@@ -1,167 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="ZoomEduca">
+    <meta name="description" content="Plataforma integrada para aplicação e correção de provas, além do monitoramento escolar.">
+    <meta name="keywords" content="educação, inovador, tecnologia, gestão, monitoramento escolar, rendimento escolar, avaliação">
+
     <title>ZoomEduca</title>
+
+    <link rel="shortcut icon" href="src/assets/favicon.png" type="image/x-icon">
+
     <script src="https://kit.fontawesome.com/bebcb8230f.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="src/css/index.css">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-      
-      ::-webkit-scrollbar {
-        overflow-y: scroll; /* Permite rolagem vertical */
-        -ms-overflow-style: none; /* IE e Edge */
-        scrollbar-width: none; /* Firefox */
-      }
-
-      :root {
-        /* Default theme */
-        --PRIMARY: #2A668B;
-        --SECONDARY: #F37835;
-        --GREEN: #00BD90;
-        --WHITE: #FFFFFF;
-        --DARK: #323232;
-        --FONT: "Rubik", sans serif;
-      }
-
-      * {
-        font-family: var(--FONT);
-      }
-
-      h1 {
-        color: var(--PRIMARY);
-      }
-      
-      h2 {
-        color: var(--SECONDARY);
-      }
-
-      p {
-        color: var(--PRIMARY);
-        text-align: justify;
-      }
-
-      .blue h2, .blue h3, .blue p {
-        color: var(--WHITE);
-      }
-
-      /* Imagem de fundo com gradiente e parallax */
-      .bg-image {
-        height: 100vh;
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        /*background-attachment: fixed; /* Fixar a imagem para o efeito parallax */
-        background-image: linear-gradient(
-            rgba(255, 255, 255, 0.4), /* 40% */
-            rgba(255, 255, 255, 1) /* 100% */
-          ), url("src/assets/01.jpg") /* Imagem de fundo */
-      }
-
-      /* Nav fixa */
-      .navbar {
-        background-color: var(--PRIMARY);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-      
-      .navbar-nav .nav-item {
-        padding: 0 10px;
-      }
-
-       /* Estilo do botão */
-       .btn-success {
-        background-color: var(--GREEN);
-        color: var(--WHITE);
-        border-radius: 15px;  
-        padding: 10px 20px;
-        font-weight: bold;
-      }
-
-      .btn-success i {
-        margin-left: 10px;
-      }
-
-      /* Limitar tamanho da logo */
-      .navbar-brand img {
-        max-height: 50px; 
-        width: auto;
-        filter: brightness(99);
-      }
-
-      .navbar-brand img:hover, .navbar-brand img:focus {
-        transform: scale(1.1);
-        
-      }
-      
-      /* Animação suave na imagem */
-      .animate-img {
-        animation: moveUpDown 3s ease-in-out infinite;
-      }
-
-      @keyframes moveUpDown {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(0);
-        }
-      }
-
-      /* Estilo para os ícones */
-      .nav-link i {
-        margin-right: 8px;
-      }
-
-      /* Centralizar o conteúdo dentro do container */
-      .content {
-        margin-top: 70px; /* Adicionando margem superior para não sobrepor com a navbar */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Garante que ocupe toda a altura da tela */
-      }
-
-      .text-column {
-        max-width: 50%; /* Limita o texto para não ocupar toda a largura */
-      }
-
-      .img-column {
-        text-align: center;
-      }
-
-      .blue {
-        background-color: var(--PRIMARY);
-      }
-
-      .h2-green h2 {
-        color: var(--GREEN);
-      }
-
-      .container-fluid-left{
-        padding-left: 0;
-      }
-
-      /* Responsividade */
-      @media (max-width: 767px) {
-        .row {
-          flex-direction: column;
-        }
-
-        .text-column {
-          text-align: center;
-          max-width: 100%;
-        }
-
-        .img-column {
-          margin-top: 20px;
-        }
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -169,7 +23,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
       <div class="container-fluid d-flex justify-content-between">
         <a class="navbar-brand" href="https://zoomeduca.com.br">
-          <img class="img-fluid" src="src/assets/logo.svg" alt="logo zoomeduca">
+          <img class="img-fluid" src="src/assets/logo-stroke.svg" alt="logo zoomeduca">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -177,16 +31,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-cogs"></i> Serviços</a>
+              <a class="nav-link" href="#services"><i class="fas fa-cogs"></i> Serviços</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-star"></i> Benefícios</a>
+              <a class="nav-link" href="#benefit"><i class="fas fa-star"></i> Benefícios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-book"></i> Manuais</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Contato</a>
+              <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contato</a>
             </li>
           </ul>
 
@@ -199,161 +50,344 @@
     <div class="bg-image">
       <!-- Conteúdo principal -->
       <div class="container content">
-        <div class="row">
+        <div class="row align-items-center">
           <div class="col-md-6 text-column text-justify">
             <h1><b>Conheça o Zoom Educa</b></h1>
-            <p>A melhor Plataforma de aplicação de Provas, Avaliações e Simulados Online e Presenciais com acompanhamento de desempenho escolar para <b>pais, alunos, gestores e professores.</b></p>
+            <p>A melhor Plataforma de aplicação de Provas, Avaliações e Simulados Online e Presenciais, Correção e acompanhamento de desempenho escolar para <b>pais, alunos, gestores e professores</b>.</p>
           </div>
           <div class="col-md-6 img-column">
-            <img src="https://placehold.co/400x400" alt="Imagem" class="animate-img img-fluid">
+            <img src="src/assets/header-zoomEduca-svg.svg" alt="Imagem" class="animate-img img-fluid">
           </div>
         </div>
       </div>
     </div>
   </header>
   <main>
-    <section class="container">
-      <h2>Credibilidade perante 17 Instituições de Ensino renomadas  e milhares de alunos</h2>
-      <div class="wrapper">
-        <div class="item item1"><img src="src/assets/logos/CEV.svg" alt="logo CEV"></div>
-        <div class="item item2"><img src="src/assets/logos/Colege_Medicina.svg" alt="logo "></div>
-        <div class="item item3"><img src="src/assets/logos/conexão.svg" alt="logo "></div>
-        <div class="item item4"><img src="src/assets/logos/diocesano_teresina.svg" alt="logo "></div>
-        <div class="item item5"><img src="src/assets/logos/dombarreto.svg" alt="logo "></div>
-        <div class="item item6"><img src="src/assets/logos/evolucao_colegio.svg" alt="logo "></div>
-        <div class="item item7"><img src="src/assets/logos/eximius.svg" alt="logo "></div>
-        <div class="item item8"><img src="src/assets/logos/intelectus.svg" alt="logo "></div>
-        <div class="item item9"><img src="src/assets/logos/ISA.svg" alt="logo "></div>
-        <div class="item item10"><img src="src/assets/logos/madre_maria_vilacidb.svg" alt="logo "></div>
-        <div class="item item11"><img src="src/assets/logos/madre_savina.svg" alt="logo "></div>
-        <div class="item item12"><img src="src/assets/logos/salesiano_juazeiro.svg" alt="logo "></div>
-        <div class="item item13"><img src="src/assets/logos/Santo_afonso.svg" alt="logo "></div>
-        <div class="item item14"><img src="src/assets/logos/colegio_machado_de_assis.svg" alt="logo "></div>
-        <div class="item item15"><img src="src/assets/logos/saojose.svg" alt="logo "></div>
-        <div class="item item16"><img src="src/assets/logos/mariana.svg" alt="logo "></div>
+    <section class="container centralize">
+      <h2 class="text-center">Veja as as várias instituições que utilizam o ZOOM EDUCA</h2>
+      <div class="scroller" data-direction="right" data-speed="fast">
+        <div class="scroller__inner">
+          <img src="src/assets/logos/CEV.svg" alt="Colegio CEV" />
+          <img src="src/assets/logos/Colege_Medicina.svg" alt="Colegio Medicina" />
+          <img src="src/assets/logos/colegio_machado_de_assis.svg" alt="Colegio Machado de Assis" />
+          <img src="src/assets/logos/conexão.svg" alt="Colegio Conexão" />
+          <img src="src/assets/logos/diocesano_teresina.svg" alt="Colegio Diocesano" />
+          <img src="src/assets/logos/dombarreto.svg" alt="Colegio Dom Barreto" />
+          <img src="src/assets/logos/evolucao_colegio.svg" alt="Colegio Evolução" />
+          <img src="src/assets/logos/eximius.svg" alt="Colegio Eximius" />
+          <img src="src/assets/logos/intelectus.svg" alt="Colegio Intelectus" />
+          <img src="src/assets/logos/ISA.svg" alt="Colegio ISA" />
+          <img src="src/assets/logos/madre_maria_vilacidb.svg" alt="Colegio Madre Maria Vilac" />
+          <img src="src/assets/logos/madre_savina.svg" alt="Colegio Madre Savina" />
+          <img src="src/assets/logos/mariana.svg" alt="Colegio Mariana" />
+          <img src="src/assets/logos/salesiano_juazeiro.svg" alt="Colegio Salesiano" />
+          <img src="src/assets/logos/Santo_afonso.svg" alt="Colegio Santo Afonso" />
+          <img src="src/assets/logos/saojose.svg" alt="Colegio Sao Jose" />
+        </div>
       </div>
     </section>
-    <article>
-      <div class="container mt-5">
+    <article id="services">
+      <!-- <div class="container mt-5">
         <h2>Sobre a Plataforma Zoom Educa</h2>
         <p>Aplicação e Correção de Provas objetivas e discursivas de forma presencial e online. Permite o acompanhamento do desempenho escolar e facilita o processo ensino-aprendizagem.</p>
-      </div>
-      <section>
-        <img class="img-fluid" src="src/assets/04.png" alt="">
+      </div> -->
+      <h2 class="text-center mt-5">Apresentação</h2>
+      <section class="form">
+        <div data-aos="fade-up"
+        data-aos-duration="2000" class="video-container">
+          <iframe 
+            class="video-style" 
+            src="https://www.youtube.com/embed/Re8pEOZ334c?si=_T-8ExO_UJSMM0gX" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+          </iframe>
+        </div>
       </section>
     </article>
+
     <section class="blue">
+      <div class="container pt-5">
+        <h2>Como o fluxo é realizado?</h2>
+        <p>Acompanhe o mapa para entender como o Zoom Educa vai atuar na sua instituição de ensino.</p>
+      </div>
+      <div class="map">
+        <img src="src/assets/forms/map.svg" alt="Mapa de fluxo Zoom Educa" class="img-fluid">
+      </div>
+    </section>
+
+    <!-- Forma para terminar parte destacada -->
+    <img src="src/assets/forms/Vector_2.svg" class="img-fluid mb-4" alt="forma">
+
+    <section>
       <div class="container">
         <h2 class="pb-4 pt-5">Conheça nosso Sistema</h2>
-          <div class="row">
-            <div class="col-md-6 img-column">
-              <img src="https://placehold.co/600x200" alt="Imagem" class="img-fluid rounded">
-            </div>
-            <div class="col">
-              <h3>Plataforma WEB</h3>
-              <p>Através da plataforma WEB é possível cadastrar e gerenciar provas e avaliações com a inserção das seguintes informações: data e horário, disciplinas a serem aplicadas, quantidade de questões, digitação de gabarito, geração de folhas de respostas e redação, processamento do resultado, etc.</p>
-              <p>Pela web também é possível à gestão pedagógica realizar todo o acompanhamento do rendimento da escola em nível de série, turma, disciplinas, alunos e questões.</p>
-            </div>
+        <div class="row">
+          <div class="col">
+            <h3 class="text-center">Plataforma WEB</h3>
+            <img src="https://placehold.co/1280x720" alt="Imagem" class="img-fluid rounded">
           </div>
-          <div class="row">
-            <div class="col-md-6 img-column">
-              <img src="https://placehold.co/600x200" alt="Imagem" class="img-fluid rounded">
-            </div>
-            <div class="col-md-6">
-              <h3>Aplicativo Mobile</h3>
-              <p>Através do APP o gestor/coordenador recebe informações sobre o rendimento de alunos, professores, turmas e disciplinas.</p>
-              <p>Todos os usuários recebem notificações automáticas no app com informações sobre todas as etapas das provas objetivas realizadas na escola.</p>
-            </div>
+          <div class="col platform-margin">
+            <h3 class="text-center">Plataforma MOBILE</h3>
+            <img src="https://placehold.co/1280x720" alt="Imagem" class="img-fluid rounded">
           </div>
+        </div>
       </div> 
       <div class="container">
         <h2 class="pb-4 pt-5">Funcionalidades</h2>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <div class="col">
-            <div class="card h-100">
-              <img src="https://placehold.co/600x400" class="card-img-top" alt="Imagem do Card 1">
+            <div data-aos="flip-right" class="card h-100">
+              <img src="src/assets/card-01.svg" class="card-img-top img-border" alt="Imagem do Card 1">
               <div class="card-body">
-                <h5 class="card-title">Funcionalidade 1</h5>
-                <p class="card-text" style="color: var(--DARK);">Descrição da funcionalidade 1. Explicando o que essa funcionalidade oferece.</p>
+                <h5 class="card-title">Avisos personalizados</h5>
+                <p class="card-text" style="color: var(--DARK);">Permite que o operador emita avisos para um perfil selecionado, seja aluno ou professor. O professor também pode emitir avisos aos alunos.</p>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
-              <img src="https://placehold.co/600x400" class="card-img-top" alt="Imagem do Card 2">
+            <div data-aos="flip-left" data-aos-delay="100" class="card h-100">
+              <img src="src/assets/card-02.svg" class="card-img-top img-border" alt="Imagem do Card 2">
               <div class="card-body">
-                <h5 class="card-title">Funcionalidade 2</h5>
-                <p class="card-text" style="color: var(--DARK);">Descrição da funcionalidade 2. Explicando o que essa funcionalidade oferece.</p>
+                <h5 class="card-title">Provas online</h5>
+                <p class="card-text" style="color: var(--DARK);">Podem ser realizadas provas online pela plataforma.</p>
               </div>
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
-              <img src="https://placehold.co/600x400" class="card-img-top" alt="Imagem do Card 3">
+            <div data-aos="flip-right" data-aos-delay="200" class="card h-100">
+              <img src="src/assets/card-03.svg" class="card-img-top img-border" alt="Imagem do Card 3">
               <div class="card-body">
-                <h5 class="card-title">Funcionalidade 3</h5>
-                <p class="card-text" style="color: var(--DARK);">Descrição da funcionalidade 3. Explicando o que essa funcionalidade oferece.</p>
+                <h5 class="card-title">Registro de atividades</h5>
+                <p class="card-text" style="color: var(--DARK);">O professor pode realizar o registro de atividades para os alunos.</p>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="https://placehold.co/600x400" class="card-img-top" alt="Imagem do Card 3">
+          <!-- Últimos dois cards empilhados -->
+          <div class="col-lg-6">
+            <div data-aos="zoom-out-center" data-aos-duration="1000" class="card h-100">
+              <img src="src/assets/card-04.svg" class="card-img-top img-border" alt="Imagem do Card 4">
               <div class="card-body">
-                <h5 class="card-title">Funcionalidade 4</h5>
-                <p class="card-text" style="color: var(--DARK);">Descrição da funcionalidade 4. Explicando o que essa funcionalidade oferece.</p>
+                <h5 class="card-title">Visualização por gráficos e médias</h5>
+                <p class="card-text" style="color: var(--DARK);">O carro-chefe da plataforma está na visualização dos gráficos de desempenho, sendo o mais detalhado possível para exibir bem as informações do aluno, turma e séries.</p>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="https://placehold.co/600x400" class="card-img-top" alt="Imagem do Card 3">
+          <div class="col-lg-6">
+            <div data-aos="zoom-out-center" data-aos-duration="1000" data-aos-delay="500" class="card h-100">
+              <img src="src/assets/card-05.png" class="card-img-top img-border" alt="Imagem do Card 5">
               <div class="card-body">
-                <h5 class="card-title">Funcionalidade 5</h5>
-                <p class="card-text" style="color: var(--DARK);">Descrição da funcionalidade 5. Explicando o que essa funcionalidade oferece.</p>
+                <h5 class="card-title">Folhas de respostas Personalizadas</h5>
+                <p class="card-text" style="color: var(--DARK);">O zoom Educa cria folhas de respostas personalizadas para sua instituição, com informações da escola e do aluno .</p>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="https://placehold.co/600x400" class="card-img-top" alt="Imagem do Card 6">
-              <div class="card-body">
-                <h5 class="card-title">Funcionalidade 6</h5>
-                <p class="card-text" style="color: var(--DARK);">Descrição da funcionalidade 6. Explicando o que essa funcionalidade oferece.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Mais cards podem ser adicionados aqui -->
         </div>
       </div>
     </section>
-
-    <!-- Forma para terminar parte destacada -->
-    <img src="src/assets/05.svg" class="img-fluid mb-4" alt="forma">
+    
 
     <section class="py-5">
-      <div class="container-fluid">
-        <div class="text-center mb-4">
-          <h2>Novas Features que facilitam e aumentam sua produtividade</h2>
-          <p class="text-center">Com o aplicativo móvel, é possível agilizar processos de maneira fácil e eficiente.</p>
+    <div class="container-fluid">
+      <div class="text-center mb-4">
+        <h2>Novas Features que facilitam e aumentam sua produtividade</h2>
+        <p class="text-center">Com o aplicativo móvel, é possível agilizar processos de maneira fácil e eficiente.</p>
+      </div>
+      <div class="row align-items-start">
+        <div data-aos="fade-right" data-aos-duration="2000" class="col-md-4 mb-4 p-0">
+          <img src="src/assets/feature-01.png" alt="Mão capturando folha de resposta" class="img-fluid">
         </div>
-    
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-4 mb-md-0 pe-0">
-            <img src="https://placehold.co/600x200" alt="Imagem" class="img-fluid rounded">
+        <div class="col-md-7 h2-green">
+          <h2>Captura de folhas de respostas</h2>
+          <p>A funcionalidade permite que o operador capture e envie folhas de respostas diretamente pelo celular, usando o aplicativo. Com essa ferramenta, as respostas são registradas rapidamente e enviadas à plataforma, onde são corrigidas automaticamente. Isso agiliza o processo de avaliação e fornece feedback imediato sobre o desempenho dos estudantes, contribuindo para o monitoramento contínuo e detalhado do rendimento escolar.</p>
+        </div>
+      </div>
+
+      <!-- Segunda parte com os celulares -->
+      <div class="row align-items-start ajust-height">
+        <div class="col-md-6 h2-green">
+          <h2>Prova Presencial Digital</h2>
+          <p>A funcionalidade permite que os alunos realizem suas avaliações de forma flexível e adaptada a diferentes necessidades. Com essa funcionalidade, o aluno pode responder por duas modalidades: Híbrido (usando caderno físico) ou Digital (respostas diretamente pelo celular ou tablet).</p>
+        </div>
+        <div data-aos="zoom-out-right " data-aos-duration="2000" class="col-md-6 mb-4 position">
+          <img src="src/assets/feature-02.png" alt="Celular com funcionalidades" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="row align-items-start">
+        <div data-aos="fade-right" data-aos-duration="2000" class="col-md-4 mb-4 p-0">
+          <img src="src/assets/feature-03.png" alt="Mão capturando folha de resposta" class="img-fluid">
+        </div>
+        <div class="col-md-7 h2-green">
+          <h2>Correção de redações</h2>
+          <p>Esta ferramenta possibilita que professores corrijam redações de maneira prática e detalhada diretamente pelo celular. Na área de redação, o professor visualiza as imagens das redações que ele mesmo registra no sistema e pode inserir comentários em trechos específicos, usando marcações na própria imagem para destacar pontos importantes ou sugerir melhorias. Além disso, é possível atribuir uma nota geral à redação, tornando o processo de feedback mais interativo e preciso, e facilitando o acompanhamento do progresso dos alunos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <article>
+    <div class="container">
+      <h2>O que cada perfil pode fazer?</h2>
+      <p>Descubra o que se pode fazer com cada perfil </p>
+    </div>
+    <section class="container">
+      <div class="col">
+        <div class="row">
+          <div data-aos="fade-right" class="col-md-6 img-container">
+            <img src="src/assets/profile_parents.png" alt="Mãe observando filho" class="img-fluid rounded">
           </div>
-          <div class="col-md-6 h2-green">
-            <h2>Captura de folhas de respostas</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio veritatis molestiae aut dicta nam magnam. Possimus sunt ea eos consequuntur delectus placeat veritatis aspernatur magnam ducimus qui. Dolore, nisi sit?</p>
+          <div class="col-md-6">
+            <h2 class="text-center">Pais</h2>
+            <p>Através do Zoom Educa os pais podem acompanhar o rendimento escolar de todos os seus filhos através do próprio celular.</p>
+            <p>Eles poderão acessar o desempenho individual do seu filho em cada disciplina por simulado. Poderão ainda consultar histórico de desempenho para saber em que disciplinas o aluno está indo bem e em quais precisa melhorar.</p>
+            <p>O Zoom Educa possui uma espécie de indicador de “comportamento” do aluno que avisa aos pais qualquer mudança abrupta no rendimento do seu filho, através de notificações pelo celular.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div data-aos="fade-right" class="col-md-6">
+            <img src="src/assets/profile_student.png" alt="Aluna sorridente" class="img-fluid rounded">
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-center">Alunos</h2>
+            <p>O aluno poderá responder provas objetivas e discursivas de forma online e presencial.</p>
+            <p>As folhas de respostas geradas pelo Zoom Educa, na modalidade presencial, são personalizadas com dados do aluno, com foto e Qr Code para a identificação de cada aluno e podem podem ser impressas em papel A4 comum para posterior escaneamento e envio para o Zoom Educa.</p>
+            <p>As folhas de respostas podem ser impressas no modelo de qualquer sistema de ensino ou mesmo do ENEM.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div data-aos="fade-right" class="col-md-6">
+            <img src="src/assets/profile_teacher.png" alt="Professor dando aula" class="img-fluid rounded">
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-center">Professor</h2>
+            <p>O professor é um dos principais beneficiados com um módulo próprio, no qual ele tem acesso a uma série de informações, a cada simulado, através do app, tais como: percentual de acertos de cada questão, percentual de marcação de cada alternativa, alunos com mais dificuldade em cada questão, rendimento da turma e disciplinas, pontuação dos alunos, recebe indicadores automáticos de rendimento, possibilidade de inserir, via app, mini-aulas ou explicações sobre as questões com menos acertos, onde somente alunos que erraram a questão receberão a notificação, etc.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div data-aos="fade-right" class="col-md-6">
+            <img src="src/assets/profile_director.png" alt="Mãe observando filho" class="img-fluid rounded">
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-center">Diretor</h2>
+            <p>O diretor pode ter uma visão geral do rendimento de sua escola e visões detalhadas sobre o rendimento de cada série, turma, professor e disciplina.</p>
+            <p>Ele tem acesso a gráficos comparativos que mostram que professores e turmas estão tendo um desempenho bom ou ruim.</p>
+            <p>Com base nestas informações, a direção poderá tomar decisões estratégicas para melhorar ainda mais o índice de aprovação de sua escola no Enem e melhorar ainda o processo ensino-aprendizagem como um todo em sua escola.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div data-aos="fade-right" class="col-md-6">
+            <img src="src/assets/profile_coodinador.png" alt="coordernador mostrando informações em papel" class="img-fluid rounded">
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-center">Coordernador</h2>
+            <p>Para o coordenador, o zoom educa permite que o processo seja automatizado e o mesmo tenha o controle de tudo via web.</p>
+            <p>O coordenador pode, além de gerenciar todo o processo do simulado desde a sua criação até o resultado final, ele pode, principalmente, acompanhar o rendimento de cada série e cada turma como um todo, cada professor, cada disciplina e cada aluno individualmente.</p>
+            <p>O Zoom Educa faz uso de indicadores de rendimento, que permitem a emissão de avisos importantes ao coordenador, para que este possa identificar facilmente problemas pontuais e intervir de forma eficaz para melhorar rendimentos ruins, sejam eles de professores, alunos ou da turma como um todo.</p>
           </div>
         </div>
       </div>
     </section>
-  </main>
-  <footer>
+  </article>
+  <section id="benefit" class="container mt-5">
+    <h2 class="text-center">Benefícios para sua Instituição</h2>
+    <div class="container my-4 position-relative">
+      <!-- Botão de rolagem à esquerda -->
+      <button class="btn-scroll-left position-absolute top-50 start-0 translate-middle-y">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
 
-  </footer>
+      <div class="d-flex flex-nowrap overflow-x-scroll custom-scroll">
+        <div class="benefit-item mx-2 text-center">
+          <i class="fa-regular fa-square-check benefit-icon"></i>
+          <p class="benefit-text">Permite o diagnóstico da real situação acadêmica e a execução de estratégias e ações planejadas, com base na análise dos indicadores apresentados pela ferramenta ao longo do ano;</p>
+        </div>
+        <div class="benefit-item mx-2 text-center">
+          <i class="fa-regular fa-square-check benefit-icon"></i>
+          <p class="benefit-text">Proporciona redução de custos, pois substitui a leitora óptica, formulários pré-impressos e software de correção;</p>
+        </div>
+        <div class="benefit-item mx-2 text-center">
+          <i class="fa-regular fa-square-check benefit-icon"></i>
+          <p class="benefit-text">Possibilita o reconhecimento de pontos fortes e fracos, auxiliando alunos, professores e equipe gestora a explorarem suas potencialidades;</p>
+        </div>
+        <div class="benefit-item mx-2 text-center">
+          <i class="fa-regular fa-square-check benefit-icon"></i>
+          <p class="benefit-text">Favorece a redução da reprovação e evasão escolar, por meio de ações direcionadas às demandas de cada aluno;</p>
+        </div>
+        <div class="benefit-item mx-2 text-center">
+          <i class="fa-regular fa-square-check benefit-icon"></i>
+          <p class="benefit-text">Possibilita a identificação das competências a desenvolver, de acordo com as particularidades dos alunos;</p>
+        </div>
+      </div>
+
+      <!-- Botão de rolagem à direita -->
+    <button class="btn-scroll-right position-absolute top-50 end-0 translate-middle-y">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    </div>
+  </section>  
+  </main>
+  <footer id="contact" class="footer mt-5">
+    <div class="container">
+      <div class="row text-center text-md-start py-4">
+        
+        <!-- Coluna Marca -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-uppercase">Marca registrada no INPI</h5>
+          <p>Processo Nº: 919721990</p>
+          <img src="src/assets/logo.svg" class="img-fluid" style="width: 60%;">
+        </div>
+        
+        <!-- Coluna Redes Sociais -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-uppercase">Zoom Educa</h5>
+          <p>Redes sociais</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/zoomeducapiaui" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/zoomeduca/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <!-- Coluna Informações -->
+        <div class="col-md-3 mb-4">
+          <h5 class="text-uppercase">Informações</h5>
+          <ul class="list-unstyled">
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#benefit">Benefícios</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        
+        <!-- Coluna Hiperdigi -->
+        <div class="col-md-3 mb-4 text-center text-md-end">
+          <img src="src/assets/hiperdigi_logo.svg" alt="Hiperdigi Logo" class="img-fluid" style="filter: brightness(0) saturate(100%) invert(15%) sepia(68%) saturate(1308%) hue-rotate(199deg) brightness(92%) contrast(96%);">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Seção de Copyright -->
+    <div class="footer-copyright text-center py-3">
+      <span><i>© Copyright Zoom Educa. Todos os direitos reservados.</i></span>
+    </div>
+  </footer>  
+  
+    <!-- Botão de Voltar ao Início -->
+  <button class="btn-scroll-top" id="scrollTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <script src="js/index.js"></script>
+
     <!-- Scripts do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

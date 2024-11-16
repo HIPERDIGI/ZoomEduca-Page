@@ -1,115 +1,565 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+::-webkit-scrollbar {
+  overflow-y: scroll; /* Permite rolagem vertical */
+  -ms-overflow-style: none; /* IE e Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+:root {
+  /* Default theme */
+  --PRIMARY: #2a668b;
+  --SECONDARY: #f37835;
+  --GREEN: #00bd90;
+  --WHITE: #ffffff;
+  --DARK: #323232;
+  --FONT: "Rubik", sans serif;
 }
 
 * {
-  margin: 0;
+  font-family: var(--FONT);
 }
 
-.wrapper {
-  width: 90%;
-  height: 150px;
-  max-width: 1536px;
-  margin-inline: auto;
+h1 {
+  color: var(--PRIMARY);
+}
+
+h2 {
+  color: var(--SECONDARY);
+}
+
+p {
+  color: var(--PRIMARY);
+  text-align: justify;
+}
+
+.blue h2,
+.blue h3,
+.blue p {
+  color: var(--WHITE);
+}
+
+/* Imagem de fundo com gradiente e parallax */
+.bg-image {
+  height: 100vh;
   position: relative;
-  margin-top: 5rem;
-  overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 1) 20%,
-    rgba(0, 0, 0, 1) 80%,
-    rgba(0, 0, 0, 0)
-  );
+  background-size: cover;
+  background-position: center;
+  /*background-attachment: fixed; /* Fixar a imagem para o efeito parallax */
+  background-image: linear-gradient(
+      rgba(41, 100, 137, 0.4),
+      /* 40% */ rgba(255, 255, 255, 1) /* 100% */
+    ),
+    url("../assets/01-gradient.png"); /* Imagem de fundo */
 }
 
-@keyframes scrollLeft {
-  to {
-    left: -200px;
+/* Nav fixa */
+.navbar {
+  background-color: var(--PRIMARY);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav .nav-item {
+  padding: 0 10px;
+}
+
+/* Estilo do botão */
+.btn-success {
+  background-color: var(--GREEN);
+  color: var(--WHITE);
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.btn-success i {
+  margin-left: 10px;
+}
+
+/* Limitar tamanho da logo */
+.navbar-brand img {
+  max-height: 50px;
+  transition: transform .5s ease-in-out;
+  width: auto;
+}
+
+.navbar-brand img:hover,
+.navbar-brand img:focus {
+  transform: scale(1.1);
+}
+
+/* Animação suave na imagem */
+.animate-img {
+  animation: moveUpDown 3s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
-.item {
-  width: 150px;
-  height: 100%;
-  position: absolute;
-  left: max(calc(150px * 16), 100%);
-  animation-name: scrollLeft;
-  animation-duration: 30s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+/* Estilo para os ícones */
+.nav-link i {
+  margin-right: 8px;
 }
 
-.item img {
-  width: 100%; /* Ajuste a largura da imagem para 100% */
-  height: 100%; /* Ajuste a altura da imagem para 100% */
-  object-fit: contain; /* Ajuste para manter a proporção sem distorcer a imagem */
-  border-radius: 50%;
+/* Centralizar o conteúdo dentro do container */
+.content {
+  margin-top: 20px; /* Adicionando margem superior para não sobrepor com a navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Garante que ocupe toda a altura da tela */
 }
 
-/* Geração de animações com atrasos sequenciais (16 itens) */
-.item1 {
-  animation-delay: calc(30s / 16 * (16 - 1) * -1);
+.text-column {
+  max-width: 50%; /* Limita o texto para não ocupar toda a largura */
 }
 
-.item2 {
-  animation-delay: calc(30s / 16 * (16 - 2) * -1);
+.img-column {
+  text-align: center;
 }
 
-.item3 {
-  animation-delay: calc(30s / 16 * (16 - 3) * -1);
+.blue {
+  background-color: var(--PRIMARY);
 }
 
-.item4 {
-  animation-delay: calc(30s / 16 * (16 - 4) * -1);
+.h2-green h2 {
+  color: var(--GREEN);
 }
 
-.item5 {
-  animation-delay: calc(30s / 16 * (16 - 5) * -1);
+.container-fluid-left {
+  padding-left: 0;
 }
 
-.item6 {
-  animation-delay: calc(30s / 16 * (16 - 6) * -1);
+.centralize {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
 }
 
-.item7 {
-  animation-delay: calc(30s / 16 * (16 - 7) * -1);
+.scroller {
+  max-width: 100%;
 }
 
-.item8 {
-  animation-delay: calc(30s / 16 * (16 - 8) * -1);
+.scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.item9 {
-  animation-delay: calc(30s / 16 * (16 - 9) * -1);
+.scroller__inner img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 15px;
 }
 
-.item10 {
-  animation-delay: calc(30s / 16 * (16 - 10) * -1);
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
 }
 
-.item11 {
-  animation-delay: calc(30s / 16 * (16 - 11) * -1);
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
 }
 
-.item12 {
-  animation-delay: calc(30s / 16 * (16 - 12) * -1);
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
 }
 
-.item13 {
-  animation-delay: calc(30s / 16 * (16 - 13) * -1);
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
 }
 
-.item14 {
-  animation-delay: calc(30s / 16 * (16 - 14) * -1);
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
 }
 
-.item15 {
-  animation-delay: calc(30s / 16 * (16 - 15) * -1);
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
 }
 
-.item16 {
-  animation-delay: calc(30s / 16 * (16 - 16) * -1);
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+.form {
+  background-image: url("../assets/forms/Vector_1.svg"); /* Adiciona a forma como fundo */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  background-size: cover; /* Faz a imagem preencher o contêiner */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 560px; /* Padrão inicial */
+  margin: 0 auto;
+  overflow: hidden; /* Evita conteúdo excedente */
+}
+
+.video-style {
+  border-radius: 1rem;
+  position: relative; /* Mantém o vídeo fluido dentro do contêiner */
+  width: 100%; /* Garante que o vídeo seja responsivo */
+  aspect-ratio: 16/9; /* Mantém a proporção do vídeo */
+  z-index: 2; /* Certifica que o vídeo está sobre o fundo */
+}
+
+.img-border {
+  border-bottom: 2px solid var(--PRIMARY); /* Cor e largura da borda */
+}
+
+.card-title {
+  color: var(--PRIMARY);
+}
+  
+.custom-scroll {
+  width: 100%; /* Garante que a rolagem ocupe toda a largura disponível */
+  overflow-x: auto; /* Scroll horizontal para desktop e mobile */
+  -webkit-overflow-scrolling: touch; /* Rolagem suave em dispositivos móveis */
+}
+
+.custom-scroll::-webkit-scrollbar {
+  height: 8px; /* Altura da barra de rolagem */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Cor do "polegar" da barra de rolagem */
+  border-radius: 4px;
+}
+
+.benefit-item {
+  min-width: 250px; /* Largura mínima para cada item */
+  padding: 15px;
+  border-right: 2px dashed #ccc; /* Borda traçada à direita */
+}
+
+.benefit-item:last-child {
+  border-right: none; /* Remove a borda do último item */
+}
+
+.benefit-icon {
+  font-size: 50px; /* Tamanho do ícone */
+  color: var(--GREEN); /* Cor verde do ícone */
+  margin-bottom: 10px;
+}
+
+.benefit-text {
+  font-size: 0.9rem; /* Tamanho do texto */
+  color: #737373; /* Cor preta do texto */
+  line-height: 1.4;
+}
+
+.ajust-height {
+  height: 400px; /* Ajusta a altura do texto */
+}
+
+.position {
+  position: relative;
+  top: -500px;
+}
+
+.footer {
+  background-color: var(--WHITE);
+  color: #737373;
+}
+
+.footer h5 {
+  font-weight: bold;
+  color: var(--PRIMARY);
+}
+
+.footer .social-icons a {
+  color: var(--PRIMARY);
+  margin: 0 10px;
+  font-size: 1.5rem;
+}
+
+.footer ul {
+  padding: 0;
+}
+
+.footer ul li a {
+  color: #737373;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  color: var(--SECONDARY);
+}
+
+.footer .footer-copyright {
+  background-color: var(--SECONDARY);
+  color: var(--WHITE);
+  font-size: 0.9rem;
+}
+
+/* Estilo do botão fixo */
+.btn-scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--DARK); /* Cor cinza */
+  color: var(--WHITE); /* Cor do ícone */
+  border: none; /* Remove borda */
+  border-radius: 50%; /* Borda totalmente arredondada */
+  padding: 20px; /* Ajuste para garantir que seja um círculo perfeito */
+  font-size: 24px; /* Tamanho do ícone */
+  width: 60px; /* Largura fixa */
+  height: 60px; /* Altura fixa */
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+/* Efeito de hover (quando passa o mouse) */
+.btn-scroll-top:hover {
+  background-color: var(
+    --GREEN
+  ); /* Um tom mais escuro de cinza ao passar o mouse */
+  cursor: pointer;
+}
+
+.btn-scroll-top i {
+  transition: transform 0.3s ease-in-out; /* Animação suave para o ícone */
+}
+
+.btn-scroll-top:hover i {
+  transform: translateY(
+    -10px
+  ); /* Mover para a esquerda quando passar o mouse */
+}
+
+/* Quando o botão estiver visível */
+.btn-scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+/* Botões de navegação */
+.btn-scroll-left,
+.btn-scroll-right {
+  color: var(--SECONDARY);
+  border: none;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0; /* Inicialmente invisíveis */
+  visibility: hidden; /* Inicialmente invisíveis */
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+/* Botões de navegação visíveis quando necessário */
+.btn-scroll-left.show,
+.btn-scroll-right.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-scroll-left:hover,
+.btn-scroll-right:hover {
+  background-color: var(--PRIMARY);
+  color: var(--WHITE);
+}
+
+.btn-scroll-left {
+  left: 10px;
+}
+
+.btn-scroll-right {
+  right: 10px;
+}
+
+/* Icones de seta */
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 18px;
+}
+
+/* Container com rolagem horizontal */
+.custom-scroll {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+}
+
+/* Estilos dos itens */
+.benefit-item {
+  min-width: 200px;
+  text-align: center;
+}
+
+.benefit-text {
+  font-size: 16px;
+  color: #333;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 1500px) {
+  .position {
+    position: relative;
+    top: -400px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .position {
+    position: relative;
+    top: -150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .video-container {
+    max-width: 800px; /* Aumenta o tamanho do contêiner */
+  }
+
+  .scroller__inner img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .position {
+    position: relative;
+    top: -100px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Reduz o tamanho das imagens para tablets */
+  .footer img {
+    max-width: 150px;
+    width: 100%;
+  }
+
+  .scroller__inner img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+}
+
+/* Para telas médias */
+@media (max-width: 768px) {
+  .video-container {
+    max-width: 480px; /* Reduz o tamanho em tablets */
+  }
+
+  .platform-margin {
+    margin-top: 2rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .text-column {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .img-column {
+    margin-top: 20px;
+  }
+  
+  .ajust-height {
+    height: 100%; /* Ajusta a altura do texto */
+  }
+
+  .position {
+    position: none;
+    top: 0;
+  }
+
+  .scroller__inner img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+
+  /* Centraliza o texto e elementos para telas menores */
+  .footer .row {
+    text-align: center;
+  }
+
+  /* Ajusta o tamanho das logos para telas menores */
+  .footer img {
+    max-width: 120px;
+    width: 100%; /* Para garantir responsividade */
+  }
+
+  /* Centraliza os ícones sociais e listas */
+  .footer h5,
+  .footer p,
+  .footer .social-icons,
+  .footer ul {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer img {
+    max-width: 150px;
+    width: 100%;
+  }
+
+  .scroller__inner img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+}
+
+/* Para telas pequenas */
+@media (max-width: 480px) {
+  .video-container {
+    max-width: 320px; /* Ajuste final para smartphones */
+  }
+
+  .scroller__inner img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 15px;
+  }
+
+  .platform-margin {
+    margin-top: 2rem;
+  }
 }
