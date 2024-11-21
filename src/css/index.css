@@ -21,7 +21,20 @@
 }
 
 h1 {
-  color: var(--PRIMARY);
+  color: var(--WHITE);
+}
+
+.text-header {
+  color: var(--WHITE);
+  font-weight: 400;
+}
+
+.paragraph {
+  display: block;
+}
+
+.low-paragraph {
+  display: none;
 }
 
 h2 {
@@ -41,17 +54,18 @@ p {
 
 /* Imagem de fundo com gradiente e parallax */
 .bg-image {
-  height: 100vh;
+  height: 100vh;  
   position: relative;
   background-size: cover;
   background-position: center;
-  /*background-attachment: fixed; /* Fixar a imagem para o efeito parallax */
+  /* background-attachment: fixed; /* Fixar a imagem para o efeito parallax */
   background-image: linear-gradient(
-      rgba(41, 100, 137, 0.4),
-      /* 40% */ rgba(255, 255, 255, 1) /* 100% */
+      rgba(41, 100, 137, 0.7) 99%, /* Gradiente de 40% da altura com essa cor */
+      rgba(255, 255, 255, 1) 100% /* Gradiente até 100% da altura com a cor branca */
     ),
-    url("../assets/01-gradient.png"); /* Imagem de fundo */
+    url("../assets/header-image.jpeg"); /* Imagem de fundo */
 }
+
 
 /* Nav fixa */
 .navbar {
@@ -170,11 +184,11 @@ p {
   -webkit-mask: linear-gradient(
     90deg,
     transparent,
-    white 20%,
-    white 80%,
+    white 5%,
+    white 95%,
     transparent
   );
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
 }
 
 .scroller[data-animated="true"] .scroller__inner {
@@ -228,6 +242,14 @@ p {
   z-index: 2; /* Certifica que o vídeo está sobre o fundo */
 }
 
+.map {
+  display: block;
+}
+
+.small-map {
+  display: none;
+}
+
 .img-border {
   border-bottom: 2px solid var(--PRIMARY); /* Cor e largura da borda */
 }
@@ -235,11 +257,20 @@ p {
 .card-title {
   color: var(--PRIMARY);
 }
-  
+
 .custom-scroll {
   width: 100%; /* Garante que a rolagem ocupe toda a largura disponível */
   overflow-x: auto; /* Scroll horizontal para desktop e mobile */
   -webkit-overflow-scrolling: touch; /* Rolagem suave em dispositivos móveis */
+  padding: 15px 0; /* Adiciona espaçamento em cima e embaixo do container */
+  display: flex;
+  gap: 20px; /* Espaçamento uniforme entre os itens */
+  cursor: grab;
+}
+
+.custom-scroll.active {
+  cursor: grabbing; /* Muda o cursor enquanto o mouse arrasta */
+  user-select: none; /* Evita seleção de texto durante o arraste */
 }
 
 .custom-scroll::-webkit-scrollbar {
@@ -252,29 +283,37 @@ p {
 }
 
 .benefit-item {
-  min-width: 250px; /* Largura mínima para cada item */
-  padding: 15px;
-  border-right: 2px dashed #ccc; /* Borda traçada à direita */
+  min-width: 270px; /* Largura mínima para equilibrar o texto */
+  max-width: 300px; /* Limita a largura para evitar textos muito esticados */
+  padding: 20px; /* Espaçamento interno maior */
+  border: 1px solid #ddd; /* Borda discreta */
+  border-radius: 8px; /* Arredondar cantos para suavizar */
+  background-color: #fff; /* Cor de fundo branco */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: center; /* Alinha todo o conteúdo no centro */
+  flex-shrink: 0; /* Evita que o item encolha */
 }
 
-.benefit-item:last-child {
-  border-right: none; /* Remove a borda do último item */
-}
-
-.benefit-icon {
+.benefit-item i.benefit-icon {
   font-size: 50px; /* Tamanho do ícone */
   color: var(--GREEN); /* Cor verde do ícone */
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Espaçamento entre ícone e texto */
 }
 
-.benefit-text {
-  font-size: 0.9rem; /* Tamanho do texto */
-  color: #737373; /* Cor preta do texto */
-  line-height: 1.4;
+.benefit-item p.benefit-text {
+  font-size: 0.95rem; /* Tamanho do texto levemente maior */
+  color: #737373; /* Cor cinza escuro */
+  line-height: 1.5; /* Maior espaçamento entre as linhas */
+  margin: 0; /* Remove margens extras */
 }
+
 
 .ajust-height {
-  height: 400px; /* Ajusta a altura do texto */
+  height: 200px; /* Ajusta a altura do texto */
+}
+
+.phones {
+  width: 80%;
 }
 
 .position {
@@ -338,9 +377,7 @@ p {
 
 /* Efeito de hover (quando passa o mouse) */
 .btn-scroll-top:hover {
-  background-color: var(
-    --GREEN
-  ); /* Um tom mais escuro de cinza ao passar o mouse */
+  background-color: var(--GREEN); /* Um tom mais escuro de cinza ao passar o mouse */
   cursor: pointer;
 }
 
@@ -421,6 +458,20 @@ p {
   color: #333;
 }
 
+/* FAQs */
+
+.accordion {
+  --bs-accordion-active-bg: var(--PRIMARY);
+  --bs-accordion-active-color: var(--WHITE);
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
+}
 
 /* Responsividade */
 
@@ -444,8 +495,8 @@ p {
   }
 
   .scroller__inner img {
-    width: 180px;
-    height: 180px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
     border-radius: 15px;
   }
@@ -456,6 +507,13 @@ p {
     position: relative;
     top: -100px;
   }
+
+  .scroller__inner img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 15px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -463,13 +521,6 @@ p {
   .footer img {
     max-width: 150px;
     width: 100%;
-  }
-
-  .scroller__inner img {
-    width: 160px;
-    height: 160px;
-    object-fit: contain;
-    border-radius: 15px;
   }
 }
 
@@ -506,10 +557,19 @@ p {
   }
 
   .scroller__inner img {
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
     object-fit: contain;
     border-radius: 15px;
+  }
+
+
+  .paragraph {
+    display: none;
+  }
+  
+  .low-paragraph {
+    display: block;
   }
 
   /* Centraliza o texto e elementos para telas menores */
@@ -550,6 +610,14 @@ p {
 @media (max-width: 480px) {
   .video-container {
     max-width: 320px; /* Ajuste final para smartphones */
+  }
+
+  .map {
+    display: none;
+  }
+
+  .small-map {
+    display: block;
   }
 
   .scroller__inner img {

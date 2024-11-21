@@ -59,6 +59,41 @@ checkScrollButtons();
 // Adiciona um evento de rolagem para atualizar os botões conforme o usuário rola
 scrollContainer.addEventListener('scroll', checkScrollButtons);
 
+
+const scrollxy = document.querySelector('.custom-scroll');
+
+let isDown = false; // Indica se o botão do mouse está pressionado
+let startX;
+let scrollLeft;
+
+// Evento de clique e arraste no mouse
+scrollContainer.addEventListener('mousedown', (e) => {
+  isDown = true;
+  scrollContainer.classList.add('active'); // Adiciona uma classe para estilo, se quiser
+  startX = e.pageX - scrollContainer.offsetLeft;
+  scrollLeft = scrollContainer.scrollLeft;
+});
+
+scrollContainer.addEventListener('mouseleave', () => {
+  isDown = false; // Para de arrastar se o mouse sair do container
+  scrollContainer.classList.remove('active');
+});
+
+scrollContainer.addEventListener('mouseup', () => {
+  isDown = false; // Para de arrastar quando o mouse é solto
+  scrollContainer.classList.remove('active');
+});
+
+scrollContainer.addEventListener('mousemove', (e) => {
+  if (!isDown) return; // Só executa se o mouse estiver pressionado
+  e.preventDefault();
+  const x = e.pageX - scrollContainer.offsetLeft;
+  const walk = (x - startX) * 2; // Velocidade do scroll (ajuste se necessário)
+  scrollContainer.scrollLeft = scrollLeft - walk;
+});
+
+
+// Logic automatic scroll in institutions
 const scrollers = document.querySelectorAll(".scroller");
 
 // If a user hasn't opted in for recuded motion, then we add the animation
