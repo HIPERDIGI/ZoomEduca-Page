@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="src/css/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+script>
   </head>
   <body>
     <header>
@@ -60,8 +62,20 @@
           <div class="col-md-6 text-column text-justify">
             <h1><b>Conheça o Zoom Educa</b></h1>
             <div class="paragraph">
-              <p class="text-header">O Zoom Educa é uma plataforma integrada que veio para facilitar a vida de quem ensina, aprende e gerencia. Com ela, você pode aplicar e corrigir provas, avaliações e simulados de forma prática, seja online ou presencial. A ferramenta é superintuitiva e permite personalizar cada detalhe, atendendo às necessidades da sua instituição.</p>
-              <p class="text-header">A plataforma integrada oferece correção automática, avisos personalizados, folhas de respostas únicas para sua instituição, registro de atividades, meios inovadores de correção, relatórios detalhados e acompanhamento de desempenho em tempo real, tanto para pais quanto para alunos, professores e gestores. Tudo isso ajuda a melhorar a comunicação, simplificar o trabalho e focar no que realmente importa: o aprendizado.</p>  
+              <p class="text-header">O Zoom Educa é uma plataforma inovadora, que veio para facilitar a vida de
+                quem ensina, aprende e gerencia escolas privadas e públicas. Com o Zoom
+                Educa, sua escola pode criar, aplicar provas presenciais e on-line, e corrigir
+                provas e simulados, de forma eficiente e rápida. O software pode ser acessado
+                por alunos, professores, gestores e coordenadores que podem contar com uma
+                ferramenta completa para a gestão de avaliações e simulados rotineiros da
+                escola.</p>
+              <p class="text-header">Com base nos resultados das avaliações a ferramenta permite ainda o
+                monitoramento completo do desempenho e rendimento de alunos, disciplinas e
+                turmas, possibilitando à escola inúmeros benefícios, tais como o aumento do seu
+                desempenho no IDEB e Enem, a diminuição da evasão escolar, diminuição da
+                reprovação, e acompanhamento completo do desempenho acadêmico de seus
+                alunos, tudo isso de forma prática pelo sistema web ou pelo aplicativo para
+                celulares Android e IOS.</p>  
             </div>
             <div class="low-paragraph">
               <p class="text-header">A melhor Plataforma integrada de aplicação e correção de Provas, Avaliações e Simulados Online e Presenciais, além do acompanhamento de desempenho escolar para <b>pais, alunos, gestores e professores</b>.</p>
@@ -125,12 +139,42 @@
         <h2>Como o fluxo é realizado?</h2>
         <p>Acompanhe o mapa para entender como o Zoom Educa vai atuar na sua instituição de ensino.</p>
       </div>
-      <div class="map">
-        <img src="src/assets/forms/map-02.svg" alt="Mapa de fluxo Zoom Educa" class="img-fluid">
-      </div>
-      <div class="small-map">
-        <img src="src/assets/forms/small-map.svg" alt="Mapa de fluxo Zoom Educa" class="img-fluid">
-      </div>
+      <div class="trail-container">
+        <div class="trail">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+            <!-- Trilhas -->
+            <path class="trail-path" d="
+              M 0 200 
+              C 100 50, 200 350, 300 200
+              S 500 50, 600 200
+              S 800 350, 900 200
+              S 1100 50, 1200 200" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="1500" stroke-linecap="round" />
+            <!-- Pontos -->
+            <circle cx="120" cy="180" r="8" fill="white" class="point" />
+            <circle cx="450" cy="85" r="8" fill="white" class="point" />
+            <circle cx="750" cy="310" r="8" fill="white" class="point" />
+            <circle cx="1050" cy="85" r="8" fill="white" class="point" /> <!-- Novo ponto -->
+          </svg>
+        </div>
+      
+        <!-- Informativos -->
+        <div class="info-container" id="info-1">
+          <img src="src/assets/forms/school-register.svg" class="img-fluid">
+          <a role="button" tabindex="0" onclick="openModal('ballon_1')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+        </div>
+        <div class="info-container" id="info-2">
+          <img src="src/assets/forms/activity-register.svg" class="img-fluid">
+          <a role="button" tabindex="0" onclick="openModal('ballon_2')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+        </div>
+        <div class="info-container" id="info-3">
+          <img src="src/assets/forms/aplication-exam-ballon.svg" class="img-fluid">
+          <a role="button" tabindex="0" onclick="openModal('ballon_3')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+        </div>
+        <div class="info-container" id="info-4">
+          <img src="src/assets/forms/monitoring-ballon.svg" class="img-fluid">
+          <a role="button" tabindex="0" onclick="openModal('ballon_4')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+        </div>
+      </div>      
     </section>
 
     <!-- Forma para terminar parte destacada -->
@@ -138,71 +182,198 @@
 
     <section>
       <div class="container">
-        <h2 class="pb-4 pt-5">Conheça nosso Sistema</h2>
-        <div class="row">
-          <div class="col">
-            <h3 class="text-center">Plataforma WEB</h3>
-            <img src="https://placehold.co/1280x720" alt="Imagem" class="img-fluid rounded">
-          </div>
-          <div class="col platform-margin">
-            <h3 class="text-center">Plataforma MOBILE</h3>
-            <img src="https://placehold.co/1280x720" alt="Imagem" class="img-fluid rounded">
-          </div>
+        <div class="col text-center">
+        <h2 class="pb-4 pt-5">Conheça nosso Sistema integrado</h2>
+          <img src="https://placehold.co/840x480" alt="Imagem" class="img-fluid rounded">
         </div>
       </div> 
       <div class="container">
-        <h2 class="pb-4 pt-5">Funcionalidades</h2>
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-          <div class="col">
-            <div data-aos="flip-right" class="card h-100">
-              <img src="src/assets/card-01.svg" class="card-img-top img-border" alt="Imagem do Card 1">
-              <div class="card-body">
-                <h5 class="card-title">Avisos personalizados</h5>
-                <p class="card-text" style="color: var(--DARK);">Permite que o operador emita avisos para um perfil selecionado, seja aluno ou professor. O professor também pode emitir avisos aos alunos.</p>
+        <h2 class="pt-5">Mais vantagens</h2>
+
+        <div class="card-container my-4 position-relative">
+          <!-- Botões de navegação -->
+           <div class="card-btn-container position-absolute">
+            <button class="card-btn-scroll-left">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            
+            <button class="card-btn-scroll-right">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        
+          <!-- Área de rolagem -->
+          <div class="card-custom-scroll">
+          <div class="card">
+            <div class="lottie-container">
+              <!-- Contêiner para a animação Lottie -->
+              <div id="anim-profile"></div>
+            </div>
+          
+            <div class="card-content">
+              <h5 class="card-title">Perfis</h5>
+              <p class="card-description">
+                A plataforma possui diferentes perfis de usuários que podem acessar pela web ou pelo aplicativo.
+              </p>
+              <a role="button" tabindex="0" onclick="openModal('profiles')" class="btn btn-outline-success btn-md btn-block" >Saiba mais</a>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="lottie-container">
+              <!-- Contêiner para a animação Lottie -->
+              <div id="anim-essay"></div>
+            </div>
+
+            <div class="card-content">
+              <h5 class="card-title">Correção de redações via app</h5>
+              <p class="card-description">
+                Aplicativo para captura e correção de redações em tablets e celulares.
+              </p>
+              <a href="#asseys" class="btn btn-outline-success btn-md btn-block">Saiba mais</a>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="lottie-container">
+              <!-- Contêiner para a animação Lottie -->
+              <div id="anim-exam"></div>
+            </div>
+            <div class="card-content">
+              <h5 class="card-title">
+                Várias possibilidades de aplicação de provas
+              </h5>
+              <p class="card-description">
+                A ferramenta permite realizar avaliações em diversas modalidades.
+              </p>
+              <a role="button" tabindex="0" onclick="openModal('ballon_3')" class="btn btn-outline-success btn-md btn-block">Saiba mais</a>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="lottie-container">
+              <!-- Contêiner para a animação Lottie -->
+              <div id="anim-auditor"></div>
+            </div>
+            <div class="card-content">
+              <h5 class="card-title">Auditoria completa</h5>
+              <p class="card-description">
+                Nessa consulta são exibidas todas as ações realizadas no sistema por usuários de todos os perfis da plataforma.
+              </p>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="lottie-container">
+              <!-- Contêiner para a animação Lottie -->
+              <div id="anim-notifications"></div>
+            </div>
+            <div class="card-content">
+              <h5 class="card-title">Avisos e notificações automatizadas</h5>
+              <p class="card-description">
+                A plataforma envia automaticamente avisos e notificações para os perfis.
+              </p>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="lottie-container">
+              <!-- Contêiner para a animação Lottie -->
+              <div id="anim-activity"></div>
+            </div>
+            <div class="card-content">
+              <h5 class="card-title">Registro de atividades</h5>
+              <p class="card-description">
+                O professor pode realizar o registro de atividades para os alunos.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+       <!-- Dois cards fixos lado a lado com a classe lg-card -->
+        <div class="row g-4 mt-1">
+          <div class="col-md-6">
+            <div class="lg-card h-100" data-aos="zoom-out-center">
+              <!-- Container da Imagem Maior -->
+              <div class="lg-card-img-container">
+                <img src="src/assets/card-04.svg" class="lg-card-img-top img-border" alt="Imagem do Card 4">
+              </div>
+              <div class="card-content">
+                <h5 class="card-title">Indicadores de desempenho</h5>
+                <p class="card-description">
+                  A ferramenta apresenta gráficos coloridos que refletem os indicadores de desempenho personalizados pela escola.
+                </p>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div data-aos="flip-left" data-aos-delay="100" class="card h-100">
-              <img src="src/assets/card-02.svg" class="card-img-top img-border" alt="Imagem do Card 2">
-              <div class="card-body">
-                <h5 class="card-title">Provas online</h5>
-                <p class="card-text" style="color: var(--DARK);">Podem ser realizadas provas online pela plataforma.</p>
+          <div class="col-md-6">
+            <div class="lg-card h-100" data-aos="zoom-out-center">
+              <!-- Container da Imagem Maior -->
+              <div class="lg-card-img-container">
+                <img src="src/assets/card-05.png" class="lg-card-img-top img-border" alt="Imagem do Card 5">
               </div>
-            </div>
-          </div>
-          <div class="col">
-            <div data-aos="flip-right" data-aos-delay="200" class="card h-100">
-              <img src="src/assets/card-03.svg" class="card-img-top img-border" alt="Imagem do Card 3">
-              <div class="card-body">
-                <h5 class="card-title">Registro de atividades</h5>
-                <p class="card-text" style="color: var(--DARK);">O professor pode realizar o registro de atividades para os alunos.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Últimos dois cards empilhados -->
-          <div class="col-lg-6">
-            <div data-aos="zoom-out-center" data-aos-duration="1000" class="card h-100">
-              <img src="src/assets/card-04.svg" class="card-img-top img-border" alt="Imagem do Card 4">
-              <div class="card-body">
-                <h5 class="card-title">Visualização por gráficos e médias</h5>
-                <p class="card-text" style="color: var(--DARK);">O carro-chefe da plataforma está na visualização dos gráficos de desempenho, sendo o mais detalhado possível para exibir bem as informações do aluno, turma e séries.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div data-aos="zoom-out-center" data-aos-duration="1000" data-aos-delay="100" class="card h-100">
-              <img src="src/assets/card-05.png" class="card-img-top img-border" alt="Imagem do Card 5">
-              <div class="card-body">
-                <h5 class="card-title">Folhas de respostas Personalizadas</h5>
-                <p class="card-text" style="color: var(--DARK);">O zoom Educa cria folhas de respostas personalizadas para sua instituição, com informações da escola e do aluno .</p>
+              <div class="card-content">
+                <h5 class="card-title">Folhas de respostas personalizadas</h5>
+                <p class="card-description">
+                  O Zoom Educa cria folhas de respostas personalizadas para sua instituição.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Modal -->
+    <div id="dynamicModal" class="modal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <a class="close-btn-modal" onclick="closeModal()"><i class="fa-solid fa-circle-xmark"></i></a>
+          </div>
+          <div class="modal-body">
+            <!-- O conteúdo dinâmico será inserido aqui -->
+          </div>
+        </div>
+      </div>
+    </div>
     
+    <section id="benefit" class="container mt-5">
+      <h2>Benefícios para sua Instituição</h2>
+      <div class="container my-4 position-relative">
+        <!-- Botão de rolagem à esquerda -->
+        <button class="btn-scroll-left position-absolute top-50 start-0 translate-middle-y">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+  
+        <div class="d-flex flex-nowrap overflow-x-scroll custom-scroll">
+          <div class="benefit-item mx-2 text-center position-relative">
+            <i class="fa-regular fa-square-check benefit-icon ajust-sm-icon-card"></i>
+            <p class="benefit-text">Permite o diagnóstico da real situação acadêmica e a execução de estratégias e ações planejadas, com base na análise dos indicadores apresentados pela ferramenta ao longo do ano;</p>
+          </div>
+          <div class="benefit-item mx-2 text-center position-relative">
+            <i class="fa-regular fa-square-check benefit-icon ajust-sm-icon-card"></i>
+            <p class="benefit-text">Proporciona redução de custos, pois substitui a leitora óptica, formulários pré-impressos e software de correção;</p>
+          </div>
+          <div class="benefit-item mx-2 text-center position-relative">
+            <i class="fa-regular fa-square-check benefit-icon ajust-sm-icon-card"></i>
+            <p class="benefit-text">Possibilita o reconhecimento de pontos fortes e fracos, auxiliando alunos, professores e equipe gestora a explorarem suas potencialidades;</p>
+          </div>
+          <div class="benefit-item mx-2 text-center position-relative">
+            <i class="fa-regular fa-square-check benefit-icon ajust-sm-icon-card"></i>
+            <p class="benefit-text">Favorece a redução da reprovação e evasão escolar, por meio de ações direcionadas às demandas de cada aluno;</p>
+          </div>
+          <div class="benefit-item mx-2 text-center position-relative">
+            <i class="fa-regular fa-square-check benefit-icon ajust-sm-icon-card"></i>
+            <p class="benefit-text">Possibilita a identificação das competências a desenvolver, de acordo com as particularidades dos alunos;</p>
+          </div>
+        </div>
+  
+        <!-- Botão de rolagem à direita -->
+      <button class="btn-scroll-right position-absolute top-50 end-0 translate-middle-y">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      </div>
+    </section>  
 
     <section class="pt-5">
     <div class="container-fluid">
@@ -221,18 +392,17 @@
       </div>
 
       <!-- Segunda parte com os celulares -->
-<div class="row justify-content-center ajust-height flex-column-reverse flex-md-row">
-  <div class="col-md-4 h2-green text-md-end text-center">
-    <h2>Prova Presencial Digital</h2>
-    <p>A funcionalidade permite que os alunos realizem suas avaliações de forma flexível e adaptada a diferentes necessidades. Com essa funcionalidade, o aluno pode responder por duas modalidades: Híbrido (usando caderno físico) ou Digital (respostas diretamente pelo celular ou tablet).</p>
-  </div>
-  <div data-aos="zoom-out-right" data-aos-duration="2000" class="col-md-6 position text-center">
-    <img src="src/assets/feature-02.png" alt="Celular com funcionalidades" class="img-fluid phones">
-  </div>
-</div>
+      <div class="row justify-content-center ajust-height flex-column-reverse flex-md-row">
+        <div class="col-md-4 h2-green text-md-end text-center">
+          <h2>Prova Presencial Digital</h2>
+          <p>A funcionalidade permite que os alunos realizem suas avaliações de forma flexível e adaptada a diferentes necessidades. Com essa funcionalidade, o aluno pode responder por duas modalidades: Híbrido (usando caderno físico) ou Digital (respostas diretamente pelo celular ou tablet).</p>
+        </div>
+        <div data-aos="zoom-out-right" data-aos-duration="2000" class="col-md-6 position text-center">
+          <img src="src/assets/feature-02.png" alt="Celular com funcionalidades" class="img-fluid phones">
+        </div>
+      </div>
 
-
-      <div class="row align-items-center">
+      <div id="asseys" class="row align-items-center">
         <div data-aos="fade-right" data-aos-duration="2000" class="col-md-4 p-0">
           <img src="src/assets/feature-03.png" alt="Mão capturando folha de resposta" class="img-fluid">
         </div>
@@ -243,110 +413,6 @@
       </div>
     </div>
   </section>
-  <article>
-    <div class="container">
-      <h2>O que cada perfil pode fazer?</h2>
-      <p>Descubra o que se pode fazer com cada perfil </p>
-    </div>
-    <section class="container">
-      <div class="col">
-        <div class="row">
-          <div data-aos="fade-right" class="col-md-6 img-container">
-            <img src="src/assets/profile_parents.png" alt="Mãe observando filho" class="img-fluid rounded">
-          </div>
-          <div class="col-md-6">
-            <h2 class="text-center">Pais</h2>
-            <p>Através do Zoom Educa os pais podem acompanhar o rendimento escolar de todos os seus filhos através do próprio celular.</p>
-            <p>Eles poderão acessar o desempenho individual do seu filho em cada disciplina por simulado. Poderão ainda consultar histórico de desempenho para saber em que disciplinas o aluno está indo bem e em quais precisa melhorar.</p>
-            <p>O Zoom Educa possui uma espécie de indicador de “comportamento” do aluno que avisa aos pais qualquer mudança abrupta no rendimento do seu filho, através de notificações pelo celular.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_student.png" alt="Aluna sorridente" class="img-fluid rounded">
-          </div>
-          <div class="col-md-6">
-            <h2 class="text-center">Alunos</h2>
-            <p>O aluno poderá responder provas objetivas e discursivas de forma online e presencial.</p>
-            <p>As folhas de respostas geradas pelo Zoom Educa, na modalidade presencial, são personalizadas com dados do aluno, com foto e Qr Code para a identificação de cada aluno e podem podem ser impressas em papel A4 comum para posterior escaneamento e envio para o Zoom Educa.</p>
-            <p>As folhas de respostas podem ser impressas no modelo de qualquer sistema de ensino ou mesmo do ENEM.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_teacher.png" alt="Professor dando aula" class="img-fluid rounded">
-          </div>
-          <div class="col-md-6">
-            <h2 class="text-center">Professor</h2>
-            <p>O professor é um dos principais beneficiados com um módulo próprio, no qual ele tem acesso a uma série de informações, a cada simulado, através do app, tais como: percentual de acertos de cada questão, percentual de marcação de cada alternativa, alunos com mais dificuldade em cada questão, rendimento da turma e disciplinas, pontuação dos alunos, recebe indicadores automáticos de rendimento, possibilidade de inserir, via app, mini-aulas ou explicações sobre as questões com menos acertos, onde somente alunos que erraram a questão receberão a notificação, etc.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_director.png" alt="Mãe observando filho" class="img-fluid rounded">
-          </div>
-          <div class="col-md-6">
-            <h2 class="text-center">Diretor</h2>
-            <p>O diretor pode ter uma visão geral do rendimento de sua escola e visões detalhadas sobre o rendimento de cada série, turma, professor e disciplina.</p>
-            <p>Ele tem acesso a gráficos comparativos que mostram que professores e turmas estão tendo um desempenho bom ou ruim.</p>
-            <p>Com base nestas informações, a direção poderá tomar decisões estratégicas para melhorar ainda mais o índice de aprovação de sua escola no Enem e melhorar ainda o processo ensino-aprendizagem como um todo em sua escola.</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_coodinador.png" alt="coordernador mostrando informações em papel" class="img-fluid rounded">
-          </div>
-          <div class="col-md-6">
-            <h2 class="text-center">Coordernador</h2>
-            <p>Para o coordenador, o zoom educa permite que o processo seja automatizado e o mesmo tenha o controle de tudo via web.</p>
-            <p>O coordenador pode, além de gerenciar todo o processo do simulado desde a sua criação até o resultado final, ele pode, principalmente, acompanhar o rendimento de cada série e cada turma como um todo, cada professor, cada disciplina e cada aluno individualmente.</p>
-            <p>O Zoom Educa faz uso de indicadores de rendimento, que permitem a emissão de avisos importantes ao coordenador, para que este possa identificar facilmente problemas pontuais e intervir de forma eficaz para melhorar rendimentos ruins, sejam eles de professores, alunos ou da turma como um todo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </article>
-  <section id="benefit" class="container mt-5">
-    <h2 class="text-center">Benefícios para sua Instituição</h2>
-    <div class="container my-4 position-relative">
-      <!-- Botão de rolagem à esquerda -->
-      <button class="btn-scroll-left position-absolute top-50 start-0 translate-middle-y">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-
-      <div class="d-flex flex-nowrap overflow-x-scroll custom-scroll">
-        <div class="benefit-item mx-2 text-center">
-          <i class="fa-regular fa-square-check benefit-icon"></i>
-          <p class="benefit-text">Permite o diagnóstico da real situação acadêmica e a execução de estratégias e ações planejadas, com base na análise dos indicadores apresentados pela ferramenta ao longo do ano;</p>
-        </div>
-        <div class="benefit-item mx-2 text-center">
-          <i class="fa-regular fa-square-check benefit-icon"></i>
-          <p class="benefit-text">Proporciona redução de custos, pois substitui a leitora óptica, formulários pré-impressos e software de correção;</p>
-        </div>
-        <div class="benefit-item mx-2 text-center">
-          <i class="fa-regular fa-square-check benefit-icon"></i>
-          <p class="benefit-text">Possibilita o reconhecimento de pontos fortes e fracos, auxiliando alunos, professores e equipe gestora a explorarem suas potencialidades;</p>
-        </div>
-        <div class="benefit-item mx-2 text-center">
-          <i class="fa-regular fa-square-check benefit-icon"></i>
-          <p class="benefit-text">Favorece a redução da reprovação e evasão escolar, por meio de ações direcionadas às demandas de cada aluno;</p>
-        </div>
-        <div class="benefit-item mx-2 text-center">
-          <i class="fa-regular fa-square-check benefit-icon"></i>
-          <p class="benefit-text">Possibilita a identificação das competências a desenvolver, de acordo com as particularidades dos alunos;</p>
-        </div>
-      </div>
-
-      <!-- Botão de rolagem à direita -->
-    <button class="btn-scroll-right position-absolute top-50 end-0 translate-middle-y">
-      <i class="fa-solid fa-chevron-right"></i>
-    </button>
-    </div>
-  </section>  
   <section id="FAQS">
     <div class="container">
       <h2>Perguntas Frequentes</h2>
@@ -441,7 +507,7 @@
     <i class="fas fa-arrow-up"></i>
   </button>
   <script src="js/index.js"></script>
-
+  <script src="js/modals.js"></script>
     <!-- Scripts do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

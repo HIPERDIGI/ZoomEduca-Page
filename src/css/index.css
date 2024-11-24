@@ -90,16 +90,22 @@ p {
   margin-left: 10px;
 }
 
-/* Limitar tamanho da logo */
-.navbar-brand img {
-  max-height: 50px;
-  transition: transform .5s ease-in-out;
-  width: auto;
+.navbar-brand {
+  max-height: 125px;
+  max-width: 125px;
+  transition: transform .3s ease-in-out;
 }
 
-.navbar-brand img:hover,
-.navbar-brand img:focus {
+/* Limitar tamanho da logo */
+.navbar-brand img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus-visible {
   transform: scale(1.1);
+  outline: none;
 }
 
 /* Animação suave na imagem */
@@ -242,6 +248,163 @@ p {
   z-index: 2; /* Certifica que o vídeo está sobre o fundo */
 }
 
+.trail-container {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+  overflow-x: auto; /* Permite scroll horizontal */
+  overflow-y: hidden; /* Remove scroll vertical desnecessário */
+  white-space: nowrap; /* Garante que os elementos não quebrem linha */
+}
+
+.trail {
+  position: relative;
+  height: auto;
+}
+
+.trail-path {
+  stroke-dasharray: 1500; /* Tamanho total da linha */
+  stroke-dashoffset: 1500; /* Inicialmente oculta a linha */
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0; /* Revela a linha */
+  }
+}
+
+.point {
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.point.show {
+  opacity: 1; /* Torna visível quando a classe show for adicionada */
+}
+
+
+.info-container {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  max-width: 300px; /* Ajuste da largura máxima para telas maiores */
+  text-align: center;
+  transform: translate(-50%, -50%); /* Centra os informativos nos pontos */
+  padding: 10px;
+  border-radius: 8px; /* Bordas arredondadas */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-container .img-fluid {
+  width: 100%; /* Ajuste do tamanho da imagem */
+  height: auto;
+}
+
+.info-content {
+  flex: 1;
+  position: relative;
+}
+
+.show-more-ballon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--GREEN);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-decoration: none;
+  position: absolute;
+  bottom: 7%;
+  right: 10%;
+}
+
+.show-more-ballon i {
+  color: var(--WHITE);
+}
+
+.show-more-ballon:hover, .show-more-ballon:focus-visible {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+  transform: translateY(5px);
+  outline: none;
+}
+
+/* Posicionamento específico dos informativos com base nos pontos */
+#info-1 {
+  top: 38%;
+  left: 10%;
+}
+
+#info-2 {
+  top: 21%;
+  left: 37.5%;
+}
+
+#info-3 {
+  top: 77%;
+  left: 62.5%;
+}
+
+#info-4 {
+  top: 21%;
+  left: 87.5%;
+}
+
+/* Responsividade */
+@media screen and (max-width: 1024px) {
+  .info-container {
+    max-width: 180px; /* Ajusta para telas médias */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .info-container {
+    max-width: 150px; /* Ajusta para telas pequenas */
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .trail {
+    min-width: 600px; /* Permite mais espaço para o fluxograma */
+  }
+
+  .info-container {
+    max-width: 150px; /* Ajusta para telas muito pequenas */
+  }
+
+  .show-more-ballon {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Posicionamento específico dos informativos com base nos pontos */
+  #info-1 {
+    top: 38%;
+    left: 20%;
+  }
+
+  #info-2 {
+    top: 21%;
+    left: 60%;
+  }
+
+  #info-3 {
+    top: 77%;
+    left: 90.5%;
+  }
+
+  #info-4 {
+    top: 20%;
+    left: 127.5%;
+  }
+}
+
 .map {
   display: block;
 }
@@ -250,12 +413,114 @@ p {
   display: none;
 }
 
-.img-border {
-  border-bottom: 2px solid var(--PRIMARY); /* Cor e largura da borda */
+/* Estilo dos cards */
+/* Contêiner da área de rolagem */
+.card-custom-scroll {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory; /* Ativa o efeito de parada por item */
+  scroll-behavior: smooth; /* Suaviza o scroll */
+  gap: 20px; /* Espaço entre os cards */
+  padding: 10px 0;
 }
 
+/* Cada card deve "parar" no lugar certo */
+.card {
+  flex: none; /* Garante que cada card tenha o mesmo tamanho */
+  scroll-snap-align: start; /* Faz com que o scroll pare no início de cada card */
+  width: 300px; /* Tamanho fixo para cada card */
+  background: #fff; /* Fundo branco */
+  border: none; /* Borda cinza clara */
+  border-radius: 8px; /* Bordas arredondadas */
+  overflow: hidden; /* Garante que o conteúdo não extrapole o card */
+}
+
+.card:hover, .card:hover .lottie-container {
+  filter: saturate(1);
+  transition: filter .3s ease-in;
+}
+
+.card:nth-child(odd) {
+  background-color: #ecf8ff; /* Cor de fundo para cards ímpares */
+}
+
+.card:nth-child(even) {
+  background-color: var(--WHITE); /* Cor de fundo para cards pares */
+}
+
+/* Estilo da imagem */
+.lottie-container {
+  width: 100%; /* Largura total do card */
+  object-fit: contain; /* Garante que a imagem se ajuste sem distorção */
+}
+
+/* Conteúdo do card */
+.card-content {
+  padding: 15px; /* Espaçamento interno */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espaçamento entre o título e a descrição */
+  overflow-y: auto; /* Adiciona rolagem se o conteúdo exceder o espaço */
+  text-align: center;
+}
+
+/* Título do card */
 .card-title {
-  color: var(--PRIMARY);
+  font-size: 18px;
+  font-weight: bold;
+  color: #333; /* Texto escuro */
+  margin: 0; /* Remove margens padrão */
+}
+
+/* Descrição do card */
+.card-description {
+  font-size: 14px;
+  line-height: 1.5; /* Melhor leitura */
+  color: #666; /* Texto levemente mais claro */
+  margin: 0; /* Remove margens padrão */
+  text-align: center;
+}
+
+/* Estilo dos cards lg-card */
+.lg-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.lg-card-img-container {
+  height: 70%; /* Aumenta a altura da imagem para que ocupe mais espaço */
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.lg-card-img-top {
+  width: 100%; /* A imagem ocupa toda a largura do container */
+  object-fit: cover; /* Garante que a imagem cubra o espaço disponível sem distorção */
+}
+
+/* Estilo dos botões de navegação */
+.card-btn-scroll-left, .card-btn-scroll-right {
+  background-color: var(--SECONDARY);
+  color: var(--WHITE);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.card-btn-container {
+  top: -80px;
+  right: 0;
+}
+
+/* Efeito de hover nos botões */
+.card-btn-scroll-left:hover, .card-btn-scroll-right:hover, 
+.card-btn-scroll-left:focus-visible, .card-btn-scroll-right:focus-visible {
+  outline: none;  
+  background-color: #d4682e;
 }
 
 .custom-scroll {
@@ -266,15 +531,12 @@ p {
   display: flex;
   gap: 20px; /* Espaçamento uniforme entre os itens */
   cursor: grab;
+  padding: 2rem;
 }
 
 .custom-scroll.active {
   cursor: grabbing; /* Muda o cursor enquanto o mouse arrasta */
   user-select: none; /* Evita seleção de texto durante o arraste */
-}
-
-.custom-scroll::-webkit-scrollbar {
-  height: 8px; /* Altura da barra de rolagem */
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
@@ -286,27 +548,31 @@ p {
   min-width: 270px; /* Largura mínima para equilibrar o texto */
   max-width: 300px; /* Limita a largura para evitar textos muito esticados */
   padding: 20px; /* Espaçamento interno maior */
-  border: 1px solid #ddd; /* Borda discreta */
   border-radius: 8px; /* Arredondar cantos para suavizar */
-  background-color: #fff; /* Cor de fundo branco */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 2px dashed var(--DARK);
   text-align: center; /* Alinha todo o conteúdo no centro */
   flex-shrink: 0; /* Evita que o item encolha */
 }
 
 .benefit-item i.benefit-icon {
   font-size: 50px; /* Tamanho do ícone */
-  color: var(--GREEN); /* Cor verde do ícone */
+  color: var(--PRIMARY); /* Cor verde do ícone */
   margin-bottom: 10px; /* Espaçamento entre ícone e texto */
 }
 
 .benefit-item p.benefit-text {
   font-size: 0.95rem; /* Tamanho do texto levemente maior */
-  color: #737373; /* Cor cinza escuro */
+  color: var(--DARK); /* Cor cinza escuro */
   line-height: 1.5; /* Maior espaçamento entre as linhas */
   margin: 0; /* Remove margens extras */
 }
 
+.ajust-sm-icon-card {
+  position: absolute;
+  top: -30px;
+  right: -10px; 
+  transform: rotate(-30deg);
+}
 
 .ajust-height {
   height: 200px; /* Ajusta a altura do texto */
@@ -319,6 +585,64 @@ p {
 .position {
   position: relative;
   top: -500px;
+}
+
+/* Modals */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Deixe o modal invisível por padrão */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  z-index: 1050;
+}
+
+.modal.show {
+  display: flex; /* Exibe o modal quando visível */
+}
+
+.body-no-scroll {
+  overflow: hidden; /* Desativa o scroll na página principal */
+}
+
+.modal-dialog {
+  max-width: 90%;
+  max-height: 90%; /* Limita a altura do modal para 90% da tela */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  border: none;
+  display: flex;
+  padding: 10px;
+  justify-content: flex-end;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto; /* Permite rolar o conteúdo do modal */
+  flex-grow: 1; /* Garante que o conteúdo cresça até o tamanho máximo */
+  max-height: 80vh; /* Limita a altura do conteúdo para 80% da altura da tela */
+}
+
+.close-btn-modal {
+  cursor: pointer;
+  position: fixed;
+  color: var(--SECONDARY);
+  font-size: 42px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  z-index: 1051; /* Define um z-index mais alto que os outros elementos */
 }
 
 .footer {
@@ -421,9 +745,12 @@ p {
 }
 
 .btn-scroll-left:hover,
-.btn-scroll-right:hover {
+.btn-scroll-right:hover,
+.btn-scroll-left:focus-visible,
+.btn-scroll-right:focus-visible {
   background-color: var(--PRIMARY);
   color: var(--WHITE);
+  outline: none;
 }
 
 .btn-scroll-left {
@@ -530,10 +857,6 @@ p {
     max-width: 480px; /* Reduz o tamanho em tablets */
   }
 
-  .platform-margin {
-    margin-top: 2rem;
-  }
-
   .row {
     flex-direction: column;
   }
@@ -563,6 +886,25 @@ p {
     border-radius: 15px;
   }
 
+  .modal.show {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    
+  }
+
+  .modal-dialog {
+    margin-top: 5vh; /* Adiciona uma margem superior para centralizar o modal */
+    margin-bottom: 10vh; /* Margem inferior para evitar corte */
+    max-height: 90vh; /* Impede que o modal ultrapasse a altura da tela */
+    overflow-y: auto; /* Permite rolar o conteúdo caso seja necessário */
+  }
+
+  /* Garantir que o modal não seja cortado */
+  .modal-content {
+    max-height: 100%; /* Faz com que o conteúdo ocupe toda a altura disponível */
+    overflow-y: auto; /* Permite rolagem caso o conteúdo exceda a altura */
+  }
 
   .paragraph {
     display: none;
@@ -625,9 +967,5 @@ p {
     height: 100px;
     object-fit: contain;
     border-radius: 15px;
-  }
-
-  .platform-margin {
-    margin-top: 2rem;
   }
 }
