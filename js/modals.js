@@ -65,6 +65,16 @@ const modalContent = {
             <p>O Zoom Educa faz uso de indicadores de rendimento, que permitem a emissão de avisos importantes ao coordenador, para que este possa identificar facilmente problemas pontuais e intervir de forma eficaz para melhorar rendimentos ruins, sejam eles de professores, alunos ou da turma como um todo.</p>
           </div>
         </div>
+
+        <div class="row">
+          <div data-aos="fade-right" class="col-md-6">
+            <img src="src/assets/profile_operator.png" alt="coordernador mostrando informações em papel" class="img-fluid rounded">
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-center">Operador</h2>
+            <p>O Operador pode ser um ou mais colaboradores da escola que serão responsáveis pelo cadastro das avaliações regulares, geração das folhas de respostas (no caso de modalidade presencial com folha física), digitação dos gabaritos oficiais e processamento do resultado com posterior habilitação para alunos, pais (opcional), professores, gestores e coordenadores. Também pode inserir avisos, cadastrar materiais de estudo, capturar folhas de repostas pelo aplicativo, etc.</p>
+          </div>
+        </div>
       </div>
     </section>
   </article>
@@ -115,7 +125,7 @@ const modalContent = {
   notifications_card: `
     <section>
       <h3>Avisos e notificações automatizadas</h3>
-      <p> Gestores e professores têm a capacidade de enviar notificações diretas para alunos e demais membros da comunidade escolar. Essas mensagens podem incluir avisos sobre prazos, eventos, mudanças no cronograma e outras informações importantes, garantindo que todos estejam sempre informados e alinhados. A plataforma facilita essa comunicação, promovendo uma gestão mais eficiente e transparente das atividades escolares.</p>
+      <p>A plataforma envia automaticamente uma série de avisos e notificações para cada um dos perfis, tais como avisos de criação de novas avaliações, habilitação de resultado de uma avaliação, rendimento abaixo da média de um aluno, disciplina, turma ou série, novo comentário sobre uma questão, mudança de comportamento de aluno, risco de evasão ou reprovação, etc.</p>
     </section>
   `,
 

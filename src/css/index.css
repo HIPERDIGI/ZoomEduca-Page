@@ -523,9 +523,6 @@ p {
 }
 
 .benefit-item {
-  min-width: 270px; /* Largura mínima para equilibrar o texto */
-  max-width: 300px; /* Limita a largura para evitar textos muito esticados */
-  padding: 20px; /* Espaçamento interno maior */
   border-radius: 8px; /* Arredondar cantos para suavizar */
   border: 2px dashed var(--DARK);
   text-align: center; /* Alinha todo o conteúdo no centro */
@@ -543,6 +540,14 @@ p {
   color: var(--DARK); /* Cor cinza escuro */
   line-height: 1.5; /* Maior espaçamento entre as linhas */
   margin: 0; /* Remove margens extras */
+}
+
+.benefit-title {
+  font-weight: 500;
+}
+
+.benefit-item p i {
+  margin-right: 15px; /* Espaçamento entre o ícone e o texto */
 }
 
 .ajust-sm-icon-card {
