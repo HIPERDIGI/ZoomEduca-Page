@@ -226,7 +226,7 @@ p {
   }
 }
 
-.form {
+.shape {
   background-image: url("../assets/forms/Vector_1.svg"); /* Adiciona a forma como fundo */
   background-repeat: no-repeat; /* Evita repetição da imagem */
   background-size: cover; /* Faz a imagem preencher o contêiner */
@@ -241,12 +241,13 @@ p {
 }
 
 .video-style {
+  width: 90%;
+  aspect-ratio: 16/9;
   border-radius: 1rem;
-  position: relative; /* Mantém o vídeo fluido dentro do contêiner */
-  width: 100%; /* Garante que o vídeo seja responsivo */
-  aspect-ratio: 16/9; /* Mantém a proporção do vídeo */
-  z-index: 2; /* Certifica que o vídeo está sobre o fundo */
+  z-index: 2;
 }
+
+
 
 .trail-container {
   position: relative;
@@ -384,8 +385,8 @@ p {
   #info-5 { top: 40%; left: 270%; }
 
   .show-more-ballon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -908,6 +909,15 @@ p {
   .low-paragraph {
     display: block;
   }
+
+  /* Form button */
+  /* Estilo para o spinner */
+  .spinner-border {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 0.2em;
+  }
+
 
   /* Centraliza o texto e elementos para telas menores */
   .footer .row {

@@ -119,20 +119,33 @@
         <p>Aplicação e Correção de Provas objetivas e discursivas de forma presencial e online. Permite o acompanhamento do desempenho escolar e facilita o processo ensino-aprendizagem.</p>
       </div> -->
       <h2 class="text-center mt-5">Apresentação</h2>
-      <section class="form">
-        <div data-aos="fade-up"
-        data-aos-duration="2000" class="video-container">
-          <iframe 
-            class="video-style" 
-            src="https://www.youtube.com/embed/Re8pEOZ334c?si=_T-8ExO_UJSMM0gX" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-          </iframe>
+      <section class="shape">
+        <div data-aos="fade-up" data-aos-duration="2000" class="row justify-content-center w-100">
+            <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+                <iframe 
+                    class="video-style" 
+                    src="https://www.youtube.com/embed/zybRlq56L8o?si=HUeIAxKHhcuo21yH"
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="col-12 col-md-6 mb-4 d-flex justify-content-center">
+                <iframe 
+                    class="video-style" 
+                    src="https://www.youtube.com/embed/epEoeGJQCYI?si=nMRW1xcNDhnz1O5T"  
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
-      </section>
+    </section>
+    
     </article>
 
     <section class="blue">
@@ -240,15 +253,16 @@
           
           <div class="card">
             <div class="lottie-container">
-              <!-- Contêiner para a animação Lottie -->
-              <div id="anim-notifications"></div>
+              <img src="src/assets/notification-card.svg" class="img-fluid" alt="Notificações Zoom Educa">
+              <!-- Contêiner para a animação Lottie
+              <div id="anim-notifications"></div> -->
             </div>
             <div class="card-content">
               <h5 class="card-title">Avisos e notificações automatizadas</h5>
               <p class="card-description">
                 A plataforma envia automaticamente avisos e notificações para os perfis.
               </p>
-              <a href="" class="btn btn-outline-success btn-md btn-block">Saiba mais</a>
+              <a role="button" tabindex="0" onclick="openModal('notifications_card')" class="btn btn-outline-success btn-md btn-block">Saiba mais</a>
             </div>
           </div>
           
@@ -262,7 +276,7 @@
               <p class="card-description">
                 Nessa consulta são exibidas todas as ações realizadas no sistema por usuários de todos os perfis da plataforma.
               </p>
-              <a href="" class="btn btn-outline-success btn-md btn-block">Saiba mais</a>
+              <a role="button" tabindex="0" onclick="openModal('audit_card')" class="btn btn-outline-success btn-md btn-block">Saiba mais</a>
             </div>
           </div>
           
@@ -276,7 +290,7 @@
               <p class="card-description">
                 O professor pode realizar o registro de atividades para os alunos.
               </p>
-              <a href="" class="btn btn-outline-success btn-md btn-block">Saiba mais</a>
+              <a role="button" tabindex="0" onclick="openModal('activity_card')" class="btn btn-outline-success btn-md btn-block">Saiba mais</a>
             </div>
           </div>
 
@@ -515,76 +529,81 @@
   </section>
   <section id="contact">
     <div class="container mt-5">
-      <h2 class="text-center text-success">Converse com um especialista</h2>
-      <p class="text-center">Preencha o formulário abaixo e entraremos em contato com você!</p>
-      <form id="contactForm">
-          <div class="row g-3">
-              <div class="col-md-6">
-                  <input type="text" class="form-control" id="name" placeholder="Nome" required>
+        <h2 class="text-center">Converse com um especialista</h2>
+        <p class="text-center">Preencha o formulário abaixo e entraremos em contato com você!</p>
+        <form id="contactForm">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="name" placeholder="Nome" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="email" placeholder="Email Corporativo">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="phone" placeholder="Celular com DDD">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="institution" placeholder="Instituição" required>
+                </div>
+                <div class="col-md-6">
+                    <select title="Você trabalha com:" class="form-select" id="workWith" required>
+                        <option value="">Sua escola trabalha com:</option>
+                        <option value="Ensino Fundamental">Ensino Fundamental</option>
+                        <option value="Ensino Médio">Ensino Médio</option>
+                        <option value="Ensino Fundamental e Médio">Ensino Fundamental e Médio</option>
+                        <option value="Ensino Superior">Ensino Superior</option>
+                        <option value="Curso Preparatório">Curso Preparatório</option>
+                        <option value="EAD">EAD</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select title="Cargo na instituição de ensino" class="form-select" id="role" required>
+                        <option value="">Cargo na instituição de ensino</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Coordenador Pedagógico">Coordenador Pedagógico</option>
+                        <option value="Diretor">Diretor</option>
+                        <option value="T.I.">T.I.</option>
+                        <option value="Empresa">Empresa</option>
+                        <option value="RH">RH</option>
+                        <option value="Reitor">Reitor</option>
+                        <option value="CEO">CEO</option>
+                        <option value="Administrativo">Administrativo</option>
+                        <option value="Aluno">Aluno</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select title="Tamanho da instituição de ensino" class="form-select" id="institutionSize" required>
+                        <option value="">Quantidade de alunos:</option>
+                        <option value="0 a 250">0 a 250</option>
+                        <option value="251 a 500">251 a 500</option>
+                        <option value="501 a 1.000">501 a 1.000</option>
+                        <option value="1.001 a 2.000">1.001 a 2.000</option>
+                        <option value="2.001 a 3.000">2.001 a 3.000</option>
+                        <option value="Acima de 3.000">Acima de 3.000</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <select title="Tipo da Instituição" class="form-select" id="institutionType" required>
+                        <option value="">Tipo de instituição:</option>
+                        <option value="Privada">Privada</option>
+                        <option value="Pública">Pública</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control" id="message" rows="4" placeholder="Mensagem" maxlength="5000"></textarea>
+                    <div id="charCount" class="text-end mt-1">0/5000 caracteres</div>
+                </div>
+                <div class="col-12 text-end">
+                  <button type="submit" id="submitButton" class="btn btn-success">
+                      Enviar Mensagem
+                  </button>
               </div>
-              <div class="col-md-6">
-                  <input type="email" class="form-control" id="email" placeholder="Email Corporativo" required>
-              </div>
-              <div class="col-md-6">
-                  <input type="text" class="form-control" id="phone" placeholder="Celular com DDD" required>
-              </div>
-              <div class="col-md-6">
-                  <input type="text" class="form-control" id="institution" placeholder="Instituição" required>
-              </div>
-              <div class="col-md-6">
-                  <select title="Você trabalha com:" class="form-select" id="workWith" required>
-                      <option value="">Você trabalha com:</option>
-                      <option value="Educação Básica">Educação Básica</option>
-                      <option value="Ensino Superior">Ensino Superior</option>
-                      <option value="Ensino Técnico">Ensino Técnico</option>
-                      <option value="Curso Preparatório">Curso Preparatório</option>
-                      <option value="Educação Corporativa">Educação Corporativa</option>
-                      <option value="EAD">EAD</option>
-                      <option value="Outro">Outro</option>
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <select title="Cargo na instituição de ensino" class="form-select" id="role" required>
-                      <option value="">Cargo na instituição de ensino</option>
-                      <option value="Professor">Professor</option>
-                      <option value="Coordenador Pedagógico">Coordenador Pedagógico</option>
-                      <option value="Diretor">Diretor</option>
-                      <option value="T.I.">T.I.</option>
-                      <option value="Empresa">Empresa</option>
-                      <option value="RH">RH</option>
-                      <option value="Reitor">Reitor</option>
-                      <option value="CEO">CEO</option>
-                      <option value="Administrativo">Administrativo</option>
-                      <option value="Aluno">Aluno</option>
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <select title="Tamanho da instituição de ensino" class="form-select" id="institutionSize" required>
-                      <option value="">Tamanho da instituição de ensino:</option>
-                      <option value="0 a 250">0 a 250</option>
-                      <option value="251 a 500">251 a 500</option>
-                      <option value="501 a 1.000">501 a 1.000</option>
-                      <option value="1.001 a 2.000">1.001 a 2.000</option>
-                      <option value="2.001 a 3.000">2.001 a 3.000</option>
-                      <option value="Acima de 3.000">Acima de 3.000</option>
-                  </select>
-              </div>
-              <div class="col-md-6">
-                  <select title="Tipo da Instituição" class="form-select" id="institutionType" required>
-                      <option value="">Tipo de instituição:</option>
-                      <option value="Privada">Privada</option>
-                      <option value="Pública">Pública</option>
-                  </select>
-              </div>
-              <div class="col-12">
-                  <textarea class="form-control" id="message" rows="4" placeholder="Mensagem"></textarea>
-              </div>
-              <div class="col-12 text-end">
-                  <button type="submit" class="btn btn-success">Enviar Mensagem</button>
-              </div>
-          </div>
-      </form>
-  </div>
+            </div>
+        </form>
+    </div>
+</section>
+
   </section>
   </main>
   <footer class="footer mt-5">
@@ -636,7 +655,7 @@
   <button class="btn-scroll-top" id="scrollTopBtn">
     <i class="fas fa-arrow-up"></i>
   </button>
-  <script src="js/index.js"></script>
+  <script src="js/index.js" defer></script>
   <script src="js/modals.js"></script>
     <!-- Scripts do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

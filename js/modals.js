@@ -111,6 +111,28 @@ const modalContent = {
       <p>A plataforma permite o monitoramento completo do rendimento escolar com base nas avaliações realizadas, sejam elas da própria escola ou dos diversos sistemas de ensino, desde que cadastradas na plataforma Zoom Educa, fornecendo informações privilegiadas através de consultas gráficas e textuais, para o acompanhamento do desempenho escolar e possibilitando que a gestão da escola faça intervenções pontuais para melhorar o rendimento no processo ensino-aprendizagem.</p>
     </section>
   `,
+
+  notifications_card: `
+    <section>
+      <h3>Avisos e notificações automatizadas</h3>
+      <p> Gestores e professores têm a capacidade de enviar notificações diretas para alunos e demais membros da comunidade escolar. Essas mensagens podem incluir avisos sobre prazos, eventos, mudanças no cronograma e outras informações importantes, garantindo que todos estejam sempre informados e alinhados. A plataforma facilita essa comunicação, promovendo uma gestão mais eficiente e transparente das atividades escolares.</p>
+    </section>
+  `,
+
+  audit_card: `
+    <section>
+      <h3> Auditoria Completa de Ações no Sistema</h3>
+      <p>A funcionalidade de auditoria permite consultar e visualizar todas as ações realizadas no sistema, independentemente do perfil do usuário. Com essa ferramenta, gestores podem acompanhar e monitorar atividades de alunos, professores e outros membros da plataforma, garantindo maior segurança e transparência. A auditoria fornece um histórico detalhado de acessos, modificações e interações, facilitando o controle e a identificação de qualquer irregularidade ou necessidade de ajustes.</p>
+    </section>
+  `,
+
+  activity_card: `
+    <section>
+      <h3> Registro Detalhado de Atividades dos Alunos</h3>
+      <p>O professor pode registrar todas as atividades realizadas pelos alunos, como tarefas, avaliações e projetos, diretamente na plataforma. Esse registro permite o acompanhamento contínuo do desempenho de cada aluno, facilitando a análise de seu progresso e a personalização do feedback. Além disso, possibilita uma gestão mais eficiente do aprendizado e um histórico detalhado das atividades ao longo do período letivo.</p>
+    </section>
+  `,
+
   successMsg: `
     <h3 style="color: var(--GREEN)" class="text-center">E-mail Enviado com sucesso!</h3>
     <p style="color: var(--GREEN)" class="text-center">Retornaremos o mais rápido possivel!</p>

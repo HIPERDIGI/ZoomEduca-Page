@@ -306,46 +306,139 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Form
-
-const modalColor = document.getElementById("modalColor"); 
+const modalColor = document.getElementById("modalColor");
+const charCountStyle = document.getElementById("charCount");
+const emailStyle = document.getElementById("email");
+const phoneStyle = document.getElementById("phone");
 
 document.getElementById('contactForm').addEventListener('submit', function (event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      institution: document.getElementById('institution').value,
-      workWith: document.getElementById('workWith').value,
-      role: document.getElementById('role').value,
-      institutionSize: document.getElementById('institutionSize').value,
-      institutionType: document.getElementById('institutionType').value,
-      message: document.getElementById('message').value,
-  };
+    // Altera o conteúdo do botão para indicar carregamento
+    const submitButton = document.getElementById('submitButton');
+    const originalButtonText = submitButton.innerHTML; // Salva o conteúdo original
+    submitButton.innerHTML = 'Enviando... <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>';
+    submitButton.disabled = true; // Desativa o botão para evitar múltiplos cliques
 
-  fetch('http://localhost:3000/send-email', { // Altere o URL para o IP da sua API se necessário
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-  })
-  .then((response) => {
-      if (response.ok) {
-          openModal("successMsg");
-          modalColor.style.backgroundColor = "var(--GREEN)";
-          document.getElementById('contactForm').reset();
-      } else {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const institution = document.getElementById('institution').value;
+    const workWith = document.getElementById('workWith').value;
+    const role = document.getElementById('role').value;
+    const institutionSize = document.getElementById('institutionSize').value;
+    const institutionType = document.getElementById('institutionType').value;
+    const message = document.getElementById('message').value;
+
+    // Validação de email
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+        emailStyle.style.borderColor = "#FF0000"; // Estiliza a borda do email
+        setTimeout(() => {
+            emailStyle.style.borderColor = ""; // Limpa a borda após 2 segundos
+        }, 2000);
+        // Restaura o botão e retorna
+        submitButton.innerHTML = originalButtonText;
+        submitButton.disabled = false;
+        return;
+    }
+
+    // Validação de telefone (somente números e no formato correto)
+    const phoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
+    if (!phoneRegex.test(phone)) {
+        phoneStyle.style.borderColor = "#FF0000"; // Estiliza a borda do telefone
+        setTimeout(() => {
+            phoneStyle.style.borderColor = ""; // Limpa a borda após 2 segundos
+        }, 2000);
+        // Restaura o botão e retorna
+        submitButton.innerHTML = originalButtonText;
+        submitButton.disabled = false;
+        return;
+    }
+
+    const formData = {
+        name,
+        email,
+        phone,
+        institution,
+        workWith,
+        role,
+        institutionSize,
+        institutionType,
+        message,
+    };
+
+    fetch('http://localhost:3000/send-email', { // Altere o URL para o IP da sua API se necessário
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    })
+    .then((response) => {
+        if (response.ok) {
+            openModal("successMsg");
+            modalColor.style.backgroundColor = "var(--GREEN)";
+            document.getElementById('contactForm').reset();
+        } else {
+            openModal("errorMsg");
+            modalColor.style.backgroundColor = "#FF0000";
+        }
+    })
+    .catch((error) => {
+        console.error('Erro:', error);
         openModal("errorMsg");
         modalColor.style.backgroundColor = "#FF0000";
-
-      }
-  })
-  .catch((error) => {
-      console.error('Erro:', error);
-      openModal("errorMsg");
-      modalColor.style.backgroundColor = "#FF0000";
-  });
+    })
+    .finally(() => {
+        // Restaura o conteúdo original e reativa o botão após o envio
+        submitButton.innerHTML = originalButtonText; // Restaura o texto original
+        submitButton.disabled = false; // Reativa o botão
+    });
 });
+
+// Função para formatar o número de telefone enquanto é digitado
+document.getElementById('phone').addEventListener('input', function (event) {
+    let input = event.target;
+    let phone = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+
+    // Se o campo estiver vazio após apagar tudo, limpa o valor
+    if (phone.length === 0) {
+        input.value = '';
+        return;
+    }
+
+    // Aplica a formatação enquanto o número é digitado
+    if (phone.length <= 2) {
+        phone = `(${phone}`;
+    } else if (phone.length <= 6) {
+        phone = `(${phone.slice(0, 2)}) ${phone.slice(2)}`;
+    } else {
+        phone = `(${phone.slice(0, 2)}) ${phone.slice(2, 7)}-${phone.slice(7, 11)}`;
+    }
+
+    // Verifica se o usuário está apagando um caractere
+    if (input.selectionStart === input.selectionEnd) {
+        let cursorPosition = input.selectionStart;
+
+        // Verifica se o caractere '-' é apagado
+        if (cursorPosition > 0 && input.value[cursorPosition - 1] === '-') {
+            input.setSelectionRange(cursorPosition - 1, cursorPosition - 1); // Ajusta a posição do cursor
+        }
+    }
+
+    // Atualiza o valor do campo com a formatação
+    input.value = phone;
+});
+
+// Contador de caracteres no campo de mensagem
+document.getElementById('message').addEventListener('input', function () {
+    const charCount = this.value.length;
+    if (charCount == 5000) {
+        charCountStyle.style.color = "#FF0000"; // Muda a cor do contador para vermelho quando atingir 5000 caracteres
+    } else {
+        charCountStyle.style.color = ""; // Reseta a cor quando o contador não estiver no limite
+    }
+    document.getElementById('charCount').textContent = `${charCount}/5000 caracteres`;
+});
+
