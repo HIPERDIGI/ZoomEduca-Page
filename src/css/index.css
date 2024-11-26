@@ -52,18 +52,85 @@ p {
   color: var(--WHITE);
 }
 
-/* Imagem de fundo com gradiente e parallax */
+/* Container geral do carrossel */
 .bg-image {
-  height: 100vh;  
   position: relative;
-  background-size: cover;
-  background-position: center;
-  /* background-attachment: fixed; /* Fixar a imagem para o efeito parallax */
-  background-image: linear-gradient(
-      rgba(41, 100, 137, 0.7) 99%, /* Gradiente de 40% da altura com essa cor */
-      rgba(255, 255, 255, 1) 100% /* Gradiente até 100% da altura com a cor branca */
-    ),
-    url("../assets/header-image.jpeg"); /* Imagem de fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Faz o container ocupar a altura do conteúdo */
+}
+
+/* Gradiente que cobre o carrossel */
+.bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0) 98%, /* Cor mais escura */
+      rgba(255, 255, 255, 1) 100% /* Transparente */
+  );
+  pointer-events: none; /* Permite interação com os controles */
+  z-index: 2; /* Coloca o gradiente sobre o carrossel */
+}
+
+/* Estilização do carrossel */
+.carousel {
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Fica abaixo do gradiente */
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover; /* Evita distorções */
+}
+
+/* Títulos dinâmicos */
+.carousel-caption {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  text-align: left;
+  z-index: 3; /* Acima do gradiente */
+}
+
+.carousel-title {
+  font-size: 26px;
+  color: var(--WHITE);
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Destaque */
+}
+
+.carousel-description {
+  font-size: 18px;
+  color: var(--WHITE);
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Destaque */
+}
+
+/* Botão fixo */
+.carousel-button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; /* Acima do gradiente */
+}
+
+.carousel-button .btn {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
 }
 
 
@@ -250,8 +317,7 @@ p {
 
 .trail-container {
   position: relative;
-  overflow: hidden;
-  padding: 4rem 0;
+  user-select: none;
   overflow-x: auto; /* Permite scroll horizontal */
   overflow-y: hidden; /* Remove scroll vertical desnecessário */
   white-space: nowrap; /* Garante que os elementos não quebrem linha */
@@ -286,16 +352,11 @@ p {
 .info-container {
   position: absolute;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   width: 100%;
-  max-width: 300px; /* Ajuste da largura máxima para telas maiores */
-  text-align: center;
-  transform: translate(-50%, -50%); /* Centra os informativos nos pontos */
   padding: 10px;
-  border-radius: 8px; /* Bordas arredondadas */
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  max-width: 300px; /* Ajuste da largura máxima para telas maiores */
+  transform: translate(-50%, -50%); /* Centra os informativos nos pontos */
+  transition: opacity 0.5s ease-in-out;
 }
 
 .info-container .img-fluid {
@@ -326,6 +387,7 @@ p {
 
 .show-more-ballon i {
   color: var(--WHITE);
+  font-size: 18px;
 }
 
 .show-more-ballon:hover, .show-more-ballon:focus-visible {
@@ -335,47 +397,30 @@ p {
 }
 
 /* Posicionamento específico dos informativos com base nos pontos */
-#info-1 {
-  top: 38%;
-  left: 10%;
-}
-
-#info-2 {
-  top: 21%;
-  left: 37.5%;
-}
-
-#info-3 {
-  top: 77%;
-  left: 62.5%;
-}
-
-#info-4 {
-  top: 21%;
-  left: 87.5%;
-}
+/* Ajuste do posicionamento dos pontos e informativos */
+#info-1 { top: 40%; left: 10%; }
+#info-2 { top: 40%; left: 30%; }
+#info-3 { top: 40%; left: 50%; }
+#info-4 { top: 40%; left: 70%; }
+#info-5 { top: 40%; left: 90%; } /* Novo informativo */
 
 /* Responsividade */
+@media screen and (max-width: 1440px) {
+  .info-container {
+    max-width: 220px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .info-container {
-    max-width: 180px; /* Ajusta para telas médias */
+    max-width: 200px; /* Ajuste para telas médias */
   }
 }
 
 @media screen and (max-width: 768px) {
   .info-container {
-    max-width: 150px; /* Ajusta para telas pequenas */
+    max-width: 150px; /* Ajuste para telas pequenas */
     padding: 8px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .trail {
-    min-width: 600px; /* Permite mais espaço para o fluxograma */
-  }
-
-  .info-container {
-    max-width: 150px; /* Ajusta para telas muito pequenas */
   }
 
   .show-more-ballon {
@@ -383,34 +428,32 @@ p {
     height: 40px;
   }
 
-  /* Posicionamento específico dos informativos com base nos pontos */
-  #info-1 {
-    top: 38%;
-    left: 20%;
-  }
-
-  #info-2 {
-    top: 21%;
-    left: 60%;
-  }
-
-  #info-3 {
-    top: 77%;
-    left: 90.5%;
-  }
-
-  #info-4 {
-    top: 20%;
-    left: 127.5%;
-  }
+  #info-1 { top: 40%; left: 10%; }
+  #info-2 { top: 40%; left: 30%; }
+  #info-3 { top: 40%; left: 50%; }
+  #info-4 { top: 40%; left: 70%; }
+  #info-5 { top: 40%; left: 90%; }
 }
 
-.map {
-  display: block;
-}
+@media screen and (max-width: 480px) {
+  .trail {
+    min-width: 1200px; /* Permite mais espaço para o fluxograma */
+  }
 
-.small-map {
-  display: none;
+  .info-container {
+    max-width: 180px; /* Ajuste para telas muito pequenas */
+  }
+
+  #info-1 { top: 40%; left: 30%; }
+  #info-2 { top: 40%; left: 90%; }
+  #info-3 { top: 40%; left: 150%; }
+  #info-4 { top: 40%; left: 210%; }
+  #info-5 { top: 40%; left: 270%; }
+
+  .show-more-ballon {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 /* Estilo dos cards */
@@ -491,6 +534,7 @@ p {
   height: 70%; /* Aumenta a altura da imagem para que ocupe mais espaço */
   overflow: hidden;
   border-radius: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .lg-card-img-top {
@@ -800,6 +844,24 @@ p {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
 }
 
+.accordion-item {
+  overflow: hidden; /* Necessário para ocultar conteúdo ao reduzir a altura */
+  max-height: 0; /* Inicialmente escondido */
+  opacity: 0;
+  transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.accordion-item.visible {
+  max-height: 500px; /* Altura suficiente para acomodar o conteúdo */
+  opacity: 1;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
 /* Responsividade */
 
 @media (max-width: 1500px) {
@@ -954,12 +1016,12 @@ p {
     max-width: 320px; /* Ajuste final para smartphones */
   }
 
-  .map {
-    display: none;
+  .carousel-title {
+    text-align: center;
   }
 
-  .small-map {
-    display: block;
+  .carousel-description {
+    display: none;
   }
 
   .scroller__inner img {

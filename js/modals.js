@@ -80,7 +80,7 @@ const modalContent = {
   `
     <section>
       <h3>Criação e cadastro da avaliação presencial ou on-line na plataforma</h3>
-      <p>O operador da plataforma na escola faz o registro das avaliações no sistema, cadastrando data e hora da prova, caderno de questões elaborado pela escola, descrição da avaliação, séries, turmas e disciplinas que realizarão a prova, bem como pode gerar folhas de respostas personalizadas para provas presenciais ou habilitar para que alunos possam responder pelo aplicativo na própria sala de aula ou remotamente, modalidade na qual o aluno tem acesso tanto à folha de respostas virtual como ao caderno de questões virtual, pelo aplicativo ou web. </p>
+      <p>O operador da plataforma na escola faz o registro das avaliações no sistema, cadastrando data e hora da prova, caderno de questões elaborado pela escola, descrição da avaliação, séries, turmas e disciplinas que realizarão a prova, bem como pode gerar folhas de respostas personalizadas para provas presenciais ou habilitar para que alunos possam responder pelo aplicativo na própria sala de aula ou remotamente, modalidade na qual o aluno tem acesso tanto à folha de respostas virtual como ao caderno de questões virtual, pelo aplicativo ou web.</p>
     </section>
   `,
   ballon_3:
@@ -98,6 +98,13 @@ const modalContent = {
     </section>
   `,
   ballon_4:
+  `
+    <section>
+      <h3>Correção e Resultados</h3>
+      <p>Após o término da avaliação, dependendo do tipo escolhido, a plataforma automaticamente processa as informações, analisando as respostas fornecidas e aplicando os critérios definidos para a correção. Em seguida, o sistema gera e apresenta o resultado correspondente para cada aluno, destacando os pontos fortes e indicando possíveis áreas de melhoria. Além disso, os resultados podem ser armazenados no perfil de cada aluno para acompanhamento do desempenho ao longo do tempo.</p>
+    </section>
+  `,
+  ballon_5:
   `
     <section>
       <h3>Monitoramento</h3>

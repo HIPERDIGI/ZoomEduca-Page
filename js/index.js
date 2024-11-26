@@ -20,19 +20,19 @@ lottiePlayers[1] = lottie.loadAnimation({
 });
 
 lottiePlayers[2] = lottie.loadAnimation({
-  container: document.getElementById("anim-essay"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "src/assets/animations/essay.json" // Atualize com o caminho correto
-});
-
-lottiePlayers[3] = lottie.loadAnimation({
   container: document.getElementById("anim-exam"),
   renderer: "svg",
   loop: false,
   autoplay: false,
   path: "src/assets/animations/exam.json" // Atualize com o caminho correto
+});
+
+lottiePlayers[3] = lottie.loadAnimation({
+  container: document.getElementById("anim-notifications"),
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "src/assets/animations/notification.json" // Atualize com o caminho correto
 });
 
 lottiePlayers[4] = lottie.loadAnimation({
@@ -44,19 +44,19 @@ lottiePlayers[4] = lottie.loadAnimation({
 });
 
 lottiePlayers[5] = lottie.loadAnimation({
-  container: document.getElementById("anim-notifications"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "src/assets/animations/notification.json" // Atualize com o caminho correto
-});
-
-lottiePlayers[6] = lottie.loadAnimation({
   container: document.getElementById("anim-activity"),
   renderer: "svg",
   loop: false,
   autoplay: false,
   path: "src/assets/animations/activity.json" // Atualize com o caminho correto
+});
+
+lottiePlayers[6] = lottie.loadAnimation({
+  container: document.getElementById("anim-essay"),
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+  path: "src/assets/animations/essay.json" // Atualize com o caminho correto
 });
 
 // Função para tocar a animação
@@ -274,3 +274,34 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(fluxogramaSection); // Observa a seção do fluxograma
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionItems = document.querySelectorAll("#accordionFlush .accordion-item");
+  const toggleButton = document.getElementById("toggleButton");
+
+  const visibleCount = 3; // Quantidade inicial visível
+
+  // Configurar o estado inicial dos acordeões
+  accordionItems.forEach((item, index) => {
+      if (index < visibleCount) {
+          item.classList.add("visible");
+      }
+  });
+
+  // Alternar visibilidade ao clicar no botão
+  toggleButton.addEventListener("click", () => {
+      const hiddenItems = Array.from(accordionItems).filter(item => !item.classList.contains("visible"));
+      if (hiddenItems.length > 0) {
+          // Mostrar todos os itens
+          accordionItems.forEach((item) => item.classList.add("visible"));
+          toggleButton.textContent = "Mostrar menos";
+      } else {
+          // Ocultar itens além do limite inicial
+          accordionItems.forEach((item, index) => {
+              if (index >= visibleCount) {
+                  item.classList.remove("visible");
+              }
+          });
+          toggleButton.textContent = "Mostrar mais";
+      }
+  });
+});
