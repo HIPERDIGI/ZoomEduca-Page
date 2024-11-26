@@ -305,3 +305,47 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
+
+// Form
+
+const modalColor = document.getElementById("modalColor"); 
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      institution: document.getElementById('institution').value,
+      workWith: document.getElementById('workWith').value,
+      role: document.getElementById('role').value,
+      institutionSize: document.getElementById('institutionSize').value,
+      institutionType: document.getElementById('institutionType').value,
+      message: document.getElementById('message').value,
+  };
+
+  fetch('http://localhost:3000/send-email', { // Altere o URL para o IP da sua API se necessário
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+  })
+  .then((response) => {
+      if (response.ok) {
+          openModal("successMsg");
+          modalColor.style.backgroundColor = "var(--GREEN)";
+          document.getElementById('contactForm').reset();
+      } else {
+        openModal("errorMsg");
+        modalColor.style.backgroundColor = "#FF0000";
+
+      }
+  })
+  .catch((error) => {
+      console.error('Erro:', error);
+      openModal("errorMsg");
+      modalColor.style.backgroundColor = "#FF0000";
+  });
+});

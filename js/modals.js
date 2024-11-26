@@ -111,6 +111,14 @@ const modalContent = {
       <p>A plataforma permite o monitoramento completo do rendimento escolar com base nas avaliações realizadas, sejam elas da própria escola ou dos diversos sistemas de ensino, desde que cadastradas na plataforma Zoom Educa, fornecendo informações privilegiadas através de consultas gráficas e textuais, para o acompanhamento do desempenho escolar e possibilitando que a gestão da escola faça intervenções pontuais para melhorar o rendimento no processo ensino-aprendizagem.</p>
     </section>
   `,
+  successMsg: `
+    <h3 style="color: var(--GREEN)" class="text-center">E-mail Enviado com sucesso!</h3>
+    <p style="color: var(--GREEN)" class="text-center">Retornaremos o mais rápido possivel!</p>
+  `,
+  errorMsg: `
+    <h3 style="color: #ff0000" class="text-center">E-mail não enviado</h3>
+    <p style="color: #ff0000" class="text-center">Algum problema ocorreu, por favor tente daqui a alguns minutos!</p>
+  `,
 };
 
 // Função para abrir o modal

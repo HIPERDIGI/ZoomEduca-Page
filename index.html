@@ -331,7 +331,7 @@
     </section>
     <!-- Modal -->
     <div id="dynamicModal" class="modal" tabindex="-1">
-      <div class="modal-dialog modal-lg">
+      <div id="modalColor" class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <a class="close-btn-modal" onclick="closeModal()"><i class="fa-solid fa-circle-xmark"></i></a>
@@ -513,8 +513,81 @@
       <button id="toggleButton" class="btn btn-outline-success mt-3">Mostrar mais</button>
     </div>
   </section>
+  <section id="contact">
+    <div class="container mt-5">
+      <h2 class="text-center text-success">Converse com um especialista</h2>
+      <p class="text-center">Preencha o formulário abaixo e entraremos em contato com você!</p>
+      <form id="contactForm">
+          <div class="row g-3">
+              <div class="col-md-6">
+                  <input type="text" class="form-control" id="name" placeholder="Nome" required>
+              </div>
+              <div class="col-md-6">
+                  <input type="email" class="form-control" id="email" placeholder="Email Corporativo" required>
+              </div>
+              <div class="col-md-6">
+                  <input type="text" class="form-control" id="phone" placeholder="Celular com DDD" required>
+              </div>
+              <div class="col-md-6">
+                  <input type="text" class="form-control" id="institution" placeholder="Instituição" required>
+              </div>
+              <div class="col-md-6">
+                  <select title="Você trabalha com:" class="form-select" id="workWith" required>
+                      <option value="">Você trabalha com:</option>
+                      <option value="Educação Básica">Educação Básica</option>
+                      <option value="Ensino Superior">Ensino Superior</option>
+                      <option value="Ensino Técnico">Ensino Técnico</option>
+                      <option value="Curso Preparatório">Curso Preparatório</option>
+                      <option value="Educação Corporativa">Educação Corporativa</option>
+                      <option value="EAD">EAD</option>
+                      <option value="Outro">Outro</option>
+                  </select>
+              </div>
+              <div class="col-md-6">
+                  <select title="Cargo na instituição de ensino" class="form-select" id="role" required>
+                      <option value="">Cargo na instituição de ensino</option>
+                      <option value="Professor">Professor</option>
+                      <option value="Coordenador Pedagógico">Coordenador Pedagógico</option>
+                      <option value="Diretor">Diretor</option>
+                      <option value="T.I.">T.I.</option>
+                      <option value="Empresa">Empresa</option>
+                      <option value="RH">RH</option>
+                      <option value="Reitor">Reitor</option>
+                      <option value="CEO">CEO</option>
+                      <option value="Administrativo">Administrativo</option>
+                      <option value="Aluno">Aluno</option>
+                  </select>
+              </div>
+              <div class="col-md-6">
+                  <select title="Tamanho da instituição de ensino" class="form-select" id="institutionSize" required>
+                      <option value="">Tamanho da instituição de ensino:</option>
+                      <option value="0 a 250">0 a 250</option>
+                      <option value="251 a 500">251 a 500</option>
+                      <option value="501 a 1.000">501 a 1.000</option>
+                      <option value="1.001 a 2.000">1.001 a 2.000</option>
+                      <option value="2.001 a 3.000">2.001 a 3.000</option>
+                      <option value="Acima de 3.000">Acima de 3.000</option>
+                  </select>
+              </div>
+              <div class="col-md-6">
+                  <select title="Tipo da Instituição" class="form-select" id="institutionType" required>
+                      <option value="">Tipo de instituição:</option>
+                      <option value="Privada">Privada</option>
+                      <option value="Pública">Pública</option>
+                  </select>
+              </div>
+              <div class="col-12">
+                  <textarea class="form-control" id="message" rows="4" placeholder="Mensagem"></textarea>
+              </div>
+              <div class="col-12 text-end">
+                  <button type="submit" class="btn btn-success">Enviar Mensagem</button>
+              </div>
+          </div>
+      </form>
+  </div>
+  </section>
   </main>
-  <footer id="contact" class="footer mt-5">
+  <footer class="footer mt-5">
     <div class="container">
       <div class="row text-center text-md-start py-4">
         
