@@ -241,66 +241,10 @@ p {
 }
 
 .video-style {
-  width: 90%;
+  width: 80%;
   aspect-ratio: 16/9;
   border-radius: 1rem;
   z-index: 2;
-}
-
-
-
-.trail-container {
-  position: relative;
-  user-select: none;
-  overflow-x: auto; /* Permite scroll horizontal */
-  overflow-y: hidden; /* Remove scroll vertical desnecessário */
-  white-space: nowrap; /* Garante que os elementos não quebrem linha */
-}
-
-.trail {
-  position: relative;
-  height: auto;
-}
-
-.trail-path {
-  stroke-dasharray: 1500; /* Tamanho total da linha */
-  stroke-dashoffset: 1500; /* Inicialmente oculta a linha */
-}
-
-@keyframes draw-line {
-  to {
-    stroke-dashoffset: 0; /* Revela a linha */
-  }
-}
-
-.point {
-  opacity: 0; /* Inicialmente invisível */
-  transition: opacity 0.5s ease-in-out;
-}
-
-.point.show {
-  opacity: 1; /* Torna visível quando a classe show for adicionada */
-}
-
-
-.info-container {
-  position: absolute;
-  opacity: 0;
-  width: 100%;
-  padding: 10px;
-  max-width: 300px; /* Ajuste da largura máxima para telas maiores */
-  transform: translate(-50%, -50%); /* Centra os informativos nos pontos */
-  transition: opacity 0.5s ease-in-out;
-}
-
-.info-container .img-fluid {
-  width: 100%; /* Ajuste do tamanho da imagem */
-  height: auto;
-}
-
-.info-content {
-  flex: 1;
-  position: relative;
 }
 
 .show-more-ballon {
@@ -315,8 +259,8 @@ p {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-decoration: none;
   position: absolute;
-  bottom: 7%;
-  right: 10%;
+  top: 5%;
+  right: 5%;
 }
 
 .show-more-ballon i {
@@ -330,63 +274,76 @@ p {
   outline: none;
 }
 
-/* Posicionamento específico dos informativos com base nos pontos */
-/* Ajuste do posicionamento dos pontos e informativos */
-#info-1 { top: 40%; left: 10%; }
-#info-2 { top: 40%; left: 30%; }
-#info-3 { top: 40%; left: 50%; }
-#info-4 { top: 40%; left: 70%; }
-#info-5 { top: 40%; left: 90%; } /* Novo informativo */
+.step-card {
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ecf8ff;
+  flex: 1; /* Faz os cards se ajustarem */
+  max-width: 18%; /* Largura máxima */
+  height: auto; /* Altura automática */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
 
-/* Responsividade */
-@media screen and (max-width: 1440px) {
-  .info-container {
-    max-width: 220px;
+.step-card img {
+  width: 100%;
+  height: 100%; /* Altura maior para destacar a imagem */
+  object-fit: contain; /* Mantém proporção */
+}
+
+.step-card h2 {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #2a506f;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.step-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap; /* Garante que fique em linha */
+}
+
+@media (max-width: 768px) {
+  .step-container {
+    flex-direction: column;
+    gap: 2rem; /* Espaçamento entre os elementos no mobile */
+    padding: 2rem; /* Adiciona mais espaçamento interno */
+  }
+
+  .step-card {
+    max-width: 100%; /* Ocupa toda a largura no celular */
+
+  }
+
+  .arrow {
+    transform: rotate(90deg); /* Setas apontam para baixo no mobile */
+  }
+
+  .step-card h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .info-container {
-    max-width: 200px; /* Ajuste para telas médias */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .info-container {
-    max-width: 150px; /* Ajuste para telas pequenas */
-    padding: 8px;
-  }
-
-  .show-more-ballon {
-    width: 40px;
-    height: 40px;
-  }
-
-  #info-1 { top: 40%; left: 10%; }
-  #info-2 { top: 40%; left: 30%; }
-  #info-3 { top: 40%; left: 50%; }
-  #info-4 { top: 40%; left: 70%; }
-  #info-5 { top: 40%; left: 90%; }
-}
-
-@media screen and (max-width: 480px) {
-  .trail {
-    min-width: 1200px; /* Permite mais espaço para o fluxograma */
-  }
-
-  .info-container {
-    max-width: 180px; /* Ajuste para telas muito pequenas */
-  }
-
-  #info-1 { top: 40%; left: 30%; }
-  #info-2 { top: 40%; left: 90%; }
-  #info-3 { top: 40%; left: 150%; }
-  #info-4 { top: 40%; left: 210%; }
-  #info-5 { top: 40%; left: 270%; }
-
-  .show-more-ballon {
-    width: 40px;
-    height: 40px;
+@media (min-width: 769px) and (max-width: 1200px) {
+  .step-card {
+    max-width: 22%; /* Ajusta largura em telas médias */
   }
 }
 
@@ -642,6 +599,11 @@ p {
   color: var(--PRIMARY);
   margin: 0 10px;
   font-size: 1.5rem;
+  transition: color 0.3s ease-in-out; /* Animação suave para o ícone */
+}
+
+.footer .social-icons a:hover {
+  color: var(--SECONDARY);
 }
 
 .footer ul {
