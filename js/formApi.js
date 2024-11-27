@@ -4,26 +4,33 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3005;
 
-app.use(cors());
+app.use(cors({
+    origin: 'zoomeduca.com.br', // Domínio permitido
+    methods: ['POST', 'GET'], // Métodos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'] // Cabeçalhos permitidos
+}));
 app.use(bodyParser.json());
+require('dotenv').config();
 
-// Configure o transportador do nodemailer com Gmail
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'hiperdigi@gmail.com', // Seu e-mail
-    pass: 'halv wpqs mgpl epxj', // Sua chave de aplicativo
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASS,
   },
 });
+
+
 
 app.post('/send-email', (req, res) => {
   const { name, email, phone, institution, workWith, role, institutionSize, institutionType, message } = req.body;
 
   const mailOptions = {
     from: 'hiperdigi@gmail.com',
-    to: 'contato@hiperdigi.com.br', // Destinatário
+    // to: 'contato@hiperdigi.com.br', // Destinatário
+    to: 'willyankairon1@gmail.com', // Destinatário
     subject: 'Novo contato do formulário do site Zoom Educa',
     text: `
       Nome: ${name}

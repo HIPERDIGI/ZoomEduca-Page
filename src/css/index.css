@@ -427,7 +427,7 @@ p {
 
 /* Estilo da imagem */
 .lottie-container {
-  width: 100%; /* Largura total do card */
+  flex: 1; /* Largura total do card */
   object-fit: contain; /* Garante que a imagem se ajuste sem distorção */
 }
 

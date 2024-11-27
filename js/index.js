@@ -111,9 +111,6 @@ cardBtnScrollRight.addEventListener("click", () => {
 });
 
 
-
-
-
 // Logic automatic scroll in institutions
 const scrollers = document.querySelectorAll(".scroller");
 
@@ -230,8 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const modalColor = document.getElementById("modalColor");
 const charCountStyle = document.getElementById("charCount");
-const emailStyle = document.getElementById("email");
-const phoneStyle = document.getElementById("phone");
+const emailField = document.getElementById("email");
+const phoneField = document.getElementById("phone");
 
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -251,14 +248,19 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     const institutionSize = document.getElementById('institutionSize').value;
     const institutionType = document.getElementById('institutionType').value;
     const message = document.getElementById('message').value;
-
+    
     // Validação de email
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
-        emailStyle.style.borderColor = "#FF0000"; // Estiliza a borda do email
-        setTimeout(() => {
-            emailStyle.style.borderColor = ""; // Limpa a borda após 2 segundos
-        }, 2000);
+      emailField.style.border = "1px solid #FF0000";
+        
+      emailField.setCustomValidity("Insira um e-mail válido");
+      emailField.reportValidity();
+
+      setTimeout(() => {
+        emailField.style.border = "";
+        emailField.setCustomValidity("");
+      }, 2000);
         // Restaura o botão e retorna
         submitButton.innerHTML = originalButtonText;
         submitButton.disabled = false;
@@ -268,11 +270,16 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     // Validação de telefone (somente números e no formato correto)
     const phoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
     if (!phoneRegex.test(phone)) {
-        phoneStyle.style.borderColor = "#FF0000"; // Estiliza a borda do telefone
+        phoneField.style.border = "1px solid #FF0000";
+        
+        phoneField.setCustomValidity("Insira um telefone válido");
+        phoneField.reportValidity();
+
         setTimeout(() => {
-            phoneStyle.style.borderColor = ""; // Limpa a borda após 2 segundos
+          phoneField.style.border = "";
+          phoneField.setCustomValidity("");
         }, 2000);
-        // Restaura o botão e retorna
+
         submitButton.innerHTML = originalButtonText;
         submitButton.disabled = false;
         return;
@@ -290,7 +297,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         message,
     };
 
-    fetch('http://localhost:3000/send-email', { // Altere o URL para o IP da sua API se necessário
+    fetch('https://zoomeduca.com.br/send-email', { // Altere o URL para o IP da sua API se necessário
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
