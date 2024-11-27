@@ -153,42 +153,54 @@
         <h2>Etapas do processo</h2>
         <p>Acompanhe o mapa para entender como o Zoom Educa vai atuar na sua instituição de ensino.</p>
       </div>
-      <div class="trail-container">
-        <div class="trail">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 400" preserveAspectRatio="none">
-            <!-- Linha reta -->
-            <path class="trail-path" d="
-              M 100 200 
-              L 1400 200" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="1500" stroke-linecap="round" />
-            <!-- Pontos -->
-            <circle cx="100" cy="200" r="8" fill="white" class="point" />
-            <circle cx="400" cy="200" r="8" fill="white" class="point" />
-            <circle cx="740" cy="200" r="8" fill="white" class="point" />
-            <circle cx="1050" cy="200" r="8" fill="white" class="point" />
-            <circle cx="1400" cy="200" r="8" fill="white" class="point" /> <!-- Novo ponto -->
-          </svg>
-        </div>
-        
-        <!-- Informativos -->
-        <div class="info-container" id="info-1">
-          <img src="src/assets/forms/school-register.svg" class="img-fluid">
-          <a role="button" tabindex="0" onclick="openModal('ballon_1')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
-        </div>
-        <div class="info-container" id="info-2">
-          <img src="src/assets/forms/activity-register.svg" class="img-fluid">
-          <a role="button" tabindex="0" onclick="openModal('ballon_2')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
-        </div>
-        <div class="info-container" id="info-3">
-          <img src="src/assets/forms/aplication-exam-ballon.svg" class="img-fluid">
-          <a role="button" tabindex="0" onclick="openModal('ballon_3')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
-        </div>
-        <div class="info-container" id="info-4">
-          <img src="src/assets/forms/corrections-and-results.svg" class="img-fluid">
-          <a role="button" tabindex="0" onclick="openModal('ballon_4')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
-        </div>
-        <div class="info-container" id="info-5">
-          <img src="src/assets/forms/monitoring-ballon.svg" class="img-fluid">
-          <a role="button" tabindex="0" onclick="openModal('ballon_5')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+      <div class="container py-5">
+        <div class="step-container">
+          <!-- Card 1 -->
+          <div class="step-card">
+            <img src="src/assets/school-Register.svg" alt="Cadastro">
+            <h2 class="step-title">Cadastro da escola na plataforma</h2>
+            <a role="button" tabindex="0" onclick="openModal('ballon_1')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+          </div>
+          
+          <!-- Setinha -->
+          <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    
+          <!-- Card 2 -->
+          <div class="step-card">
+            <img src="src/assets/register_avaliation.svg" alt="Registro">
+            <h2 class="step-title">Registro das avaliações</h2>
+            <a role="button" tabindex="0" onclick="openModal('ballon_2')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+          </div>
+    
+          <!-- Setinha -->
+          <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    
+          <!-- Card 3 -->
+          <div class="step-card">
+            <img src="src/assets/aplication-exam.svg" alt="Aplicação">
+            <h2 class="step-title">Aplicação das avaliações</h2>
+            <a role="button" tabindex="0" onclick="openModal('ballon_3')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+          </div>
+    
+          <!-- Setinha -->
+          <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    
+          <!-- Card 4 -->
+          <div class="step-card">
+            <img src="src/assets/corrections-and-results.svg" alt="Correção">
+            <h2 class="step-title">Correção e resultados</h2>
+            <a role="button" tabindex="0" onclick="openModal('ballon_4')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+          </div>
+    
+          <!-- Setinha -->
+          <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    
+          <!-- Card 5 -->
+          <div class="step-card">
+            <img src="src/assets/monitoring.svg" alt="Monitoramento">
+            <h2 class="step-title">Monitoramento dos resultados</h2>
+            <a role="button" tabindex="0" onclick="openModal('ballon_5')" class="show-more-ballon"><i class="fa-solid fa-question"></i></a>
+          </div>
         </div>
       </div>
     </section>
@@ -358,7 +370,7 @@
     </div>
     
     <section id="container benefit" class="mt-5">
-      <h2 class="text-center">Benefícios para sua Instituição</h2>
+      <h2 class="text-center">Benefícios para sua Instituição de Ensino</h2>
       <div class="container my-4">
         <div class="row g-4 w-100">
           <!-- Item 1 -->
@@ -368,7 +380,7 @@
               <p class="benefit-title">Aumento da Precisão</p>
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Correções Imparciais: Elimina erros humanos na correção e garante que todos os alunos sejam avaliados de forma justa.</p>
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Estatísticas Detalhadas: Permite identificar padrões de acertos e erros com precisão.</p>
-              <p class="benefit-title">Monitoramento e Feedback</p>
+              <p class="benefit-title mt-2">Monitoramento e Feedback</p>
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Rastreamento do desempenho: Toda a escola pode acompanhar o desempenho das avaliações pelo aplicativo ou web.</p>
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Feedback Imediato: Fornece o resultado logo após a conclusão da prova.</p>
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Suporte Multiplataforma: Pode ser acessado por diferentes dispositivos, como tablets, celulares e computadores.</p>
@@ -383,7 +395,7 @@
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Menos Papel: Diminui gastos com impressão, materiais, scanners e softwares.</p>
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Eficiência Operacional: Otimiza o uso de recursos humanos e financeiros.</p>
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Economia substancial com impressão de folhas de respostas e cadernos de questões (na modalidade presencial digital pelo aplicativo).</p>
-              <p class="benefit-title">Integração com Outras Ferramentas e Sistemas de Ensino</p>
+              <p class="benefit-title mt-5">Integração com Outras Ferramentas e Sistemas de Ensino</p>
               <p class="benefit-text"><i class="fa-solid fa-arrow-right"></i> Pode ser integrado a sistemas de gestão acadêmica, diários de classe e plataformas de ensino online, ampliando sua funcionalidade.</p>
             </div>
           </div>
@@ -632,19 +644,19 @@
       <div class="row text-center text-md-start py-4">
         
         <!-- Coluna Marca -->
-        <div class="col-md-3 mb-4">
+        <div class="col-md-4 text-center mb-4">
           <h5 class="text-uppercase">Marca registrada no INPI</h5>
 	  <!--  <p>Processo Nº: 919721990</p> -->
           <img src="src/assets/logo.svg" class="img-fluid" style="width: 60%;">
         </div>
         
         <!-- Coluna Redes Sociais -->
-        <div class="col-md-3 mb-4">
+        <div class="col-md-4 text-center mb-4">
           <h5 class="text-uppercase">Zoom Educa</h5>
-          <p>Redes sociais</p>
+          <p class="text-center">Redes sociais</p>
           <div class="social-icons">
             <a href="https://www.facebook.com/zoomeducapiaui" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/zoomeduca/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/zoom_educa/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://api.whatsapp.com/send?phone=558699812204" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
@@ -660,8 +672,8 @@
         </div> -->
         
         <!-- Coluna Hiperdigi -->
-        <div class="col-md-3 mb-4 text-center text-md-end">
-          <img src="src/assets/hiperdigi_logo.svg" alt="Hiperdigi Logo" class="img-fluid" style="filter: brightness(0) saturate(100%) invert(15%) sepia(68%) saturate(1308%) hue-rotate(199deg) brightness(92%) contrast(96%);">
+        <div class="col-md-4 mb-4 text-center text-md-end">
+          <img src="src/assets/hiperdigi_logo.svg" alt="Hiperdigi Logo" class="img-fluid" style="filter: brightness(0) saturate(100%) invert(15%) sepia(68%) saturate(1308%) hue-rotate(199deg) brightness(92%) contrast(96%); width: 70%;">
         </div>
       </div>
     </div>

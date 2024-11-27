@@ -117,7 +117,7 @@ const modalContent = {
   ballon_5:
   `
     <section>
-      <h3>Monitoramento</h3>
+      <h3>Monitoramento dos resultados</h3>
       <p>A plataforma permite o monitoramento completo do rendimento escolar com base nas avaliações realizadas, sejam elas da própria escola ou dos diversos sistemas de ensino, desde que cadastradas na plataforma Zoom Educa, fornecendo informações privilegiadas através de consultas gráficas e textuais, para o acompanhamento do desempenho escolar e possibilitando que a gestão da escola faça intervenções pontuais para melhorar o rendimento no processo ensino-aprendizagem.</p>
     </section>
   `,
