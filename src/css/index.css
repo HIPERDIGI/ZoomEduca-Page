@@ -151,8 +151,8 @@ p {
   background-color: var(--PRIMARY);
 }
 
-.h2-green h2 {
-  color: var(--GREEN);
+.h2-color-primary h2 {
+  color: #43a0d9;
 }
 
 .container-fluid-left {
@@ -581,10 +581,10 @@ p {
 }
 
 .metrics-container {
-  background-color: var(--SECONDARY); /* Cor suave para destaque */
+  background-color: var(--PRIMARY); /* Cor suave para destaque */
   border-radius: 15px;
   flex: 1;
-  padding: 2rem;
+  padding: 1.2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
