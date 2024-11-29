@@ -10,7 +10,7 @@ const modalContent = {
       <div class="col">
         <div class="row">
           <div data-aos="fade-right" class="col-md-6 img-container">
-            <img src="src/assets/profile_parents.png" alt="Mãe observando filho" class="img-fluid rounded">
+            <img src="src/assets/profile_parents.png" alt="Mãe observando filho, Ferramenta escolar para pais de alunos" class="img-fluid rounded">
           </div>
           <div class="col-md-6">
             <h2 class="text-center">Pais</h2>
@@ -22,7 +22,7 @@ const modalContent = {
 
         <div class="row">
           <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_student.png" alt="Aluna sorridente" class="img-fluid rounded">
+            <img src="src/assets/profile_student.png" alt="Aluna sorridente, Rendimento acadêmico do aluno, Monitoramento de desempenho de aluno, Análise de acertos e erros dos alunos" class="img-fluid rounded">
           </div>
           <div class="col-md-6">
             <h2 class="text-center">Alunos</h2>
@@ -35,7 +35,7 @@ const modalContent = {
 
         <div class="row">
           <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_teacher.png" alt="Professor dando aula" class="img-fluid rounded">
+            <img src="src/assets/profile_teacher.png" alt="Professor dando aula, Correção de provas para professores, Correção de redações no app, Avaliação de rendimento por turma" class="img-fluid rounded">
           </div>
           <div class="col-md-6">
             <h2 class="text-center">Professor</h2>
@@ -45,7 +45,7 @@ const modalContent = {
 
         <div class="row">
           <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_director.png" alt="Mãe observando filho" class="img-fluid rounded">
+            <img src="src/assets/profile_director.png" alt="Gestão educacional para diretores, Relatórios de rendimento escolar, Relatórios gráficos para gestores" class="img-fluid rounded">
           </div>
           <div class="col-md-6">
             <h2 class="text-center">Diretor (Gestor)</h2>
@@ -57,7 +57,7 @@ const modalContent = {
 
         <div class="row">
           <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_coodinador.png" alt="coordernador mostrando informações em papel" class="img-fluid rounded">
+            <img src="src/assets/profile_coodinador.png" alt="coordernador mostrando informações em papel, Acompanhamento de desempenho escolar, Relatórios de desempenho de alunos" class="img-fluid rounded">
           </div>
           <div class="col-md-6">
             <h2 class="text-center">Coordernador</h2>
@@ -68,7 +68,7 @@ const modalContent = {
 
         <div class="row">
           <div data-aos="fade-right" class="col-md-6">
-            <img src="src/assets/profile_operator.png" alt="coordernador mostrando informações em papel" class="img-fluid rounded">
+            <img src="src/assets/profile_operator.png" alt="Cadastro de avaliações no sistema, Controle de provas e resultados, Criação de avisos e notificações" class="img-fluid rounded">
           </div>
           <div class="col-md-6">
             <h2 class="text-center">Operador</h2>

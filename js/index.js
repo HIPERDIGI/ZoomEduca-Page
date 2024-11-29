@@ -8,80 +8,39 @@ window.onscroll = function() {
   }
 };
 
-// Inicialize as animações Lottie
-let lottiePlayers = [];
-
-lottiePlayers[1] = lottie.loadAnimation({
-  container: document.getElementById("anim-profile"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "src/assets/animations/profiles.json" // Atualize com o caminho correto
-});
-
-lottiePlayers[2] = lottie.loadAnimation({
-  container: document.getElementById("anim-exam"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "src/assets/animations/exam.json" // Atualize com o caminho correto
-});
-
-lottiePlayers[3] = lottie.loadAnimation({
-  container: document.getElementById("anim-notifications"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "src/assets/animations/notification.json" // Atualize com o caminho correto
-});
-
-lottiePlayers[4] = lottie.loadAnimation({
-  container: document.getElementById("anim-auditor"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "src/assets/animations/audit.json" // Atualize com o caminho correto
-});
-
-lottiePlayers[5] = lottie.loadAnimation({
-  container: document.getElementById("anim-activity"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "src/assets/animations/activity.json" // Atualize com o caminho correto
-});
-
-lottiePlayers[6] = lottie.loadAnimation({
-  container: document.getElementById("anim-essay"),
-  renderer: "svg",
-  loop: false,
-  autoplay: false,
-  path: "src/assets/animations/essay.json" // Atualize com o caminho correto
-});
-
-// Função para tocar a animação
-function playAnimation(id) {
-  if (!lottiePlayers[id].isAnimating) {
-    lottiePlayers[id].play();
-    lottiePlayers[id].isAnimating = true;
-  }
+// Configuração do Intersection Observer para lazy load das animações
+function loadLottieAnimation(elementId, animationDataUrl) {
+  lottie.loadAnimation({
+    container: document.getElementById(elementId), // O contêiner da animação
+    renderer: 'svg', // Tipo de renderização (pode ser 'svg', 'canvas' ou 'html')
+    loop: false, // Define se a animação vai se repetir
+    autoplay: true, // Define se a animação vai iniciar automaticamente
+    path: animationDataUrl, // Caminho do arquivo JSON da animação
+  });
 }
 
-// Função para parar a animação e deixar no último frame
-function stopAnimation(id) {
-  if (lottiePlayers[id].isAnimating) {
-    lottiePlayers[id].stop(); // Para a animação no frame atual
-    lottiePlayers[id].isAnimating = false;
-  }
-}
+// Configuração do Intersection Observer
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Quando o contêiner entra na tela, carrega a animação
+      const elementId = entry.target.id; // Pega o id do elemento (no caso, #anim-profile)
+      
+      // Pega o caminho do arquivo JSON da animação através do data-attribute
+      const animationDataUrl = entry.target.getAttribute('data-animation'); 
 
-// Eventos para hover nos elementos
-// Ativar animação ao passar o mouse sobre o card
-document.querySelectorAll(".card").forEach((card, index) => {
-  const id = index + 1;
-  
-  card.addEventListener("mouseenter", () => playAnimation(id));  // Play no hover
-  card.addEventListener("mouseleave", () => stopAnimation(id));  // Stop no sair do hover
+      loadLottieAnimation(elementId, animationDataUrl); // Carrega a animação Lottie
+
+      // Desativa o observer após carregar a animação
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 }); // A animação será carregada quando 50% do contêiner estiver visível
+
+// Alvo de observação (todos os contêineres de animação Lottie)
+const lottieContainers = document.querySelectorAll('.lottie-container');
+lottieContainers.forEach(container => {
+  observer.observe(container); // Observa cada contêiner
 });
 
 // Função para rolar até o topo suavemente
@@ -119,6 +78,7 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
 }
 
+// Logica scroll automatico logos colegios
 function addAnimation() {
   scrollers.forEach((scroller) => {
     // add data-animated="true" to every `.scroller` on the page
@@ -138,60 +98,6 @@ function addAnimation() {
     });
   });
 }
-
-// Fluxogram animation
-document.addEventListener("DOMContentLoaded", () => {
-  const trailPath = document.querySelector(".trail-path");
-  const points = document.querySelectorAll(".point");
-  const infoContainers = document.querySelectorAll(".info-container");
-
-  // Obtém o comprimento total da linha
-  const totalLength = trailPath.getTotalLength();
-  trailPath.style.strokeDasharray = totalLength; // Ajusta o tamanho da linha conforme o comprimento
-  trailPath.style.strokeDashoffset = totalLength; // Inicialmente a linha está oculta
-
-  const duration = 5; // Duração total da animação da linha em segundos
-  const delayBetweenPoints = 1; // Delay entre cada ponto (em segundos)
-  
-  let progress = 0;  // Controla o progresso da animação
-  let pointIndex = 0;  // Controla qual ponto deve aparecer
-
-  // Função para animar a linha e mostrar os pontos
-  const animateLine = () => {
-    const interval = setInterval(() => {
-      // Incrementar o progresso da linha
-      progress += (totalLength / (duration * 60));  // Dividido por 60 para FPS de 60
-      trailPath.style.strokeDashoffset = totalLength - progress;
-
-      // Mostrar os pontos conforme a linha avança
-      while (pointIndex < points.length && progress >= (pointIndex * (totalLength / points.length))) {
-        points[pointIndex].classList.add("show"); // Torna o ponto visível
-        infoContainers[pointIndex].style.opacity = 1; // Torna o informativo visível
-        pointIndex++;
-      }
-
-      // Se a linha alcançar o final, para a animação
-      if (progress >= totalLength) {
-        clearInterval(interval);
-      }
-    }, 1000 / 60); // 60 FPS
-  };
-
-  // Configurando o IntersectionObserver para observar quando a seção estiver visível
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { // Se a seção entrou na viewport
-        animateLine(); // Inicia a animação da linha
-        observer.disconnect(); // Para de observar depois que a animação começar
-      }
-    });
-  }, {
-    threshold: 0.5 // A animação começa quando 50% da seção está visível
-  });
-
-  const fluxogramaSection = document.querySelector(".trail-container");
-  observer.observe(fluxogramaSection); // Observa a seção do fluxograma
-});
 
 document.addEventListener("DOMContentLoaded", function () {
   const accordionItems = document.querySelectorAll("#accordionFlush .accordion-item");
@@ -225,13 +131,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-const modalColor = document.getElementById("modalColor");
-const charCountStyle = document.getElementById("charCount");
-const emailField = document.getElementById("email");
-const phoneField = document.getElementById("phone");
-
+// Validação dos campos e envio das informações para api
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault();
+
+    const modalColor = document.getElementById("modalColor");
+    const emailField = document.getElementById("email");
+    const phoneField = document.getElementById("phone");
 
     // Altera o conteúdo do botão para indicar carregamento
     const submitButton = document.getElementById('submitButton');
@@ -362,7 +268,9 @@ document.getElementById('phone').addEventListener('input', function (event) {
 
 // Contador de caracteres no campo de mensagem
 document.getElementById('message').addEventListener('input', function () {
+    const charCountStyle = document.getElementById("charCount");
     const charCount = this.value.length;
+
     if (charCount == 5000) {
         charCountStyle.style.color = "#FF0000"; // Muda a cor do contador para vermelho quando atingir 5000 caracteres
     } else {
@@ -371,3 +279,53 @@ document.getElementById('message').addEventListener('input', function () {
     document.getElementById('charCount').textContent = `${charCount}/5000 caracteres`;
 });
 
+// Animação crescente métricas 
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".metric-number");
+  const duration = 2000; // Duração total da animação em milissegundos
+
+  const animateNumbers = (entry, observer) => {
+    if (entry.isIntersecting) {
+      counters.forEach((counter) => {
+        const target = +counter.dataset.target;
+        const startTime = performance.now();
+
+        const updateCounter = (currentTime) => {
+          const elapsedTime = currentTime - startTime;
+          const progress = elapsedTime / duration; // Progresso linear (0 a 1)
+          const value = Math.floor(progress * target);
+          const remaining = target - value;
+
+          if (remaining > 5) {
+            counter.textContent = formatNumber(value); // Atualização rápida
+          } else if (remaining > 0) {
+            const slowUpdate = Math.min(target, value + 1); // Incrementa 1 de forma controlada
+            counter.textContent = formatNumber(slowUpdate);
+          }
+
+          if (value < target) {
+            requestAnimationFrame(updateCounter); // Continua a animação
+          } else {
+            counter.textContent = formatNumber(target); // Garante o valor final
+            counter.classList.add("scrolled"); // Classe para indicar finalização
+          }
+        };
+
+        requestAnimationFrame(updateCounter);
+      });
+
+      observer.disconnect(); // Para de observar após a animação
+    }
+  };
+
+  const formatNumber = (number) => {
+    return new Intl.NumberFormat("pt-BR").format(number); // Formata com separador de milhar
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach((entry) => animateNumbers(entry, observer)),
+    { threshold: 0.6 } // Inicia a animação quando 60% do container estiver visível
+  );
+
+  observer.observe(document.querySelector("#metrics"));
+});

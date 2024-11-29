@@ -171,6 +171,11 @@ p {
   max-width: 100%;
 }
 
+.title-muted {
+  color: #adadad;
+  font-size: 1.5rem;
+}
+
 .scroller__inner {
   padding-block: 1rem;
   display: flex;
@@ -296,9 +301,9 @@ p {
   object-fit: contain; /* Mantém proporção */
 }
 
-.step-card h2 {
+.step-card h3 {
   margin-top: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #2a506f;
 }
 
@@ -335,9 +340,9 @@ p {
     transform: rotate(90deg); /* Setas apontam para baixo no mobile */
   }
 
-  .step-card h2 {
+  .step-card h3 {
     margin-top: 10px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -413,6 +418,7 @@ p {
   color: #666; /* Texto levemente mais claro */
   margin: 0; /* Remove margens padrão */
   text-align: center;
+  overflow: hidden;
 }
 
 /* Estilo dos cards lg-card */
@@ -430,6 +436,7 @@ p {
 
 .lg-card-img-top {
   width: 100%; /* A imagem ocupa toda a largura do container */
+  height: 100%;
   object-fit: cover; /* Garante que a imagem cubra o espaço disponível sem distorção */
 }
 
@@ -458,27 +465,6 @@ p {
   background-color: #d4682e;
 }
 
-.custom-scroll {
-  width: 100%; /* Garante que a rolagem ocupe toda a largura disponível */
-  overflow-x: auto; /* Scroll horizontal para desktop e mobile */
-  -webkit-overflow-scrolling: touch; /* Rolagem suave em dispositivos móveis */
-  padding: 15px 0; /* Adiciona espaçamento em cima e embaixo do container */
-  display: flex;
-  gap: 20px; /* Espaçamento uniforme entre os itens */
-  cursor: grab;
-  padding: 2rem;
-}
-
-.custom-scroll.active {
-  cursor: grabbing; /* Muda o cursor enquanto o mouse arrasta */
-  user-select: none; /* Evita seleção de texto durante o arraste */
-}
-
-.custom-scroll::-webkit-scrollbar-thumb {
-  background-color: #ccc; /* Cor do "polegar" da barra de rolagem */
-  border-radius: 4px;
-}
-
 .benefit-item {
   border-radius: 8px; /* Arredondar cantos para suavizar */
   border: 2px dashed var(--DARK);
@@ -492,15 +478,24 @@ p {
   margin-bottom: 10px; /* Espaçamento entre ícone e texto */
 }
 
-.benefit-item p.benefit-text {
-  font-size: 0.95rem; /* Tamanho do texto levemente maior */
-  color: var(--DARK); /* Cor cinza escuro */
-  line-height: 1.5; /* Maior espaçamento entre as linhas */
-  margin: 0; /* Remove margens extras */
+.benefit-list {
+  list-style: none;
+  margin: 0 1rem;
+  padding: 0;
+}
+
+
+.benefit-text {
+  font-size: 16px;
+  color: var(--DARK);
+  text-align: justify;
 }
 
 .benefit-title {
   font-weight: 500;
+  font-size: 18px;
+  text-align: left;
+  color: var(--PRIMARY);  
 }
 
 .benefit-item p i {
@@ -583,6 +578,37 @@ p {
   border-radius: 5px;
   padding: 10px 15px;
   z-index: 1051; /* Define um z-index mais alto que os outros elementos */
+}
+
+.metrics-container {
+  background-color: var(--SECONDARY); /* Cor suave para destaque */
+  border-radius: 15px;
+  flex: 1;
+  padding: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.metric-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--WHITE); /* Verde para confiança */
+  margin: 0;
+  transition: transform 0.3s ease; /* Efeito visual extra */
+}
+
+#metrics p {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--WHITE);
+}
+
+.metric-number.scrolled {
+  transform: scale(1.1); /* Animação de destaque */
+}
+
+
+form {
+  color: #666;
 }
 
 .footer {
@@ -712,23 +738,12 @@ p {
   font-size: 18px;
 }
 
-/* Container com rolagem horizontal */
-.custom-scroll {
-  display: flex;
-  overflow-x: scroll;
-  gap: 20px;
-}
-
 /* Estilos dos itens */
 .benefit-item {
   min-width: 200px;
   text-align: center;
 }
 
-.benefit-text {
-  font-size: 16px;
-  color: #333;
-}
 
 /* FAQs */
 
@@ -934,14 +949,6 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  .custom-scroll {
-    flex-direction: column; /* Altera para coluna */
-    overflow-x: unset; /* Remove o scroll horizontal */
-    overflow-y: auto; /* Adiciona scroll vertical se necessário */
-    gap: 15px; /* Ajusta o espaçamento entre os itens */
-    align-items: center; /* Centraliza os cards */
   }
 
   .benefit-item {
