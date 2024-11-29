@@ -319,7 +319,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const formatNumber = (number) => {
-    return new Intl.NumberFormat("pt-BR").format(number); // Formata com separador de milhar
+    const formatedNumber = new Intl.NumberFormat("pt-BR").format(number); // Formata com separador de milhar
+    return " + " + formatedNumber;
   };
 
   const observer = new IntersectionObserver(
