@@ -1032,6 +1032,15 @@ form {
     max-width: 320px; /* Ajuste final para smartphones */
   }
 
+  .carousel-title {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .carousel-description {
+    display: none;
+  }
+
   .card-btn-container {
     display: none;
   }
