@@ -52,18 +52,88 @@ p {
   color: var(--WHITE);
 }
 
-/* Imagem de fundo com gradiente e parallax */
+/* Container geral do carrossel */
 .bg-image {
-  height: 100vh;  
   position: relative;
-  background-size: cover;
-  background-position: center;
-  /* background-attachment: fixed; /* Fixar a imagem para o efeito parallax */
-  background-image: linear-gradient(
-      rgba(41, 100, 137, 0.7) 99%, /* Gradiente de 40% da altura com essa cor */
-      rgba(255, 255, 255, 1) 100% /* Gradiente até 100% da altura com a cor branca */
-    ),
-    url("../assets/header-image.jpeg"); /* Imagem de fundo */
+  overflow: hidden;
+}
+
+/* Estilização do carrossel */
+.carousel {
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Fica abaixo do gradiente */
+}
+
+.carousel-item img {
+  position: relative; /* Necessário para que o ::after funcione corretamente */
+  z-index: 1; /* Deixa a imagem abaixo do gradiente */
+}
+
+.carousel-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, .4) 98%, /* Cor mais escura */
+      rgba(255, 255, 255, 1) 100% /* Transparente */
+  );
+  z-index: 2; /* Deixa o gradiente acima da imagem */
+  pointer-events: none; /* Permite interagir com os elementos acima do gradiente */
+}
+
+
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover; /* Evita distorções */
+}
+
+/* Títulos dinâmicos */
+.carousel-caption {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  text-align: center;
+  z-index: 3; /* Acima do gradiente */
+}
+
+.carousel-title {
+  font-size: 32px;
+  color: var(--WHITE);
+  font-weight: bold;
+  text-shadow: 0px 3px 0px #2a506f; /* Destaque */
+}
+
+.carousel-description {
+  font-size: 18px;
+  color: var(--WHITE);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Destaque */
+}
+
+/* Botão fixo */
+.carousel-button {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; /* Acima do gradiente */
+}
+
+.carousel-button .btn {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
 }
 
 
@@ -84,6 +154,23 @@ p {
   border-radius: 15px;
   padding: 10px 20px;
   font-weight: bold;
+}
+
+.btn-entry-platform {
+  background-color: var(--SECONDARY);
+  color: var(--WHITE);
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.btn-entry-platform:hover, .focus-ring:focus-visible {
+  background-color: #ce642b;
+  color: var(--WHITE);
+}
+
+.focus-ring {
+  --bs-focus-ring-color: rgba(243, 119, 53, 0.5);
 }
 
 .btn-success i, .btn-outline-light i {
@@ -791,6 +878,10 @@ form {
   .position {
     position: relative;
     top: -150px;
+  }
+
+  .ajust-height {
+    height: 300px; /* Ajusta a altura do texto */
   }
 }
 
