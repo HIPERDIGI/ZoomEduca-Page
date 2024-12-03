@@ -9,10 +9,7 @@
     
     <title>ZoomEduca - Plataforma para Aplicação, Correção e Monitoramento de Resultados.</title>
     
-    <link rel="canonical" href="https://zoomeduca.com.br">
-    <link rel="canonical" href="https://zoomeduca.com.br/index.html">
-    <link rel="canonical" href="https://www.zoomeduca.com.br">
-    <link rel="canonical" href="https://www.zoomeduca.com.br/index.html">
+    <link rel="canonical" href="https://zoomeduca.com.br/">
     
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://zoomeduca.com.br">
@@ -33,10 +30,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
-    <script src="https://kit.fontawesome.com/bebcb8230f.js" crossorigin="anonymous"></script>
-    <script async   src="https://www.googletagmanager.com/gtag/js?id=G-GY2XB5GRY2"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/bebcb8230f.js" defer crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY2XB5GRY2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js" defer></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-834865001"></script>
@@ -115,7 +112,7 @@
             <img src="src/assets/new-carousel-01.jpg" class="d-block w-100" alt="Imagem 1">
             <div class="carousel-caption d-md-block">
                 <h3 class="carousel-title">Avaliações Inteligentes e Monitoramento Completo dos resultados: Conheça o Zoom Educa.</h3>
-                <p class="carousel-description">O Zoom Educa simplifica as etapas escolares, otimizando a gestão e oferecendo ainda mais recursos para o sucesso da sua instituição!</p>
+                <!-- <p class="carousel-description">O Zoom Educa simplifica as etapas escolares, otimizando a gestão e oferecendo ainda mais recursos para o sucesso da sua instituição!</p> -->
             </div>
           </div>
           <div class="carousel-item" data-bs-interval="15000">
@@ -123,7 +120,7 @@
             <div class="carousel-caption d-md-block">
               <h2 class="carousel-title">Melhore o rendimento da sua escola no IDEB e ENEM com o Zoom Educa.</h2>
               <p class="carousel-description">
-                Aumente os índices de desempenho da sua escola com o Zoom Educa, uma plataforma que potencializa resultados no IDEB e ENEM de forma prática e eficiente.</p>
+                <!-- Aumente os índices de desempenho da sua escola com o Zoom Educa, uma plataforma que potencializa resultados no IDEB e ENEM de forma prática e eficiente.</p> -->
             </div>
           </div>
           <div class="carousel-item">
@@ -131,7 +128,7 @@
             <div class="carousel-caption d-md-block">
               <h2 class="carousel-title">
                 Transforme Suas Provas: Mais Rapidez, Menos Custos e Mais Eficiência na Plataforma!</h2>
-              <p class="carousel-description">Organize o processo provas de forma rápida e eficiente, reduza custos e economize tempo com nossa plataforma inovadora para escolas</p>
+              <!-- <p class="carousel-description">Organize o processo provas de forma rápida e eficiente, reduza custos e economize tempo com nossa plataforma inovadora para escolas</p> -->
             </div>
           </div>
         </div>
@@ -440,11 +437,11 @@
       </div>
     </section>
     <!-- Modal -->
-    <div id="dynamicModal" class="modal" tabindex="-1">
-      <div id="modalColor" class="modal-dialog modal-lg">
+    <div id="dynamicModal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div id="modalColor" class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <a class="close-btn-modal" onclick="closeModal()"><i class="fa-solid fa-circle-xmark"></i></a>
+            <a class="close-btn-modal" onclick="closeModal()"  aria-label="Fechar modal"><i class="fa-solid fa-circle-xmark" aria-hidden="true"></i></a>
           </div>
           <div class="modal-body">
             <!-- O conteúdo dinâmico será inserido aqui -->
@@ -529,19 +526,19 @@
         <div class="row justify-content-center align-items-center">
 
           <!-- Métrica 1 -->
-          <div class="col-lg-3 col-md-6 p-3 d-flex flex-column align-items-center justify-content-center">
+          <div class="col-lg-3 col-md-6 p-2 d-flex flex-column align-items-center justify-content-center">
             <h3 class="metric-number" data-target="250000">0</h3>
             <p>Acessos à plataforma</p>
           </div>
           
           <!-- Métrica 4 -->
-          <div class="col-lg-3 col-md-6 p-3 d-flex flex-column align-items-center justify-content-center">
+          <div class="col-lg-3 col-md-6 p-2 d-flex flex-column align-items-center justify-content-center">
             <h3 class="metric-number" data-target="260000">0</h3>
             <p>Folhas de resposta geradas</p>
           </div>
           
           <!-- Métrica 2 -->
-          <div class="col-lg-3 col-md-6 p-3 d-flex flex-column align-items-center justify-content-center">
+          <div class="col-lg-3 col-md-6 p-2 d-flex flex-column align-items-center justify-content-center">
             <h3 class="metric-number" data-target="3000000">0</h3>
             <p>Questões corrigidas</p>
           </div>
@@ -563,6 +560,7 @@
             alt="Imagem representando a captura de folhas de respostas por aplicativo" 
             aria-label="Captura de folhas de respostas"
             role="img"
+            loading="lazy"
             class="img-fluid">
         </div>
         <div class="col-md-6 h2-color-primary">
@@ -583,6 +581,7 @@
           alt="Celular com diferentes funcionalidades e tipos de provas, hibrido ou digital" 
           aria-label="Modalidades de provas híbridas e digitais"
           role="img"
+          loading="lazy"
           class="img-fluid phones">
         </div>
       </div>
@@ -594,6 +593,7 @@
           alt="Mão capturando folha de resposta, Correção de redações" 
           aria-label="Correção digital de redações por aplicativo"
           role="img"
+          loading="lazy"
           class="img-fluid">
         </div>
         <div class="col-md-6 h2-color-primary">
