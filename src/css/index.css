@@ -681,6 +681,7 @@ p {
   color: var(--WHITE); /* Verde para confiança */
   margin: 0;
   transition: transform 0.3s ease; /* Efeito visual extra */
+  flex-wrap: nowrap;
 }
 
 #metrics p {
@@ -1030,6 +1031,10 @@ form {
 @media (max-width: 480px) {
   .video-container {
     max-width: 320px; /* Ajuste final para smartphones */
+  }
+
+  .carousel-caption {
+    top: 30%;
   }
 
   .carousel-title {
