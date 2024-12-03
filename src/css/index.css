@@ -59,18 +59,18 @@ p {
 }
 
 /* Estilização do carrossel */
-.carousel {
+.carousel-header {
   width: 100%;
   height: 100%;
   z-index: 1; /* Fica abaixo do gradiente */
 }
 
-.carousel-item img {
+.carousel-item-header img {
   position: relative; /* Necessário para que o ::after funcione corretamente */
   z-index: 1; /* Deixa a imagem abaixo do gradiente */
 }
 
-.carousel-item::after {
+.carousel-item-header::after {
   content: '';
   position: absolute;
   top: 0;
@@ -85,13 +85,41 @@ p {
   pointer-events: none; /* Permite interagir com os elementos acima do gradiente */
 }
 
+.gradient-custom {
+  background: #2a668b;
+}
 
-.carousel-inner {
+
+.carousel-indicators [data-bs-target]{
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+
+.carousel .carousel-indicators-testimonials button {
+ width: 10px;
+ height: 10px;
+ border-radius: 100%;
+}
+
+.report-message {
+  color: var(--DARK);
+}
+
+.report-name {
+  color: var(--PRIMARY);
+}
+
+.report-profile {
+  color: var(--PRIMARY);
+}
+
+.carousel-inner-header {
   width: 100%;
   height: 100%;
 }
 
-.carousel-inner img {
+.carousel-inner-header img {
   width: 100%;
   height: 60vh;
   object-fit: cover; /* Evita distorções */
@@ -451,7 +479,7 @@ p {
 }
 
 /* Cada card deve "parar" no lugar certo */
-.card {
+.card-custom-one {
   flex: none; /* Garante que cada card tenha o mesmo tamanho */
   scroll-snap-align: start; /* Faz com que o scroll pare no início de cada card */
   width: 300px; /* Tamanho fixo para cada card */
@@ -461,16 +489,11 @@ p {
   overflow: hidden; /* Garante que o conteúdo não extrapole o card */
 }
 
-.card:hover, .card:hover .lottie-container {
-  filter: saturate(1);
-  transition: filter .3s ease-in;
-}
-
-.card:nth-child(odd) {
+.card-custom-one:nth-child(odd) {
   background-color: #ecf8ff; /* Cor de fundo para cards ímpares */
 }
 
-.card:nth-child(even) {
+.card-custom-one:nth-child(even) {
   background-color: var(--WHITE); /* Cor de fundo para cards pares */
 }
 
@@ -481,7 +504,7 @@ p {
 }
 
 /* Conteúdo do card */
-.card-content {
+.card-custom-one-content {
   padding: 15px; /* Espaçamento interno */
   display: flex;
   flex-direction: column;
@@ -491,7 +514,7 @@ p {
 }
 
 /* Título do card */
-.card-title {
+.card-custom-one-title {
   font-size: 18px;
   font-weight: bold;
   color: #333; /* Texto escuro */
@@ -499,7 +522,7 @@ p {
 }
 
 /* Descrição do card */
-.card-description {
+.card-custom-one-description {
   font-size: 14px;
   line-height: 1.5; /* Melhor leitura */
   color: #666; /* Texto levemente mais claro */

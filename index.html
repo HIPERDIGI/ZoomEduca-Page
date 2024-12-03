@@ -51,7 +51,7 @@
     <nav role="navigation" aria-label="Menu de navegação principal" class="navbar fixed-top navbar-expand-lg navbar-dark">
       <div class="container-fluid d-flex justify-content-between">
         <a class="navbar-brand" href="https://zoomeduca.com.br">
-          <img class="img-fluid" src="src/assets/logo-stroke.svg" alt="logo plataforma integrada aplicação, correção e monitoramento Zoom Educa">
+          <img class="img-fluid" src="src/assets/logo-stroke.svg" alt="logo plataforma integrada aplicação, correção e monitoramento Zoom Educa" height="125" width="125">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir opções de navegação">
           <span class="navbar-toggler-icon"></span>
@@ -107,15 +107,15 @@
           <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <!-- Imagens + Texto -->
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="15000">
+        <div class="carousel-inner carousel-inner-header">
+          <div class="carousel-item carousel-item-header active" data-bs-interval="15000">
             <img src="src/assets/new-carousel-01.jpg" class="d-block w-100" alt="Imagem 1">
             <div class="carousel-caption d-md-block">
                 <h3 class="carousel-title">Avaliações Inteligentes e Monitoramento Completo dos resultados: Conheça o Zoom Educa.</h3>
                 <!-- <p class="carousel-description">O Zoom Educa simplifica as etapas escolares, otimizando a gestão e oferecendo ainda mais recursos para o sucesso da sua instituição!</p> -->
             </div>
           </div>
-          <div class="carousel-item" data-bs-interval="15000">
+          <div class="carousel-item carousel-item-header" data-bs-interval="15000">
             <img src="src/assets/new-carousel-02.jpg" class="d-block w-100" alt="Imagem 2">
             <div class="carousel-caption d-md-block">
               <h2 class="carousel-title">Melhore o rendimento da sua escola no IDEB e ENEM com o Zoom Educa.</h2>
@@ -123,7 +123,7 @@
                 <!-- Aumente os índices de desempenho da sua escola com o Zoom Educa, uma plataforma que potencializa resultados no IDEB e ENEM de forma prática e eficiente.</p> -->
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item carousel-item-header" data-bs-interval="15000">
             <img src="src/assets/new-carousel-03.jpg" class="d-block w-100" alt="Imagem 3">
             <div class="carousel-caption d-md-block">
               <h2 class="carousel-title">
@@ -314,88 +314,88 @@
         
           <!-- Área de rolagem -->
           <div class="card-custom-scroll">
-          <div class="card">
+          <div class="card card-custom-one">
             <div class="lottie-container">
               <!-- Contêiner para a animação Lottie -->
               <div id="anim-profile" class="lottie-container" data-animation="src/assets/animations/profiles.json"></div>
             </div>
           
-            <div class="card-content">
-              <h5 class="card-title">Perfis</h5>
-              <p class="card-description">
+            <div class="card-content card-custom-one-content">
+              <h5 class="card-title card-custom-one-title">Perfis</h5>
+              <p class="card-description card-custom-one-description">
                 A plataforma possui diferentes perfis de usuários que podem acessar pela web ou pelo aplicativo.
               </p>
               <a role="button" tabindex="0" onclick="openModal('profiles')" class="btn btn-outline-success btn-md btn-block" aria-label="Abrir modal para mais informações sobre os perfis" >Saiba mais</a>
             </div>
           </div>
-          <div class="card">
+          <div class="card card-custom-one">
             <div class="lottie-container">
               <!-- Contêiner para a animação Lottie -->
               <div id="anim-exam" class="lottie-container" data-animation="src/assets/animations/exam.json"></div>
             </div>
-            <div class="card-content">
-              <h5 class="card-title">
+            <div class="card-content card-custom-one-content">
+              <h5 class="card-title card-custom-one-title">
                 Várias possibilidades de aplicação de provas
               </h5>
-              <p class="card-description">
+              <p class="card-description card-custom-one-description">
                 A ferramenta permite realizar avaliações em diversas modalidades.
               </p>
               <a role="button" tabindex="0" onclick="openModal('ballon_3')" class="btn btn-outline-success btn-md btn-block" aria-label="Abrir modal para mais informações sobre tipos de aplicação de provas">Saiba mais</a>
             </div>
           </div>
           
-          <div class="card">
+          <div class="card card-custom-one">
             <div class="lottie-container">
               <img src="src/assets/notification-card.svg" class="img-fluid" alt="avisos e notificações automatizadas">
               <!-- Contêiner para a animação Lottie
              <div id="anim-notifications" class="lottie-container" data-animation="src/assets/animations/notification.json"></div> -->
             </div>
-            <div class="card-content">
-              <h5 class="card-title">Avisos e notificações automatizadas</h5>
-              <p class="card-description">
+            <div class="card-content card-custom-one-content">
+              <h5 class="card-title card-custom-one-title">Avisos e notificações automatizadas</h5>
+              <p class="card-description card-custom-one-description">
                 A plataforma envia automaticamente avisos e notificações para os perfis.
               </p>
               <a role="button" tabindex="0" onclick="openModal('notifications_card')" class="btn btn-outline-success btn-md btn-block" aria-label="Abrir modal para mais informações sobre avisos e notificações automatizadas">Saiba mais</a>
             </div>
           </div>
           
-          <div class="card">
+          <div class="card card-custom-one">
             <div class="lottie-container">
               <!-- Contêiner para a animação Lottie -->
               <div id="anim-auditor" class="lottie-container" data-animation="src/assets/animations/audit.json"></div>
             </div>
-            <div class="card-content">
-              <h5 class="card-title">Auditoria completa</h5>
-              <p class="card-description">
+            <div class="card-content card-custom-one-content">
+              <h5 class="card-title card-custom-one-title">Auditoria completa</h5>
+              <p class="card-description card-custom-one-description">
                 Nessa consulta são exibidas todas as ações realizadas no sistema por usuários de todos os perfis da plataforma.
               </p>
               <a role="button" tabindex="0" onclick="openModal('audit_card')" class="btn btn-outline-success btn-md btn-block" aria-label="Abrir modal para mais informações sobre auditoria completa">Saiba mais</a>
             </div>
           </div>
           
-          <div class="card">
+          <div class="card card-custom-one">
             <div class="lottie-container">
               <!-- Contêiner para a animação Lottie -->
               <div id="anim-activity" class="lottie-container" data-animation="src/assets/animations/activity.json"></div>
             </div>
-            <div class="card-content">
-              <h5 class="card-title">Registro de atividades</h5>
-              <p class="card-description">
+            <div class="card-content card-custom-one-content">
+              <h5 class="card-title card-custom-one-title">Registro de atividades</h5>
+              <p class="card-description card-custom-one-description">
                 O professor pode realizar o registro de atividades para os alunos.
               </p>
               <a role="button" tabindex="0" onclick="openModal('activity_card')" class="btn btn-outline-success btn-md btn-block" aria-label="Abrir modal para mais informações sobre registro de atividades">Saiba mais</a>
             </div>
           </div>
 
-          <div class="card">
+          <div class="card card-custom-one">
             <div class="lottie-container">
               <!-- Contêiner para a animação Lottie -->
               <div id="anim-essay" class="lottie-container" data-animation="src/assets/animations/essay.json"></div>
             </div>
 
-            <div class="card-content">
-              <h5 class="card-title">Correção de redações via app</h5>
-              <p class="card-description">
+            <div class="card-content card-custom-one-content">
+              <h5 class="card-title card-custom-one-title">Correção de redações via app</h5>
+              <p class="card-description card-custom-one-description">
                 Aplicativo para captura e correção de redações em tablets e celulares.
               </p>
               <a href="#asseys" class="btn btn-outline-success btn-md btn-block" aria-label="Abrir modal para mais informações sobre Correções de redações via aplicativo">Saiba mais</a>
@@ -411,9 +411,9 @@
               <div class="lg-card-img-container">
                 <img src="src/assets/card-04.svg" class="lg-card-img-top img-border" alt="Indicadores de desempenho, análise preditiva de desempenho escolar e monitoramento educacional">
               </div>
-              <div class="card-content">
-                <h5 class="card-title">Indicadores de desempenho</h5>
-                <p class="card-description">
+              <div class="card-content card-custom-one-content">
+                <h5 class="card-title card-custom-one-title">Indicadores de desempenho</h5>
+                <p class="card-description card-custom-one-description">
                   A ferramenta apresenta gráficos de desempenho coloridos de acordo com as cores dos indicadores de desempenho por faixa de rendimento, que são personalizados para cada escola no momento do cadastro da mesma.
                 </p>
               </div>
@@ -423,11 +423,11 @@
             <div class="lg-card h-100" data-aos="zoom-out-center">
               <!-- Container da Imagem Maior -->
               <div class="lg-card-img-container">
-                <img src="src/assets/Frame 1 (1).png" class="lg-card-img-top img-border" alt="Folhas de respostas personalizadas">
+                <img src="src/assets/card-05.png" class="lg-card-img-top img-border" alt="Folhas de respostas personalizadas">
               </div>
-              <div class="card-content">
-                <h5 class="card-title">Folhas de respostas personalizadas</h5>
-                <p class="card-description">
+              <div class="card-content card-custom-one-content">
+                <h5 class="card-title card-custom-one-title">Folhas de respostas personalizadas</h5>
+                <p class="card-description card-custom-one-description">
                   Gere folhas de respostas totalmente personalizadas, adaptadas ao modelo específico de cada escola ou sistema de ensino.
                 </p>
               </div>
@@ -603,7 +603,118 @@
       </div>
     </div>
   </section>
-
+  <section class="gradient-custom">
+    <div class="container my-5 py-5">
+      <h2 class="text-md-start text-center" style="color: var(--WHITE); font-weight: 600;">O Que Estão Dizendo sobre Nós</h2>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12">
+          <div class="text-center mb-4 pb-2">
+            <i class="fas fa-quote-left fa-3x text-white"></i>
+          </div>
+          
+          <div class="card">
+            <div class="card-body px-4 py-3"> <!-- Diminui o padding vertical -->
+              <!-- Carousel wrapper -->
+              <div id="carouselDarkVariant" class="carousel slide" data-bs-theme="dark">
+                <!-- Indicators -->
+                <div class="carousel-indicators carousel-indicators-testimonials mb-0">
+                  <button type="button" data-bs-target="#carouselDarkVariant" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselDarkVariant" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselDarkVariant" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+  
+                <!-- Inner -->
+                <div class="carousel-inner pb-4"> <!-- Diminui o padding vertical -->
+                  <!-- Single item -->
+                  <div class="carousel-item active">
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-lg-10 col-xl-8">
+                        <div class="row">
+                          <div class="col-lg-4 flex-column align-items-center d-flex justify-content-center">
+                            <i class="fa-solid fa-user" style="font-size: 70px; background-color: #eeeeee; padding: 3rem; border-radius: 20px;"></i>
+                          </div>
+                          <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
+                            <p class="mb-2 pb-3 report-message"><i> <!-- Reduz a margem inferior -->
+                              Merece especial destaque o fato de ser uma ferramenta tão eficaz, originada em nossa terra - Piauí.</i>
+                            </p>
+                            <h6 class="report-name"><b>Julival Alves da Silva</b></h6>
+                            <h6 class="report-profile">Assessoria Pedagógica e Coordenação interna do Sistema de qualidade na Gestão Escolar do colegio Diocesano</h6> <!-- Reduz a margem inferior -->
+                            
+                            <!-- Colocar relato em audio aqui(se houver) -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- Single item -->
+                  <div class="carousel-item">
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-lg-10 col-xl-8">
+                        <div class="row">
+                          <div class="col-lg-4 flex-column align-items-center d-flex justify-content-center">
+                            <i class="fa-solid fa-user" style="font-size: 70px; background-color: #eeeeee; padding: 3rem; border-radius: 20px;"></i>
+                          </div>
+                          <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
+                            <p class="mb-2 pb-3 report-message"><i> <!-- Reduz a margem inferior -->
+                              É importante por permitir aos professores um levantamento detalhado do resultado da avaliação, permitindo uma análise e correção de respostas junto aos alunos, aprimorando o desempenho dos mesmos.</i>
+                            </p>
+                            <h6 class="report-name"><b>José Itamar Soares</b></h6>
+                            <h6 class="report-profile">Coordenador de Física do colégio Diocesano</h6> <!-- Reduz a margem inferior -->
+                            
+                            <!-- Colocar relato em audio aqui(se houver) -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- Single item -->
+                  <div class="carousel-item">
+                    <div class="row d-flex justify-content-center">
+                      <div class="col-lg-10 col-xl-8">
+                        <div class="row">
+                          <div class="col-lg-4 flex-column align-items-center d-flex justify-content-center">
+                            <i class="fa-solid fa-user" style="font-size: 70px; background-color: #eeeeee; padding: 3rem; border-radius: 20px;"></i>
+                          </div>
+                          <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
+                            <p class="mb-2 pb-3 report-message"><i> <!-- Reduz a margem inferior -->
+                              Para o professor é uma ferramenta maravilhosa, pois contribui com o fazer pedagógico e especialmente para resolver e dedicar-se as competências e habilidades em que os alunos tiveram mais dificuldades.</i>
+                            </p>
+                            <h6 class="report-name"><b>Patricia Carvalho Prado</b></h6>
+                            <h6 class="report-profile">Coordenadora de história do colégio Diocesano</h6> <!-- Reduz a margem inferior -->
+                            
+                            <!-- Colocar relato em audio aqui(se houver) -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Inner -->
+  
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDarkVariant" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDarkVariant" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <!-- Carousel wrapper -->
+            </div>
+          </div>
+  
+          <div class="text-center mt-4 pt-2">
+            <i class="fas fa-quote-right fa-3x text-white"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <section id="FAQS" class="container">
     <div class="container">
       <h2>Perguntas Frequentes</h2>
@@ -861,9 +972,9 @@
   </button>
   
   <script src="js/index.js" defer></script>
-  <script src="js/modals.js"></script>
+  <script src="js/modals.js" defer></script>
   <!-- Scripts do Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script defer>
