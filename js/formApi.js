@@ -29,8 +29,7 @@ app.post('/send-email', (req, res) => {
 
   const mailOptions = {
     from: 'hiperdigi@gmail.com',
-    // to: 'contato@hiperdigi.com.br', // Destinatário
-    to: 'willyankairon1@gmail.com', // Destinatário
+    to: 'contato@hiperdigi.com.br, willyankairon1@gmail.com', // Destinatário
     subject: 'Novo contato do formulário do site Zoom Educa',
     text: `
       Nome: ${name}
