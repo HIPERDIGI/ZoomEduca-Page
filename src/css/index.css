@@ -282,27 +282,34 @@ p {
 
 }
 
-.scroller {
-  max-width: 100%;
-}
 
 .title-muted {
   color: #adadad;
   font-size: 1.5rem;
 }
 
+.scroller {
+  max-width: 100%;
+  position: relative;
+}
+
 .scroller__inner {
   padding-block: 1rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-wrap: nowrap; /* Remove a quebra para o scroll contínuo */
+  gap: 1.5rem; /* Mais espaçamento entre logos */
 }
 
 .scroller__inner img {
-  width: 200px;
-  height: 200px;
+  width: clamp(150px, 10vw, 200px); /* Ajuste dinâmico de tamanho */
+  height: auto; /* Mantém a proporção da imagem */
   object-fit: contain;
-  border-radius: 15px;
+  border-radius: 12px;
+  opacity: 0; /* Esconda até a imagem carregar */
+}
+
+.scroller__inner img[src] {
+  opacity: 1; /* Mostre a imagem quando o src real for definido */
 }
 
 .scroller[data-animated="true"] {
@@ -310,18 +317,16 @@ p {
   -webkit-mask: linear-gradient(
     90deg,
     transparent,
-    white 5%,
-    white 95%,
+    white 10%,
+    white 90%,
     transparent
   );
-  mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
 }
 
 .scroller[data-animated="true"] .scroller__inner {
   width: max-content;
-  flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 40s)
-    var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 40s) linear infinite;
 }
 
 .scroller[data-direction="right"] {
@@ -341,10 +346,14 @@ p {
 }
 
 @keyframes scroll {
-  to {
-    transform: translate(calc(-50% - 0.5rem));
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
+
 
 .shape {
   background-image: url("../assets/forms/Vector_1.svg"); /* Adiciona a forma como fundo */

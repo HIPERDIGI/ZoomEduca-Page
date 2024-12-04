@@ -70,34 +70,50 @@ cardBtnScrollRight.addEventListener("click", () => {
 });
 
 
-// Logic automatic scroll in institutions
+// Automatic scroll logic for institutions
 const scrollers = document.querySelectorAll(".scroller");
 
-// If a user hasn"t opted in for recuded motion, then we add the animation
+// If a user hasn"t opted in for reduced motion, then we add the animation
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
 }
 
-// Logica scroll automatico logos colegios
+// Add animations and initialize lazy-loading
 function addAnimation() {
   scrollers.forEach((scroller) => {
-    // add data-animated="true" to every `.scroller` on the page
     scroller.setAttribute("data-animated", true);
 
-    // Make an array from the elements within `.scroller-inner`
     const scrollerInner = scroller.querySelector(".scroller__inner");
     const scrollerContent = Array.from(scrollerInner.children);
 
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
+    // Clone the items for infinite scroll
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
       scrollerInner.appendChild(duplicatedItem);
     });
+
+    // Initialize lazy loading for images
+    initializeLazyLoading(scroller.querySelectorAll("img[data-src]"));
   });
 }
+
+// Lazy-loading logic
+function initializeLazyLoading(images) {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src; // Set the real image source
+        img.removeAttribute("data-src"); // Clean up the data attribute
+        observer.unobserve(img); // Stop observing this image
+      }
+    });
+  }, { rootMargin: "50px", threshold: 0.1 });
+
+  images.forEach((img) => observer.observe(img));
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const accordionItems = document.querySelectorAll("#accordionFlush .accordion-item");
