@@ -116,7 +116,7 @@
           <div class="carousel-item carousel-item-header active" data-bs-interval="15000">
             <img src="src/assets/new-carousel-01.jpg" class="d-block w-100" alt="Avaliações e Monitoramento completo dos resultados" width="1200" height="600" loading="lazy">
             <div class="carousel-caption d-md-block">
-                <h3 class="carousel-title">Avaliações Inteligentes e Monitoramento Completo dos resultados: Conheça o Zoom Educa.</h3>
+                <h3 class="carousel-title">Avaliações inteligentes e monitoramento completo dos resultados: conheça o Zoom Educa.</h3>
                 <!-- <p class="carousel-description">O Zoom Educa simplifica as etapas escolares, otimizando a gestão e oferecendo ainda mais recursos para o sucesso da sua instituição!</p> -->
             </div>
           </div>
@@ -132,7 +132,7 @@
             <img src="src/assets/new-carousel-03.jpg" class="d-block w-100" alt="Provas aplicadas pelo aplicativo">
             <div class="carousel-caption d-md-block" width="1200" height="600" loading="lazy">
               <h2 class="carousel-title">
-                Transforme Suas Provas: Mais Rapidez, Menos Custos e Mais Eficiência na Plataforma!</h2>
+                Transforme suas provas: mais rapidez, menos custos e mais eficiência com a plataforma Zoom Educa!</h2>
               <!-- <p class="carousel-description">Organize o processo provas de forma rápida e eficiente, reduza custos e economize tempo com nossa plataforma inovadora para escolas</p> -->
             </div>
           </div>
@@ -190,7 +190,7 @@
             <div class="col-12 col-md-6 mb-4 mb-md-0">
               <div class="video-container" data-video-id="zybRlq56L8o">
                 <div class="thumbnail">
-                  <img src="https://img.youtube.com/vi/zybRlq56L8o/hqdefault.jpg" alt="Thumbnail do vídeo">
+                  <img src="src/assets/zoomeduca-thumb-video-01.png" alt="Thumbnail do vídeo">
                   <div class="play-button"></div>
                 </div>
               </div>
@@ -198,7 +198,7 @@
             <div class="col-12 col-md-6">
               <div class="video-container" data-video-id="epEoeGJQCYI">
                 <div class="thumbnail">
-                  <img src="https://img.youtube.com/vi/epEoeGJQCYI/hqdefault.jpg" alt="Thumbnail do vídeo">
+                  <img src="src/assets/zoomeduca-thumb-video-02.png" alt="Thumbnail do vídeo">
                   <div class="play-button"></div>
                 </div>
               </div>
@@ -214,72 +214,92 @@
         <p>Acompanhe o mapa para entender como o Zoom Educa vai atuar na sua instituição de ensino.</p>
       </div>
       <div class="container py-5">
-        <div class="step-container">
+        <div class="d-flex flex-wrap justify-content-center align-items-center step-container">
           <!-- Card 1 -->
-          <div class="step-card">
-            <img src="src/assets/school-Register.svg" alt="Imagem representando o cadastro de escolas no Zoom Educa">
-            <h3 class="step-title">Cadastro da escola na plataforma</h3>
-            <a role="button" tabindex="0" onclick="openModal('ballon_1')" 
-              aria-label="Saiba mais sobre o cadastro da escola"
-              class="show-more-ballon">
-              <i class="fa-solid fa-question"></i>
-            </a>
+          <div class="step-card" onclick="openModal('ballon_1')">
+            <div class="step-image">
+              <img src="src/assets/school-Register.svg" alt="Imagem representando o cadastro de escolas no Zoom Educa">
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Cadastro da escola na plataforma</h3>
+              <a role="button" tabindex="0" onclick="event.stopPropagation(); openModal('ballon_1');" 
+                aria-label="Saiba mais sobre o cadastro da escola"
+                class="show-more-ballon">
+                <i class="fa-solid fa-question"></i>
+              </a>
+            </div>
           </div>
           
           <!-- Setinha -->
           <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
     
           <!-- Card 2 -->
-          <div class="step-card">
-            <img src="src/assets/register_avaliation.svg" alt="Imagem representando o Registro das avaliações no Zoom Educa">
+          <div class="step-card" onclick="openModal('ballon_2')">
+            <div class="step-image">
+              <img src="src/assets/register_avaliation.svg" alt="Imagem representando o Registro das avaliações no Zoom Educa">
+            </div>
+            <div class="step-content">
             <h3 class="step-title">Registro das avaliações</h3>
-            <a role="button" tabindex="0" onclick="openModal('ballon_2')"
-              aria-label="Saiba mais sobre o registro das avaliações"
-              class="show-more-ballon">
-              <i class="fa-solid fa-question"></i>
-            </a>
+              <a role="button" tabindex="0" onclick="event.stopPropagation();openModal('ballon_2')"
+                aria-label="Saiba mais sobre o registro das avaliações"
+                class="show-more-ballon">
+                <i class="fa-solid fa-question"></i>
+              </a>
+            </div>
           </div>
     
           <!-- Setinha -->
           <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
     
           <!-- Card 3 -->
-          <div class="step-card">
-            <img src="src/assets/aplication-exam.svg" alt="Imagem representando a Aplicação das avaliações no Zoom Educa">
-            <h3 class="step-title">Aplicação das avaliações</h3>
-            <a role="button" tabindex="0" onclick="openModal('ballon_3')" 
-              aria-label="Saiba mais sobre a aplicação das avaliações"
-              class="show-more-ballon">
-              <i class="fa-solid fa-question"></i>
-            </a>
+          <div class="step-card" onclick="openModal('ballon_3')" >
+            <div class="step-image">
+              <img src="src/assets/aplication-exam.svg" alt="Imagem representando a Aplicação das avaliações no Zoom Educa">
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Aplicação das avaliações</h3>
+              <a role="button" tabindex="0" onclick="event.stopPropagation();openModal('ballon_3')" 
+                aria-label="Saiba mais sobre a aplicação das avaliações"
+                class="show-more-ballon">
+                <i class="fa-solid fa-question"></i>
+              </a>
+            </div>
           </div>
     
           <!-- Setinha -->
           <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
     
           <!-- Card 4 -->
-          <div class="step-card">
-            <img src="src/assets/corrections-and-results.svg" alt="Imagem representando a Correção das avaliações no Zoom Educa">
-            <h3 class="step-title">Correção e resultados</h3>
-            <a role="button" tabindex="0" onclick="openModal('ballon_4')" 
-              aria-label="Saiba mais sobre correção e resultados"
-              class="show-more-ballon">
-              <i class="fa-solid fa-question"></i>
-            </a>
+          <div class="step-card" onclick="openModal('ballon_4')" >
+            <div class="step-image">
+              <img src="src/assets/corrections-and-results.svg" alt="Imagem representando a Correção das avaliações no Zoom Educa">
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Correção e resultados</h3>
+              <a role="button" tabindex="0" onclick="event.stopPropagation();openModal('ballon_4')" 
+                aria-label="Saiba mais sobre correção e resultados"
+                class="show-more-ballon">
+                <i class="fa-solid fa-question"></i>
+              </a>
+            </div>
           </div>
     
           <!-- Setinha -->
           <div class="arrow"><i class="fa-solid fa-chevron-right"></i></div>
     
           <!-- Card 5 -->
-          <div class="step-card">
-            <img src="src/assets/monitoring.svg" alt="Imagem representando o Monitoramento dos resultados no Zoom Educa">
-            <h3 class="step-title">Monitoramento dos resultados</h3>
-            <a role="button" tabindex="0" onclick="openModal('ballon_5')" 
-              aria-label="Saiba mais sobre o monitoramento dos resultados"
-              class="show-more-ballon">
-              <i class="fa-solid fa-question"></i>
-            </a>
+          <div class="step-card" onclick="openModal('ballon_5')" >
+            <div class="step-image">
+              <img src="src/assets/monitoring.svg" alt="Imagem representando o Monitoramento dos resultados no Zoom Educa">
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Monitoramento dos resultados</h3>
+              <a role="button" tabindex="0" onclick="event.stopPropagation();openModal('ballon_5')" 
+                aria-label="Saiba mais sobre o monitoramento dos resultados"
+                class="show-more-ballon">
+                <i class="fa-solid fa-question"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>  
@@ -522,7 +542,7 @@
     <section id="metrics" class="container">
       <h2 class="text-center m-4" style="color: var(--SECONDARY);"><b>SOMENTE EM 2024</b></h2>
       <div class="container text-center metrics-container">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center gap-lg-5">
 
           <!-- Métrica 1 -->
           <div class="col-lg-3 col-md-6 p-2 d-flex flex-column align-items-center justify-content-center">
@@ -533,7 +553,7 @@
           <!-- Métrica 4 -->
           <div class="col-lg-3 col-md-6 p-2 d-flex flex-column align-items-center justify-content-center">
             <h3 class="metric-number" data-target="260000">0</h3>
-            <p>Folhas de resposta geradas</p>
+            <p>Folhas de respostas geradas</p>
           </div>
           
           <!-- Métrica 2 -->
@@ -602,7 +622,8 @@
       </div>
     </div>
   </section>
-  <section class="gradient-custom">
+  <!-- Sessão Relatos - Adicionar quando pegar novos relatos -->
+  <!-- <section class="gradient-custom">
     <div class="container my-5 py-5">
       <h2 class="text-md-start text-center" style="color: var(--WHITE); font-weight: 600;">O Que Estão Dizendo sobre Nós</h2>
       <div class="row d-flex justify-content-center">
@@ -612,19 +633,15 @@
           </div>
           
           <div class="card">
-            <div class="card-body px-4 py-3"> <!-- Diminui o padding vertical -->
-              <!-- Carousel wrapper -->
+            <div class="card-body px-4 py-3">
               <div id="carouselDarkVariant" class="carousel slide" data-bs-theme="dark">
-                <!-- Indicators -->
                 <div class="carousel-indicators carousel-indicators-testimonials mb-0">
                   <button type="button" data-bs-target="#carouselDarkVariant" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselDarkVariant" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#carouselDarkVariant" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
   
-                <!-- Inner -->
-                <div class="carousel-inner pb-4"> <!-- Diminui o padding vertical -->
-                  <!-- Single item -->
+                <div class="carousel-inner pb-4">
                   <div class="carousel-item active">
                     <div class="row d-flex justify-content-center">
                       <div class="col-lg-10 col-xl-8">
@@ -633,20 +650,17 @@
                             <i class="fa-solid fa-user" style="font-size: 70px; background-color: #eeeeee; padding: 3rem; border-radius: 20px;"></i>
                           </div>
                           <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
-                            <p class="mb-2 pb-3 report-message"><i> <!-- Reduz a margem inferior -->
+                            <p class="mb-2 pb-3 report-message"><i> 
                               Merece especial destaque o fato de ser uma ferramenta tão eficaz, originada em nossa terra - Piauí.</i>
                             </p>
                             <h6 class="report-name"><b>Julival Alves da Silva</b></h6>
-                            <h6 class="report-profile">Assessoria Pedagógica e Coordenação Interna do Sistema de Qualidade na Gestão Escolar do Colégio Diocesano</h6> <!-- Reduz a margem inferior -->
-                            
-                            <!-- Colocar relato em audio aqui(se houver) -->
+                            <h6 class="report-profile">Assessoria Pedagógica e Coordenação Interna do Sistema de Qualidade na Gestão Escolar do Colégio Diocesano</h6>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-  
-                  <!-- Single item -->
+
                   <div class="carousel-item">
                     <div class="row d-flex justify-content-center">
                       <div class="col-lg-10 col-xl-8">
@@ -655,20 +669,17 @@
                             <i class="fa-solid fa-user" style="font-size: 70px; background-color: #eeeeee; padding: 3rem; border-radius: 20px;"></i>
                           </div>
                           <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
-                            <p class="mb-2 pb-3 report-message"><i> <!-- Reduz a margem inferior -->
+                            <p class="mb-2 pb-3 report-message"><i>
                               É importante por permitir aos professores um levantamento detalhado do resultado da avaliação, permitindo uma análise e correção de respostas junto aos alunos, aprimorando o desempenho dos mesmos.</i>
                             </p>
                             <h6 class="report-name"><b>José Itamar Soares</b></h6>
-                            <h6 class="report-profile">Coordenador de Física do Colégio Diocesano</h6> <!-- Reduz a margem inferior -->
-                            
-                            <!-- Colocar relato em audio aqui(se houver) -->
+                            <h6 class="report-profile">Coordenador de Física do Colégio Diocesano</h6>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-  
-                  <!-- Single item -->
+
                   <div class="carousel-item">
                     <div class="row d-flex justify-content-center">
                       <div class="col-lg-10 col-xl-8">
@@ -677,22 +688,18 @@
                             <i class="fa-solid fa-user" style="font-size: 70px; background-color: #eeeeee; padding: 3rem; border-radius: 20px;"></i>
                           </div>
                           <div class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0">
-                            <p class="mb-2 pb-3 report-message"><i> <!-- Reduz a margem inferior -->
+                            <p class="mb-2 pb-3 report-message"><i>
                               Para o professor é uma ferramenta maravilhosa, pois contribui com o fazer pedagógico e especialmente para resolver e dedicar-se as competências e habilidades em que os alunos tiveram mais dificuldades.</i>
                             </p>
                             <h6 class="report-name"><b>Patricia Carvalho Prado</b></h6>
-                            <h6 class="report-profile">Coordenadora de história do Colégio Diocesano</h6> <!-- Reduz a margem inferior -->
-                            
-                            <!-- Colocar relato em audio aqui(se houver) -->
+                            <h6 class="report-profile">Coordenadora de história do Colégio Diocesano</h6>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- Inner -->
-  
-                <!-- Controls -->
+
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselDarkVariant" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
@@ -702,7 +709,6 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
-              <!-- Carousel wrapper -->
             </div>
           </div>
   
@@ -712,7 +718,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   
   <section id="FAQS" class="container">
     <div class="container">
