@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ZoomEduca">
+  <meta name="description" content="Conheça o Zoom Educa, a plataforma integrada para aplicação, correção e monitoramento de provas e desempenho escolar.">
+
+  <title>Zoom Educa - Saiba Mais</title>
+
+ <link rel="shortcut icon" href="src/assets/favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/css/global.css">
+
+  <script src="https://kit.fontawesome.com/bebcb8230f.js" defer crossorigin="anonymous"></script>
+  
+  <style>
+    .header-image {
+      background-image: url('src/assets/carousel-01.jpg'); /* Substituir pela imagem fixa desejada */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      height: 400px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+          rgba(0, 0, 0, .4) 98%, /* Cor mais escura */
+          rgba(255, 255, 255, 1) 100% /* Transparente */
+      );
+      z-index: 2; /* Deixa o gradiente acima da imagem */
+      pointer-events: none; /* Permite interagir com os elementos acima do gradiente */
+    }
+
+    .header-image .header-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 3;
+    }
+    .header-content h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .custom-card {
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .custom-card img {
+      height: 180px;
+      object-fit: cover;
+    }
+    .custom-card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #004085;
+    }
+    .custom-card-text {
+      color: #6c757d;
+      font-size: 0.95rem;
+    }
+    .custom-card .btn {
+      font-weight: bold;
+      color: var(--SECONDARY);
+      background-color: transparent;
+      border: none;
+      text-decoration: underline;
+    }
+    .custom-card .btn:hover {
+      color: #f7874b;
+    }
+
+    .search-container {
+      max-width: 600px;
+      min-width: 300px;
+      margin: 0 auto;
+    }
+
+    .search-container input {
+      width: calc(100% - 110px); /* Subtrai o tamanho do botão */
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      display: inline-block;
+    }
+
+    .search-container button {
+      flex: 1;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav role="navigation" aria-label="Menu de navegação principal" class="navbar fixed-top navbar-expand-lg navbar-dark">
+      <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand" href="https://zoomeduca.com.br">
+          <img class="img-fluid" src="src/assets/logo-stroke.svg" alt="logo plataforma integrada aplicação, correção e monitoramento Zoom Educa" height="125" width="125">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir opções de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav nav-pills">
+            <li class="nav-item"><a class="nav-link" href="#contact" aria-label="Navegar para Contato"><i class="fas fa-envelope" aria-hidden="true"></i> Contato</a></li>
+            <li class="nav-item"><a class="nav-link active text-center" href="learn-more.html" aria-label="Navegar para Contato"><i class="fa-regular fa-bookmark" aria-hidden="true"></i> Saiba mais</a></li>
+          </ul>
+          <div class="ms-auto">
+            <a href="https://api.whatsapp.com/send?phone=558699812204" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light m-2">Fale com um consultor <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://zoomeduca.com.br/zoomeduca" target="_blank" rel="noopener noreferrer" class="btn btn-entry-platform focus-ring">Entrar no Zoom Educa <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-image">
+      <div class="header-content">
+        <h1>Saiba mais sobre os principais tópicos!</h1>
+        <!-- Barra de pesquisa -->
+        <div class="search-container mt-4">
+          <input type="text" id="searchInput" class="form-control" placeholder="Pesquisar tópicos...">
+          <button class="btn btn-primary focus-ring" onclick="searchTopics()">Pesquisar</button>
+        </div>
+      </div>
+    </div>    
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container mt-5 pt-5">
+    <section class="row row-cols-1 row-cols-md-2 g-4 custom-card-container">
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="card custom-card">
+          <img src="src/assets/learn-more-topics/thumb/topic-01.jpg" class="card-img-top" alt="Imagem funcionalidade 1">
+          <div class="card-body">
+            <h5 class="custom-card-title">Entendendo os perfis</h5>
+            <p class="custom-card-text">
+              Os perfis foram criados para atender às necessidades específicas de cada público dentro do ambiente escolar.
+            </p>
+            <a href="learn-more-content.html?topic=1" class="btn">Leia mais</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="card custom-card">
+          <img src="src/assets/learn-more-topics/thumb/topic-02.jpg" class="card-img-top" alt="Imagem funcionalidade 2">
+          <div class="card-body">
+            <h5 class="custom-card-title">As 6 principais formas de aplicação de provas da plataforma</h5>
+            <p class="custom-card-text">
+              O Zoom Educa oferece diversas formas de aplicação de provas, adaptando-se às necessidades de cada instituição.
+            </p>
+            <a href="learn-more-content.html?topic=2" class="btn">Leia mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="card custom-card">
+          <img src="src/assets/learn-more-topics/thumb/topic-03.jpg" class="card-img-top" alt="Imagem funcionalidade 2">
+          <div class="card-body">
+            <h5 class="custom-card-title">Corrija redações com apenas alguns cliques! descubra a eficiência na correção de redações</h5>
+            <p class="custom-card-text">
+              Esta ferramenta possibilita que professores corrijam redações de maneira prática e detalhada diretamente pelo celular.
+            </p>
+            <a href="learn-more-content.html?topic=3" class="btn">Leia mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col">
+        <div class="card custom-card">
+          <img src="src/assets/learn-more-topics/thumb/topic-04.jpg" class="card-img-top" alt="Imagem funcionalidade 2">
+          <div class="card-body">
+            <h5 class="custom-card-title">Da aplicação das provas ao monitoramento dos resultados: entenda como funciona as etapas do processo</h5>
+            <p class="custom-card-text">
+              O processo de aplicação das provas e monitoramento dos resultados é crucial para garantir a qualidade da educação. A cada etapa, as informações coletadas e processadas contribuem para uma avaliação detalhada do desempenho dos alunos, permitindo ajustes e intervenções necessárias ao longo do processo de ensino-aprendizagem.
+            </p>
+            <a href="learn-more-content.html?topic=4" class="btn">Leia mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col">
+        <div class="card custom-card">
+          <img src="src/assets/learn-more-topics/thumb/topic-05.jpg" class="card-img-top" alt="Imagem funcionalidade 2">
+          <div class="card-body">
+            <h5 class="custom-card-title">Esqueça o scanner! Descubra a praticidade da captura de folhas de respostas</h5>
+            <p class="custom-card-text">
+              A funcionalidade de captura de folhas de respostas é uma ferramenta inovadora que permite aos operadores registrar e enviar folhas de respostas diretamente pelo celular, utilizando um aplicativo dedicado. 
+            </p>
+            <a href="learn-more-content.html?topic=5" class="btn">Leia mais</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col">
+        <div class="card custom-card">
+          <img src="src/assets/learn-more-topics/thumb/topic-06.jpg" class="card-img-top" alt="Imagem funcionalidade 2">
+          <div class="card-body">
+            <h5 class="custom-card-title">"Sua escola, suas folhas de resposta"</h5>
+            <p class="custom-card-text">
+              As folhas de respostas personalizadas oferecem uma solução inovadora e prática para escolas e sistemas de ensino que buscam otimizar seus processos de avaliação. Com a capacidade de gerar folhas totalmente adaptadas ao modelo específico de cada instituição, esse recurso permite que cada escola tenha folhas de respostas que reflitam sua identidade visual e suas necessidades pedagógicas.
+            </p>
+            <a href="learn-more-content.html?topic=6" class="btn">Leia mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row text-center text-md-start py-4">
+        
+        <!-- Coluna Marca -->
+        <div class="col-md-4 text-center mb-4">
+          <h5 class="text-uppercase">Marca registrada no INPI</h5>
+	  <!--  <p>Processo Nº: 919721990</p> -->
+          <img src="src/assets/logo.svg" class="img-fluid" style="width: 60%;" alt="Logo da Zoom Educa">
+        </div>
+        
+        <!-- Coluna Redes Sociais -->
+        <div class="col-md-4 text-center mb-4">
+          <h5 class="text-uppercase">Zoom Educa</h5>
+          <p class="text-center">Redes sociais</p>
+          <div class="social-icons" aria-label="Redes sociais da Zoom Educa">
+            <a href="https://www.facebook.com/zoomeducapiaui" target="_blank"  aria-label="Facebook Zoom Educa" rel="noopener noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/zoom_educa/" target="_blank" aria-label="Instagram Zoom Educa" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=558699812204" target="_blank" aria-label="WhatsApp Zoom Educa" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        
+        <!-- Coluna Hiperdigi -->
+        <div class="col-md-4 mb-4 text-center text-md-end">
+          <img src="src/assets/hiperdigi_logo.svg" alt="Logo da Hiperdigi" class="img-fluid" style="filter: brightness(0) saturate(100%) invert(15%) sepia(68%) saturate(1308%) hue-rotate(199deg) brightness(92%) contrast(96%); width: 70%;">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Seção de Copyright -->
+    <div class="footer-copyright text-center py-3">
+      <span><i>© Copyright Zoom Educa. Todos os direitos reservados.</i></span>
+    </div>
+  </footer>  
+  
+
+  <script src="src/js/index.js" defer></script>
+  <!-- Scripts do Bootstrap -->
+  <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    document.querySelectorAll('.custom-card-text').forEach(description => {
+      const maxLength = 150; // Número máximo de caracteres
+      if (description.textContent.length > maxLength) {
+        description.textContent = description.textContent.slice(0, maxLength) + '...';
+      }
+    });
+    
+    // Adiciona o evento keypress para acionar a busca ao pressionar "Enter"
+    document.getElementById('searchInput').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        searchTopics();
+      }
+    });
+
+    function searchTopics() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.custom-card');
+      
+      let foundResults = false; // Para saber se encontramos algum resultado
+      
+      cards.forEach(card => {
+        const title = card.querySelector('.custom-card-title').textContent.toLowerCase();
+        const description = card.querySelector('.custom-card-text').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+          card.style.display = 'block'; // Mostrar o card
+          foundResults = true; // Marcar que há resultados
+        } else {
+          card.style.display = 'none'; // Ocultar o card
+        }
+      });
+
+      // Se algum resultado for encontrado, rolar até o primeiro card visível
+      if (foundResults) {
+        window.scrollTo({
+          top: document.querySelector('.custom-card-container').offsetTop,
+          behavior: 'smooth'
+        });
+      } else {
+        alert('Nenhum tópico encontrado.');
+      }
+
+      // Reorganizar os cards após a busca
+      const row = document.querySelector('.row');
+      row.classList.add('d-flex');
+      row.classList.add('flex-wrap');
+    }
+  </script>
+</body>
+</html>

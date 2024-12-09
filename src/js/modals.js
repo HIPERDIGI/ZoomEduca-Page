@@ -149,7 +149,7 @@ const modalContent = {
   `,
   errorMsg: `
     <h3 style="color: #ff0000" class="text-center">E-mail não enviado</h3>
-    <p style="color: #ff0000" class="text-center">Algum problema ocorreu, por favor tente daqui a alguns minutos!</p>
+    <p style="color: #ff0000" class="text-center">Algum problema ocorreu, por favor tente novamente daqui a alguns minutos!</p>
   `,
 };
 
