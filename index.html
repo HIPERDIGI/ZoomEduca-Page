@@ -79,17 +79,11 @@
                 <i class="fa-solid fa-person-circle-question" aria-hidden="true"></i> Dúvidas
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact" aria-label="Navegar para Contato">
-                <i class="fas fa-envelope" aria-hidden="true"></i> Contato
-              </a>
-            </li>
             <li class="nav-item"><a class="nav-link" href="learn-more.html" aria-label="Navegar para Contato"><i class="fa-regular fa-bookmark" aria-hidden="true"></i> Saiba mais</a></li>
           </ul>
 
           <div class="ms-auto">
-            <a href="https://api.whatsapp.com/send?phone=558699812204" 
-              target="_blank"
+            <a href="form.html" 
               rel="noopener noreferrer"
               class="btn btn-outline-light m-2">Fale com um consultor
               <i class="fa-solid fa-arrow-right"></i>
@@ -816,116 +810,6 @@
       <button id="toggleButton" class="btn btn-outline-success mt-3" aria-label="Mostrar mais" role="button">Mostrar mais</button>
     </div>
   </section>
-
-  <section id="contact">
-    <div class="container mt-5">
-      <h2 class="text-center">Converse com um especialista</h2>
-      <p class="text-center">Preencha o formulário abaixo e entraremos em contato com você!</p>
-      <form id="contactForm">
-        <div class="row g-3">
-          
-          <!-- Nome -->
-          <div class="col-md-6 form-floating">
-            <input type="text" class="form-control" id="name" placeholder="Nome" required>
-            <label for="name">Nome</label>
-          </div>
-          
-          <!-- Email -->
-          <div class="col-md-6 form-floating">
-            <input type="email" class="form-control" id="email" placeholder="Email Corporativo">
-            <label for="email">Email Corporativo</label>
-          </div>
-          
-          <!-- Celular -->
-          <div class="col-md-6 form-floating">
-            <input type="tel" class="form-control" id="phone" placeholder="Celular com DDD">
-            <label for="phone">Celular com DDD</label>
-          </div>
-          
-          <!-- Instituição -->
-          <div class="col-md-6 form-floating">
-            <input type="text" class="form-control" id="institution" placeholder="Instituição" required>
-            <label for="institution">Instituição</label>
-          </div>
-          
-          <!-- Selecionar: Trabalha com -->
-          <div class="col-md-6 form-floating">
-            <select class="form-select" id="workWith" required>
-              <option value="" disabled selected>Selecionar</option>
-              <option value="Ensino Fundamental">Ensino Fundamental</option>
-              <option value="Ensino Médio">Ensino Médio</option>
-              <option value="Ensino Fundamental e Médio">Ensino Fundamental e Médio</option>
-              <option value="Ensino Superior">Ensino Superior</option>
-              <option value="Curso Preparatório">Curso Preparatório</option>
-              <option value="EAD">EAD</option>
-              <option value="Outro">Outro</option>
-            </select>
-            <label for="workWith">Sua escola trabalha com:</label>
-          </div>
-          
-          <!-- Selecionar: Cargo -->
-          <div class="col-md-6 form-floating">
-            <select class="form-select" id="role" required>
-              <option value="" disabled selected>Selecionar</option>
-              <option value="Professor">Professor</option>
-              <option value="Coordenador Pedagógico">Coordenador Pedagógico</option>
-              <option value="Diretor">Diretor</option>
-              <option value="T.I.">T.I.</option>
-              <option value="Empresa">Empresa</option>
-              <option value="RH">RH</option>
-              <option value="Reitor">Reitor</option>
-              <option value="CEO">CEO</option>
-              <option value="Administrativo">Administrativo</option>
-              <option value="Aluno">Aluno</option>
-            </select>
-            <label for="role">Cargo na instituição de ensino</label>
-          </div>
-          
-          <!-- Selecionar: Quantidade de alunos -->
-          <div class="col-md-6 form-floating">
-            <select class="form-select" id="institutionSize" required>
-              <option value="" disabled selected>Selecionar</option>
-              <option value="0 a 250">0 a 250</option>
-              <option value="251 a 500">251 a 500</option>
-              <option value="501 a 1.000">501 a 1.000</option>
-              <option value="1.001 a 2.000">1.001 a 2.000</option>
-              <option value="2.001 a 3.000">2.001 a 3.000</option>
-              <option value="Acima de 3.000">Acima de 3.000</option>
-            </select>
-            <label for="institutionSize">Quantidade de alunos:</label>
-          </div>
-          
-          <!-- Selecionar: Tipo de instituição -->
-          <div class="col-md-6 form-floating">
-            <select class="form-select" id="institutionType" required>
-              <option value="" disabled selected>Selecionar</option>
-              <option value="Privada">Privada</option>
-              <option value="Pública">Pública</option>
-            </select>
-            <label for="institutionType">Tipo de instituição:</label>
-          </div>
-          
-          <!-- Mensagem -->
-          <div class="col-12 form-floating">
-            <textarea class="form-control" id="message" rows="4" placeholder="Mensagem" maxlength="5000" style="height: 100px;"></textarea>
-            <label for="message">Mensagem (opcional)</label>
-            <div class="d-flex justify-content-between">
-              <div id="messageHelp" class="form-text">Máximo de 5000 caracteres</div>
-              <div id="charCount" class="form-text">0/5000 caracteres</div>
-            </div>
-          </div>
-          
-          <!-- Botão de envio -->
-          <div class="col-12 text-end">
-            <button type="submit" id="submitButton" class="btn btn-success">
-              Enviar Mensagem
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-  
   </main>
 
   <footer class="footer mt-5">
@@ -946,7 +830,7 @@
           <div class="social-icons" aria-label="Redes sociais da Zoom Educa">
             <a href="https://www.facebook.com/zoomeducapiaui" target="_blank"  aria-label="Facebook Zoom Educa" rel="noopener noreferrer"><i class="fab fa-facebook" aria-hidden="true"></i></a>
             <a href="https://www.instagram.com/zoom_educa/" target="_blank" aria-label="Instagram Zoom Educa" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=558699812204" target="_blank" aria-label="WhatsApp Zoom Educa" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=558699856371" target="_blank" aria-label="WhatsApp Zoom Educa" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
           </div>
         </div>
         
