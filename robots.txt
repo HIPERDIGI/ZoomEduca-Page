@@ -4,8 +4,8 @@ Disallow: /
 
 # Permite rotas específicas para AdsBot-Google
 Allow: /home
-Allow: /sobre
-Allow: /contato
+Allow: /form
+Allow: /learn-more
 
 # Bloqueia outros rastreadores para todas as rotas
 User-agent: *
@@ -18,3 +18,4 @@ Allow: /contato
 
 # Exemplo de Sitemap
 Sitemap: https://zoomeduca.com.br/sitemap.xml
+Sitemap: https://zoomeduca.com.br/sitemap_index.xml
