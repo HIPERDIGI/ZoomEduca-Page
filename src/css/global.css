@@ -71,11 +71,29 @@ p {
   margin-right: 8px;
 }
 
+/* Estilo inicial para a navbar animada */
+.navbar-animated {
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: none;
+}
+
+.navbar-animated.scrolled {
+  background-color: var(--PRIMARY); /* Cor de fundo ao rolar */
+}
+
+.navbar-animated .nav-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+
 /* =============================== */
 
 /* Buttons */
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background-color: var(--SECONDARY) !important;
+  border: none !important;
 }
 
 .btn-entry-platform {
