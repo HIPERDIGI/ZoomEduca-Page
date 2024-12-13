@@ -109,6 +109,15 @@
       display: inline-block;
     }
 
+    /* Estilo da mensagem de erro */
+    .error-message {
+      opacity: 0; /* Começa invisível */
+      transition: opacity 0.5s ease-in-out; /* Transição suave */
+      color: red;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
@@ -236,6 +245,20 @@
           </div>
         </div>
       </div>
+
+      <!-- Card 7 -->
+      <div class="col">
+        <div class="card custom-card">
+          <img src="src/assets/learn-more-topics/thumb/topic-07.jpg" class="card-img-top" alt="Imagem funcionalidade 2">
+          <div class="card-body">
+            <h5 class="custom-card-title">As modalidades existentes no Zoom Educa</h5>
+            <p class="custom-card-text">
+              Em um mundo cada vez mais dinâmico e conectado, as instituições educacionais precisam se adaptar a novas tecnologias e métodos de avaliação. Pensando nisso, o Zoom Educa oferece diversas modalidades de avaliação, com planos que atendem às necessidades específicas de cada instituição, seja em formato tradicional, híbrido ou 100% digital.
+            </p>
+            <a href="learn-more-content.html?topic=7" class="btn">Leia mais</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="footer mt-5">
@@ -284,7 +307,7 @@
         description.textContent = description.textContent.slice(0, maxLength) + '...';
       }
     });
-    
+
     // Adiciona o evento keypress para acionar a busca ao pressionar "Enter"
     document.getElementById('searchInput').addEventListener('keypress', function(event) {
       if (event.key === 'Enter') {
@@ -316,8 +339,35 @@
           top: document.querySelector('.custom-card-container').offsetTop,
           behavior: 'smooth'
         });
+        // Limpa a mensagem de erro se houver resultados
+        const errorMessage = document.querySelector(".error-message");
+        if (errorMessage) {
+          errorMessage.style.opacity = 0; // Apaga a mensagem suavemente
+          setTimeout(() => {
+            errorMessage.style.display = 'none'; // Esconde a mensagem após o fade out
+          }, 100); // O tempo do fade out (correspondente à duração da transição)
+        }
       } else {
-        alert('Nenhum tópico encontrado.');
+        // Se não encontrar nada, mostrar todos os cards
+        cards.forEach(card => {
+          card.style.display = 'block'; // Exibe todos os cards
+        });
+
+        // Exibe a mensagem de erro sem apagar os elementos do formulário
+        let errorMessage = document.querySelector(".error-message");
+        if (!errorMessage) {
+          // Cria o elemento de erro se ele não existir
+          errorMessage = document.createElement("span");
+          errorMessage.classList.add("error-message");
+          document.querySelector(".search-container").appendChild(errorMessage);
+        }
+        
+        // Exibe a mensagem de erro com o fade in
+        errorMessage.textContent = 'Nenhum resultado encontrado';
+        errorMessage.style.display = 'block'; // Torna o elemento visível
+        setTimeout(() => {
+          errorMessage.style.opacity = 1; // Aplica o fade in após um pequeno atraso
+        }, 10);
       }
 
       // Reorganizar os cards após a busca
@@ -325,6 +375,7 @@
       row.classList.add('d-flex');
       row.classList.add('flex-wrap');
     }
+
   </script>
 </body>
 </html>

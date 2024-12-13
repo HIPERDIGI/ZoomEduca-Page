@@ -46,10 +46,13 @@
       font-weight: bold;
     }
 
-    /* Estilo dos Subtítulos */
     .card-body-custom h3 {
+      text-align: center;
       font-size: 1.2rem; /* Subtítulos ajustados */
       font-weight: 600;
+      border-top: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
+      padding: .5rem;
     }
     
     /* Texto normal no corpo do card */
@@ -68,10 +71,23 @@
     .custom-card {
       border-radius: 10px; 
       height: 100%;
+      overflow: hidden;
     }
 
     .card-header-custom {
       background-color: #1b4b69;
+    }
+
+    .card-img-top-custom {
+      background-color: var(--PRIMARY); 
+      width: 100%;
+      height: 150px;
+    }
+
+    .card-img-top-custom img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
     }
 
     .card-body-custom {
@@ -102,27 +118,12 @@
     }
 
     .price-badge {
-      position: absolute;
-      right: -1.6rem; /* faz o badge ficar fora do card */
-      top: 50%;
-      transform: translateY(-50%);
       background-color: var(--SECONDARY);
-      color: white;
+      color: var(--WHITE);
       font-weight: bold;
       padding: 8px 12px;
       font-size: 0.9rem;
       box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .price-badge:before {
-      content: "";
-      position: absolute;
-      left: -10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 10px;
-      height: 100%;
-      z-index: -1; /* adiciona uma "conexão" ao card */
     }
   </style>
 </head>
@@ -173,7 +174,7 @@
   <main class="correction-margin-nav">
     <article class="container">
       <div class="text-end" style="position: absolute;">
-        <a class="btn" href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="custom-tooltip" data-bs-html="true" data-bs-title='Saiba mais sobre as modalidades <a href="learn-more-content.html?topic=1">clicando aqui!</a>'>
+        <a class="btn" href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top"  data-bs-custom-class="custom-tooltip" data-bs-html="true" data-bs-title='Saiba mais sobre as modalidades <a href="learn-more-content.html?topic=7">clicando aqui!</a>'>
           <i style="font-size: 32px; color: var(--SECONDARY);" class="fa-solid fa-circle-exclamation"></i>
         </a>
       </div>
@@ -185,18 +186,21 @@
         <div class="col-md-4 mb-4">
           <div class="card custom-card">
             <div class="card-header text-center card-header-custom">
-              <h2 class="text-white">Completa Presencial</h2>
+              <h2 class="text-white">Modalidade 1</h2>
+            </div>
+            <div class="card-img-top card-img-top-custom">
+              <img src="src/assets/modality.jpg" alt="Imagem da modalidade 1">
             </div>
             <div class="card-body card-body-custom">
-              <h3>Características</h3>
+              <h3 class="text-center card-title">Características</h3>
               <!-- Caracteristicas aqui -->
-               <ul>
-                <li><strong>Impressão dos cadernos de questões e folhas de respostas  </strong>, <strong>aplicação e coleta das folhas de respostas</strong>;</li>
-                <li>Acessos ilimitados;</li>
-                <li>Correções ilimitadas;</li>
-                <li>Módulo de correção de redações;</li>
+               <ul style="list-style-type: decimal;">
+                <li>Prova Presencial;</li>
+                <li><strong>Impressão dos cadernos de questões e folhas de respostas</strong>;</li>
+                <li>Coleta das folhas de respostas;</li>
+                <li>Resultado no mesmo dia da coleta.</li>
                </ul>
-              <h3 class="mt-3">Faixa de Preço</h3>
+              <h3 class="mt-3">Investimento por aluno</h3>
               <ul class="list-group">
                     <li class="d-flex justify-content-between align-items-center">
                       0 a 200 alunos
@@ -211,13 +215,10 @@
                       <span class="price-badge">R$ --,--</span>
                     </li>
                     <li class="d-flex justify-content-between align-items-center">
-                      a partir de 1.000 alunos
+                      Acima de 1.000 alunos
                       <span class="price-badge">R$ --,--</span>
                     </li>
                   </ul>
-                </div>
-                <div class="d-grid gap-2 card-footer card-footer-custom">
-                  <a class="btn btn-primary focus-ring fw-bold" type="button">Escolher esse plano</a>
                 </div>
           </div>
         </div>
@@ -226,19 +227,22 @@
         <div class="col-md-4 mb-4">
           <div class="card custom-card">
             <div class="card-header text-center card-header-custom">
-              <h2 class="text-white">Presencial com envio digital</h2>
+              <h2 class="text-white">Modalidade 2</h2>
+            </div>
+            <div class="card-img-top card-img-top-custom">
+              <img src="src/assets/modality.jpg" alt="Imagem da modalidade 1">
             </div>
             <div class="card-body card-body-custom">
-              <h3>Características</h3>
+              <h3 class="text-center card-title">Características</h3>
               <!-- Caracteristicas aqui -->
-               <ul>
-                <li>Impressão dos cadernos de questões e folhas de resposta, <strong>escaneamento e envio digital realizado diretamente pelo sistema</strong>;</li>
+              <ul style="list-style-type: decimal;">
+                <li>Prova presencial;</li>
+                <li><strong>Impressão dos cadernos de questões e folhas de respostas</strong>;</li>
+                <li>Upload das folhas pela escola;</li>
                 <li><em>Scanner</em> comodato (opcional);</li>
-                <li>Acessos ilimitados;</li>
-                <li>Correções ilimitadas;</li>
-                <li>Módulo de correção de redações;</li>
+                <li>Resultado logo após o upload.</li>
                </ul>
-              <h3 class="mt-3">Faixa de Preço</h3>
+              <h3 class="mt-3">Investimento por aluno</h3>
               <ul class="list-group">
                     <li class="d-flex justify-content-between align-items-center">
                       0 a 200 alunos
@@ -253,13 +257,10 @@
                       <span class="price-badge">R$ --,--</span>
                     </li>
                     <li class="d-flex justify-content-between align-items-center">
-                      a partir de 1.000 alunos
+                      Acima de 1.000 alunos
                       <span class="price-badge">R$ --,--</span>
                     </li>
                   </ul>
-                </div>
-                <div class="d-grid gap-2 card-footer card-footer-custom">
-                  <a class="btn btn-primary focus-ring fw-bold" type="button">Escolher esse plano</a>
                 </div>
           </div>
         </div>
@@ -268,18 +269,21 @@
         <div class="col-md-4 mb-4">
           <div class="card custom-card">
             <div class="card-header text-center card-header-custom">
-              <h2 class="text-white">Captura e envio das folhas de respostas digitalmente <em>(Upload)</em></h2>
+              <h2 class="text-white">Modalidade 3</h2>
+            </div>
+            <div class="card-img-top card-img-top-custom">
+              <img src="src/assets/modality.jpg" alt="Imagem da modalidade 1">
             </div>
             <div class="card-body card-body-custom">
               <h3>Características</h3>
               <!-- Caracteristicas aqui -->
-               <ul>
-                <li>Impressão dos cadernos de questões e folhas de resposta, com o <strong>envio realizado por meio da ferramenta de captura de folhas de resposta disponível no aplicativo</strong>;</li>
-                <li>Acessos ilimitados;</li>
-                <li>Correções ilimitadas;</li>
-                <li>Módulo de correção de redações;</li>
+               <ul style="list-style-type: decimal;">
+                <li>Prova presencial;</li>
+                <li><strong>Impressão dos cadernos de questões e folhas de respostas</strong>;</li>
+                <li>Captura das folhas de resposta pelo aplicativo;</li>
+                <li>Resultado logo após a captura das folhas de respostas no aplicativo;</li>
                </ul>
-              <h3 class="mt-3">Faixa de Preço</h3>
+              <h3 class="mt-3">Investimento por aluno</h3>
               <ul class="list-group">
                     <li class="d-flex justify-content-between align-items-center">
                       0 a 200 alunos
@@ -294,13 +298,10 @@
                       <span class="price-badge">R$ --,--</span>
                     </li>
                     <li class="d-flex justify-content-between align-items-center">
-                      a partir de 1.000 alunos
+                      Acima de 1.000 alunos
                       <span class="price-badge">R$ --,--</span>
                     </li>
                   </ul>
-                </div>
-                <div class="d-grid gap-2 card-footer card-footer-custom">
-                  <a class="btn btn-primary focus-ring fw-bold" type="button">Escolher esse plano</a>
                 </div>
           </div>
         </div>
@@ -309,19 +310,21 @@
         <div class="col-md-4 mb-4">
           <div class="card custom-card">
             <div class="card-header text-center card-header-custom">
-              <h2 class="text-white">Aplicação presencial semi-digital</h2>
+              <h2 class="text-white">Modalidade 4</h2>
+            </div>
+            <div class="card-img-top card-img-top-custom">
+              <img src="src/assets/learn-more-topics/full/topic-05-full.jpg" alt="Imagem da modalidade 1">
             </div>
             <div class="card-body card-body-custom">
               <h3>Características</h3>
               <!-- Caracteristicas aqui -->
-               <ul>
-                <li>Impressão <strong>apenas dos cadernos de questões</strong>, enquanto as respostas são preenchidas diretamente no aplicativo.</li>
-                <li><strong>Resultado instantâneo</strong>;</li>
-                <li>Acessos ilimitados;</li>
-                <li>Correções ilimitadas;</li>
-                <li>Módulo de correção de redações;</li>
+               <ul style="list-style-type: decimal;">
+                <li>Prova presencial</li>
+                <li>Impressão <strong>apenas dos cadernos de questões</strong>;</li>
+                <li>Marcação da folha de resposta pelo aplicativo;</li>
+                <li><strong>Resultado instantâneo após o termino da avaliação</strong>;</li>
                </ul>
-              <h3 class="mt-3">Faixa de Preço</h3>
+              <h3 class="mt-3">Investimento por aluno</h3>
               <ul class="list-group">
                     <li class="d-flex justify-content-between align-items-center">
                       0 a 200 alunos
@@ -336,13 +339,10 @@
                       <span class="price-badge">R$ --,--</span>
                     </li>
                     <li class="d-flex justify-content-between align-items-center">
-                      a partir de 1.000 alunos
+                      Acima de 1.000 alunos
                       <span class="price-badge">R$ --,--</span>
                     </li>
                   </ul>
-                </div>
-                <div class="d-grid gap-2 card-footer card-footer-custom">
-                  <a class="btn btn-primary focus-ring fw-bold" type="button">Escolher esse plano</a>
                 </div>
           </div>
         </div>
@@ -351,20 +351,21 @@
         <div class="col-md-4 mb-4">
           <div class="card custom-card">
             <div class="card-header text-center card-header-custom">
-              <h2 class="text-white">Aplicação presencial totalmente digital</h2>
+              <h2 class="text-white">Modalidade 5</h2>
+            </div>
+            <div class="card-img-top card-img-top-custom">
+              <img src="src/assets/feature-02-1.png" alt="Imagem da modalidade 1">
             </div>
             <div class="card-body card-body-custom">
               <h3>Características</h3>
               <!-- Caracteristicas aqui -->
-               <ul>
-                <li><strong>O caderno de questões e as folhas de resposta são totalmente disponibilizados no aplicativo</strong>, permitindo a realização do processo de forma completamente digital.</li>
-                <li><strong>Resultado instantâneo</strong>;</li>
-                <li>Acessos ilimitados;</li>
-                <li>Alta redução de custos;</li>
-                <li>Correções ilimitadas;</li>
-                <li>Módulo de correção de redações;</li>
+               <ul style="list-style-type: decimal;">
+                <li>Prova presencial(digital);</li>
+                <li>Sem impressão de folha de resposta e caderno de questões;</li>
+                <li>Visualização de caderno de questões e marcação da folha de resposta pelo aplicativo;</li>
+                <li><strong>Resultado instantâneo após o termino da avaliação</strong>;</li>
                </ul>
-              <h3 class="mt-3">Faixa de Preço</h3>
+              <h3 class="mt-3">Investimento por aluno</h3>
               <ul class="list-group">
                     <li class="d-flex justify-content-between align-items-center">
                       0 a 200 alunos
@@ -379,22 +380,56 @@
                       <span class="price-badge">R$ --,--</span>
                     </li>
                     <li class="d-flex justify-content-between align-items-center">
-                      a partir de 1.000 alunos
+                      Acima de 1.000 alunos
                       <span class="price-badge">R$ --,--</span>
                     </li>
                   </ul>
                 </div>
-                <div class="d-grid gap-2 card-footer card-footer-custom">
-                  <a class="btn btn-primary focus-ring fw-bold" type="button">Escolher esse plano</a>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="card custom-card">
+            <div class="card-header text-center card-header-custom">
+              <h2 class="text-white">Modalidade 6</h2>
+            </div>
+            <div class="card-img-top card-img-top-custom">
+              <img src="src/assets/new-carousel-03.jpg" alt="Imagem da modalidade 1">
+            </div>
+            <div class="card-body card-body-custom">
+              <h3>Características</h3>
+              <!-- Caracteristicas aqui -->
+               <ul style="list-style-type: decimal;">
+                <li>Prova <em>online</em> (remoto);</li>
+                <li>Caderno de questões e folha de resposta online;</li>
+                <li><strong>Resultado instantâneo após o termino da avaliação</strong>;</li>
+               </ul>
+              <h3 class="mt-3">Investimento por aluno</h3>
+              <ul class="list-group">
+                    <li class="d-flex justify-content-between align-items-center">
+                      0 a 200 alunos
+                      <span class="price-badge">R$ --,--</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                      200 a 500 alunos
+                      <span class="price-badge">R$ --,--</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                      500 a 1.000 alunos
+                      <span class="price-badge">R$ --,--</span>
+                    </li>
+                    <li class="d-flex justify-content-between align-items-center">
+                      Acima de 1.000 alunos
+                      <span class="price-badge">R$ --,--</span>
+                    </li>
+                  </ul>
                 </div>
           </div>
         </div>
       </section>
     </article>
   </main>
-  
-  
-  
   
   <footer class="footer mt-5">
     <div class="container">
