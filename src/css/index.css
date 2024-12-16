@@ -1,20 +1,11 @@
-.text-header {
-  color: var(--WHITE);
-  font-weight: 400;
-}
-
-.paragraph {
-  display: block;
-}
-
-.low-paragraph {
-  display: none;
-}
-
 .blue h2,
 .blue h3,
 .blue p {
   color: var(--WHITE);
+}
+
+.blue {
+  background-color: var(--PRIMARY);
 }
 
 /* Container geral do carrossel */
@@ -129,15 +120,6 @@
   border-radius: 25px;
 }
 
-/* Estilo do botão */
-.btn-success {
-  background-color: var(--GREEN);
-  color: var(--WHITE);
-  border-radius: 15px;
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
 /* Centralizar o conteúdo dentro do container */
 .content {
   margin-top: 20px; /* Adicionando margem superior para não sobrepor com a navbar */
@@ -153,10 +135,6 @@
 
 .img-column {
   text-align: center;
-}
-
-.blue {
-  background-color: var(--PRIMARY);
 }
 
 .h2-color-primary h2 {
@@ -611,64 +589,6 @@ iframe {
   top: -500px;
 }
 
-/* Modals */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none; /* Deixe o modal invisível por padrão */
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(2px);
-  z-index: 1050;
-}
-
-.modal.show {
-  display: flex; /* Exibe o modal quando visível */
-}
-
-.body-no-scroll {
-  overflow: hidden; /* Desativa o scroll na página principal */
-}
-
-.modal-dialog {
-  max-width: 90%;
-  max-height: 90%; /* Limita a altura do modal para 90% da tela */
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-header {
-  border: none;
-  display: flex;
-  padding: 10px;
-  justify-content: flex-end;
-}
-
-.modal-body {
-  padding: 20px;
-  overflow-y: auto; /* Permite rolar o conteúdo do modal */
-  flex-grow: 1; /* Garante que o conteúdo cresça até o tamanho máximo */
-  max-height: 80vh; /* Limita a altura do conteúdo para 80% da altura da tela */
-}
-
-.close-btn-modal {
-  cursor: pointer;
-  position: fixed;
-  color: var(--SECONDARY);
-  font-size: 42px;
-  border-radius: 5px;
-  padding: 10px 15px;
-  z-index: 1051; /* Define um z-index mais alto que os outros elementos */
-}
-
 .metrics-container {
   background-color: var(--PRIMARY); /* Cor suave para destaque */
   border-radius: 15px;
@@ -792,7 +712,6 @@ iframe {
   opacity: 1;
 }
 
-
 .hidden {
   display: none;
 }
@@ -845,31 +764,10 @@ iframe {
   }
 }
 
-@media (max-width: 992px) {
-  /* Reduz o tamanho das imagens para tablets */
-  .footer img {
-    max-width: 150px;
-    width: 100%;
-  }
-}
-
 /* Para telas médias */
 @media (max-width: 768px) {
   .video-container {
     max-width: 480px; /* Reduz o tamanho em tablets */
-  }
-
-  .row {
-    flex-direction: column;
-  }
-
-  .text-column {
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .img-column {
-    margin-top: 20px;
   }
   
   .ajust-height {
@@ -888,34 +786,6 @@ iframe {
     border-radius: 15px;
   }
 
-  .modal.show {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    
-  }
-
-  .modal-dialog {
-    margin-top: 5vh; /* Adiciona uma margem superior para centralizar o modal */
-    margin-bottom: 10vh; /* Margem inferior para evitar corte */
-    max-height: 90vh; /* Impede que o modal ultrapasse a altura da tela */
-    overflow-y: auto; /* Permite rolar o conteúdo caso seja necessário */
-  }
-
-  /* Garantir que o modal não seja cortado */
-  .modal-content {
-    max-height: 100%; /* Faz com que o conteúdo ocupe toda a altura disponível */
-    overflow-y: auto; /* Permite rolagem caso o conteúdo exceda a altura */
-  }
-
-  .paragraph {
-    display: none;
-  }
-  
-  .low-paragraph {
-    display: block;
-  }
-
   /* Form button */
   /* Estilo para o spinner */
   .spinner-border {
@@ -923,34 +793,9 @@ iframe {
     height: 1.5rem;
     border-width: 0.2em;
   }
-
-
-  /* Centraliza o texto e elementos para telas menores */
-  .footer .row {
-    text-align: center;
-  }
-
-  /* Ajusta o tamanho das logos para telas menores */
-  .footer img {
-    max-width: 120px;
-    width: 100%; /* Para garantir responsividade */
-  }
-
-  /* Centraliza os ícones sociais e listas */
-  .footer h5,
-  .footer p,
-  .footer .social-icons,
-  .footer ul {
-    text-align: center;
-  }
 }
 
 @media (max-width: 576px) {
-  .footer img {
-    max-width: 150px;
-    width: 100%;
-  }
-
   .scroller__inner img {
     width: 120px;
     height: 120px;

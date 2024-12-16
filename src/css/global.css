@@ -96,6 +96,15 @@ p {
   border: none !important;
 }
 
+/* Estilo do botão */
+.btn-success {
+  background-color: var(--GREEN);
+  color: var(--WHITE);
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
 .btn-entry-platform {
   background-color: var(--SECONDARY);
   color: var(--WHITE);
@@ -120,6 +129,62 @@ p {
 
 .btn-success i, .btn-outline-light i {
   margin-left: 10px;
+}
+
+/* =============================== */
+
+/* Modals */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Deixe o modal invisível por padrão */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  z-index: 1050;
+}
+
+.modal.show {
+  display: flex; /* Exibe o modal quando visível */
+}
+
+.modal-dialog {
+  max-width: 90%;
+  max-height: 90%; /* Limita a altura do modal para 90% da tela */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  border: none;
+  display: flex;
+  padding: 10px;
+  justify-content: flex-end;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto; /* Permite rolar o conteúdo do modal */
+  flex-grow: 1; /* Garante que o conteúdo cresça até o tamanho máximo */
+  max-height: 80vh; /* Limita a altura do conteúdo para 80% da altura da tela */
+}
+
+.close-btn-modal {
+  cursor: pointer;
+  position: fixed;
+  color: var(--SECONDARY);
+  font-size: 42px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  z-index: 1051; /* Define um z-index mais alto que os outros elementos */
 }
 
 /* =============================== */
@@ -209,4 +274,65 @@ p {
 
 .correction-margin-nav {
   margin-top: 100px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  /* Reduz o tamanho das imagens para tablets */
+  .footer img {
+    max-width: 150px;
+    width: 100%;
+  }
+}
+
+/* Para telas médias */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .modal.show {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .modal-dialog {
+    margin-top: 5vh; /* Adiciona uma margem superior para centralizar o modal */
+    margin-bottom: 10vh; /* Margem inferior para evitar corte */
+    max-height: 90vh; /* Impede que o modal ultrapasse a altura da tela */
+    overflow-y: auto; /* Permite rolar o conteúdo caso seja necessário */
+  }
+
+  /* Garantir que o modal não seja cortado */
+  .modal-content {
+    max-height: 100%; /* Faz com que o conteúdo ocupe toda a altura disponível */
+    overflow-y: auto; /* Permite rolagem caso o conteúdo exceda a altura */
+  }
+
+  /* Centraliza o texto e elementos para telas menores */
+  .footer .row {
+    text-align: center;
+  }
+
+  /* Ajusta o tamanho das logos para telas menores */
+  .footer img {
+    max-width: 120px;
+    width: 100%; /* Para garantir responsividade */
+  }
+
+  /* Centraliza os ícones sociais e listas */
+  .footer h5,
+  .footer p,
+  .footer .social-icons,
+  .footer ul {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer img {
+    max-width: 150px;
+    width: 100%;
+  }
 }
