@@ -41,22 +41,16 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY2XB5GRY2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js" defer></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-834865001"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-834865001');
-    </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-834865001"></script>
+  <script src="src/js/gtag.js"></script>
   </head>
   <body>
     <header>
     <!-- Navbar fixa -->
     <nav role="navigation" aria-label="Menu de navegação principal" class="navbar fixed-top navbar-expand-lg navbar-dark">
       <div class="container-fluid d-flex justify-content-between">
-        <a class="navbar-brand" href="https://zoomeduca.com.br">
+        <a class="navbar-brand" href="index.html">
           <img class="img-fluid" src="src/assets/logo-stroke.svg" alt="logo plataforma integrada aplicação, correção e monitoramento Zoom Educa" height="125" width="125">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir opções de navegação">
@@ -79,7 +73,14 @@
                 <i class="fa-solid fa-person-circle-question" aria-hidden="true"></i> Dúvidas
               </a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="learn-more.html" aria-label="Navegar para Contato"><i class="fa-regular fa-bookmark" aria-hidden="true"></i> Saiba mais</a></li>
+            <li class="nav-item"><a class="nav-link" href="learn-more.html" aria-label="Navegar para Contato">
+              <i class="fa-regular fa-bookmark" aria-hidden="true"></i> Saiba mais</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="prices-and-modalities.html" aria-label="Navegar para Modalidades e Planos">
+                <i class="fa-solid fa-file-lines"></i> Modalidades & Planos
+              </a>
+            </li>
           </ul>
 
           <div class="ms-auto">
@@ -113,7 +114,6 @@
             <img src="src/assets/new-carousel-01.jpg" class="d-block w-100" alt="Avaliações e Monitoramento completo dos resultados" width="1200" height="600" loading="lazy">
             <div class="carousel-caption d-md-block">
                 <h3 class="carousel-title">Avaliações inteligentes e monitoramento completo dos resultados: conheça o Zoom Educa.</h3>
-                <!-- <p class="carousel-description">O Zoom Educa simplifica as etapas escolares, otimizando a gestão e oferecendo ainda mais recursos para o sucesso da sua instituição!</p> -->
             </div>
           </div>
           <div class="carousel-item carousel-item-header" data-bs-interval="15000">
@@ -121,15 +121,13 @@
             <div class="carousel-caption d-md-block">
               <h2 class="carousel-title">Melhore o rendimento da sua escola no IDEB e ENEM com o Zoom Educa.</h2>
               <p class="carousel-description">
-                <!-- Aumente os índices de desempenho da sua escola com o Zoom Educa, uma plataforma que potencializa resultados no IDEB e ENEM de forma prática e eficiente.</p> -->
             </div>
           </div>
           <div class="carousel-item carousel-item-header" data-bs-interval="15000">
             <img src="src/assets/new-carousel-03.jpg" class="d-block w-100" alt="Provas aplicadas pelo aplicativo">
             <div class="carousel-caption d-md-block" width="1200" height="600" loading="lazy">
               <h2 class="carousel-title">
-                Transforme suas provas: mais rapidez, menos custos e mais eficiência com a plataforma Zoom Educa!</h2>
-              <!-- <p class="carousel-description">Organize o processo provas de forma rápida e eficiente, reduza custos e economize tempo com nossa plataforma inovadora para escolas</p> -->
+                Otimize suas avaliações: mais rapidez, menos custos e mais eficiência com a plataforma Zoom Educa!</h2>
             </div>
           </div>
         </div>
@@ -183,6 +181,7 @@
       <section class="shape">
         <div class="container text-center mt-2">
           <div class="row">
+            <!-- Primeiro vídeo -->
             <div class="col-12 col-md-6 mb-4 mb-md-0">
               <div class="video-container" data-video-id="zybRlq56L8o">
                 <div class="thumbnail">
@@ -191,7 +190,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6">
+            <!-- Segundo vídeo -->
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
               <div class="video-container" data-video-id="epEoeGJQCYI">
                 <div class="thumbnail">
                   <img src="src/assets/zoomeduca-thumb-video-02.png" alt="Thumbnail do vídeo">
@@ -199,8 +199,18 @@
                 </div>
               </div>
             </div>
+            <!-- Terceiro vídeo -->
+            <!-- <div class="col-12 col-md-7 mx-auto mt-4">
+              <div class="video-container" data-video-id="">
+                <div class="thumbnail">
+                  <img src="https://placehold.co/1920x1080" alt="Thumbnail do vídeo">
+                  <div class="play-button"></div>
+                </div>
+              </div>
+            </div> -->
           </div>
         </div>
+        
       </section>
     </article>
 
@@ -805,6 +815,32 @@
           </div>
         </div>
       </div>  
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight" aria-label="Expandir: Como a escola contrata a plataforma Zoom Educa?">
+            Qual é o tempo médio para a correção de provas?
+          </button>
+        </h2>
+        <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+          <div class="accordion-body">
+            O tempo médio para a correção de provas depende da modalidade. Para modalidades exclusivamente digitais, a correção é praticamente instantânea, garantindo agilidade e eficiência. Já em processos que envolvem etapas físicas, como coleta e escaneamento de folhas de resposta, o tempo pode variar, considerando as demandas logísticas e operacionais.
+          </div>
+        </div>
+      </div>  
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine" aria-label="Expandir: Como a escola contrata a plataforma Zoom Educa?">
+            Há suporte para correção de provas discursivas?
+          </button>
+        </h2>
+        <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+          <div class="accordion-body">
+            No momento, não oferecemos suporte para a correção de provas discursivas. Nosso foco está na avaliação de provas objetivas e processos automatizados.
+          </div>
+        </div>
+      </div>  
     </div>
     <div class="container text-center">
       <button id="toggleButton" class="btn btn-outline-success mt-3" aria-label="Mostrar mais" role="button">Mostrar mais</button>
@@ -819,7 +855,6 @@
         <!-- Coluna Marca -->
         <div class="col-md-4 text-center mb-4">
           <h5 class="text-uppercase">Marca registrada no INPI</h5>
-	  <!--  <p>Processo Nº: 919721990</p> -->
           <img src="src/assets/logo.svg" class="img-fluid" style="width: 60%;" alt="Logo da Zoom Educa">
         </div>
         
@@ -833,16 +868,6 @@
             <a href="https://api.whatsapp.com/send?phone=558699856371" target="_blank" aria-label="WhatsApp Zoom Educa" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
           </div>
         </div>
-        
-        <!-- Coluna Informações -->
-        <!-- <div class="col-md-3 mb-4">
-          <h5 class="text-uppercase">Informações</h5>
-          <ul class="list-unstyled">
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#benefit">Benefícios</a></li>
-            <li><a href="#contact">Contato</a></li>
-          </ul>
-        </div> -->
         
         <!-- Coluna Hiperdigi -->
         <div class="col-md-4 mb-4 text-center text-md-end">
