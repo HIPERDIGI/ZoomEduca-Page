@@ -184,7 +184,7 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(67, 160, 217, 0.9);
   mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"/></svg>');
   -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M8 5v14l11-7z"/></svg>');
   background-size: cover;
