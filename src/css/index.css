@@ -162,6 +162,10 @@
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  &.vertical {
+    aspect-ratio: 9/16;
+    width: 100%;
+  }
 }
 
 .thumbnail {
