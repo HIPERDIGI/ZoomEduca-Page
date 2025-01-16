@@ -220,6 +220,9 @@ iframe {
   pointer-events: none;
 }
 
+.img-gap {
+  gap: 10em;
+}
 
 .title-muted {
   color: #adadad;
@@ -796,6 +799,9 @@ iframe {
     width: 1.5rem;
     height: 1.5rem;
     border-width: 0.2em;
+  }
+  .img-gap {
+    gap: 0;
   }
 }
 
