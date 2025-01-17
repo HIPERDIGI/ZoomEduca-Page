@@ -162,6 +162,10 @@
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  &.vertical {
+    aspect-ratio: 9/16;
+    width: 100%;
+  }
 }
 
 .thumbnail {
@@ -216,6 +220,9 @@ iframe {
   pointer-events: none;
 }
 
+.img-gap {
+  gap: 10em;
+}
 
 .title-muted {
   color: #adadad;
@@ -589,6 +596,38 @@ iframe {
   top: -500px;
 }
 
+.bg-overlay-01 {
+  background-image: url("../assets/background.png"); 
+  background-size: cover; 
+  padding: 1em;
+}
+
+.bg-overlay-02 {
+  background-image: url("../assets/background-02.png"); 
+  background-size: cover; 
+  padding: 1em;
+}
+
+.bg-overlay-03 {
+  background-image: url("../assets/background-02.png"); 
+  background-size: cover; 
+  padding: 1em;
+}
+
+/* Esconde o background em dispositivos pequenos */
+@media (max-width: 576px) {
+.bg-overlay-01 {
+    background-image: none;
+  }
+
+  .bg-overlay-02 {
+    background-image: none;
+  }
+
+  .bg-overlay-03 {
+    background-image: none;
+  }
+}
 .metrics-container {
   background-color: var(--PRIMARY); /* Cor suave para destaque */
   border-radius: 15px;
@@ -792,6 +831,9 @@ iframe {
     width: 1.5rem;
     height: 1.5rem;
     border-width: 0.2em;
+  }
+  .img-gap {
+    gap: 0;
   }
 }
 
